@@ -49,11 +49,6 @@ namespace Optimizer
             {
                 btnNo.Visible = false;
                 btnYes.Text = OptionsHelper.TranslationList["btnOk"];
-
-                this.AcceptButton = btnNo;
-                this.AcceptButton = btnYes;
-                this.CancelButton = btnNo;
-                this.CancelButton = btnYes;
             }
 
             // translate UI elements
@@ -62,11 +57,13 @@ namespace Optimizer
 
         private void btnNo_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.No;
             this.Close();
         }
 
         private void btnYes_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Yes;
             Confirm();
             this.Close();
         }

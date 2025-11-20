@@ -41,7 +41,7 @@ namespace Optimizer
             // 
             this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtMessage.Location = new System.Drawing.Point(11, 9);
             this.txtMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -91,7 +91,7 @@ namespace Optimizer
             // 
             this.txtVersions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVersions.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVersions.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVersions.ForeColor = System.Drawing.Color.White;
             this.txtVersions.Location = new System.Drawing.Point(11, 80);
             this.txtVersions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -105,12 +105,12 @@ namespace Optimizer
             // txtChanges
             // 
             this.txtChanges.AutoSize = true;
-            this.txtChanges.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChanges.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChanges.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtChanges.Location = new System.Drawing.Point(11, 135);
             this.txtChanges.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtChanges.Name = "txtChanges";
-            this.txtChanges.Size = new System.Drawing.Size(102, 20);
+            this.txtChanges.Size = new System.Drawing.Size(112, 20);
             this.txtChanges.TabIndex = 67;
             this.txtChanges.Tag = "themeable";
             this.txtChanges.Text = "View changes";
@@ -122,7 +122,7 @@ namespace Optimizer
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInfo.ForeColor = System.Drawing.Color.White;
             this.txtInfo.Location = new System.Drawing.Point(15, 168);
             this.txtInfo.Margin = new System.Windows.Forms.Padding(2);

@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Optimizer
@@ -14,47 +16,56 @@ namespace Optimizer
 
         public MoonTree()
         {
-            this.DrawMode = TreeViewDrawMode.OwnerDrawAll;
-            this.BackColor = Color.FromArgb(20, 20, 20);
-            this.ForeColor = Color.White;
-            this.BorderStyle = BorderStyle.None;
-        }
-
-        private bool FindName(string name)
-        {
-            foreach (string x in rootNodes)
-            {
-                if (x == name) return true;
-            }
-
-            return false;
+            DrawMode = TreeViewDrawMode.OwnerDrawAll;
+            BackColor = Color.FromArgb(20, 20, 20);
+            ForeColor = Color.White;
+            BorderStyle = BorderStyle.None;
         }
 
         protected override void OnDrawNode(DrawTreeNodeEventArgs e)
         {
-            Rectangle r = new Rectangle();
-            r.X = 0;
-            r.Y = e.Bounds.Y;
-
-            r.Height = e.Bounds.Height;
-            r.Width = 100000;
+            Rectangle nodeRectangle = new Rectangle(0, e.Bounds.Y, Width, e.Bounds.Height);
 
             if (e.Node.IsSelected)
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(50, 50, 50)), r); //e.Bounds
+                using (SolidBrush nodeBrush = new SolidBrush(Color.FromArgb(50, 50, 50)))
+                {
+                    e.Graphics.FillRectangle(nodeBrush, nodeRectangle);
+                }
+            }
+
+            // draw text in a nicer place (e.Bounds only has a getter)
+            // e.Node.Bounds.Left is an awkward place to draw text at
+            nodeRectangle.X = e.Node.Bounds.Left - 7;
+            nodeRectangle.Width = e.Node.Bounds.Width;
+
+            if (rootNodes.Contains(e.Node.Name))
+            {
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, Font, nodeRectangle, Color.Silver);
+            }
+            else if (e.Node.Tag?.ToString() == _primaryItemTag)
+            {
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, Font, nodeRectangle, OptionsHelper.ForegroundColor);
             }
             else
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(20, 20, 20)), r); //e.Bounds
+                TextRenderer.DrawText(e.Graphics, e.Node.Text, Font, nodeRectangle, Color.White);
             }
 
-            if (FindName(e.Node.Name)) TextRenderer.DrawText(e.Graphics, e.Node.Text, this.Font, e.Node.Bounds, Color.Silver);
-            else if (e.Node.Tag != null && e.Node.Tag.ToString() == _primaryItemTag) TextRenderer.DrawText(e.Graphics, e.Node.Text, this.Font, e.Node.Bounds, OptionsHelper.ForegroundColor);
-            else TextRenderer.DrawText(e.Graphics, e.Node.Text, this.Font, e.Node.Bounds, Color.White);
-
-            if (this.ImageList != null && this.ImageList.Images.Count > 0 && e.Node.SelectedImageIndex > -1)
+            if (!DesignMode)
             {
-                e.Graphics.DrawImage(this.ImageList.Images[e.Node.SelectedImageIndex], e.Bounds.Left + 15 * e.Node.Level + 5, e.Bounds.Top);
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                if (ImageList != null && ImageList.Images.Count > e.Node.SelectedImageIndex && e.Node.SelectedImageIndex > -1)
+                {
+                    e.Graphics.DrawImage(ImageList.Images[e.Node.SelectedImageIndex], (e.Bounds.Left + 5) + (15 * e.Node.Level) + 24, e.Bounds.Top);
+
+                    Rectangle nodeExpanderRect = new Rectangle(7, e.Bounds.Top + 7, 14, 14);
+                    using (GraphicsPath expanderPath = CuoreUI.Helpers.GeneralHelper.RoundTriangle(
+                        nodeExpanderRect, rounding: 2, pointingDown: e.Node.IsExpanded))
+                    {
+                        e.Graphics.FillPath(Brushes.DimGray, expanderPath);
+                    }
+                }
             }
         }
     }

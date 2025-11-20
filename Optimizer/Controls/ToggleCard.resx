@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cardHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vQAADr0BR/uQrQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAUBJREFUSEvNlDtO
+        Q0EMRUOADiIhPjsAlsEO+LTUNEDDFlLAWrKKgKBgE+wAKBHie5DRHXFjBZiXlyJHGimxPb5jj+d1OrME
+        MBcr21sDzANd+98N22jUhKTEy7HG+SaitAM4AK6AB61LYN9jGlNOB1zww4tW4dxjqyn91cmDV+AEWNM6
+        Bd7k2/M9Vdjph0pyPCYmRIKh7/kX63sPeFKSDdlimkp166rsHljyvX/iQcB1XG7yl+pWgGfgsUxWlUBg
+        VcS8+5jGQ1vQ7yNVd+t7qkmVjLxg4Az4lMChbN/CjSiJU/KBEgd92eou+DesLX0ljovdla1ZazLpPu4k
+        sCPbYo5vjAms6nHFaPbc14rU/5sY3XG+2cbatAVsuq019nK3NfsfIeS+ViSBSP5uVbQXCEwkWjS90zvp
+        mzTd5IX88avhC0u91Qvs5tssAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="cuiTooltipHover1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

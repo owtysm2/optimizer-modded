@@ -15,8 +15,6 @@ namespace Optimizer
             Enable = 0x2
         }
 
-        public static TokenPrivilegeHelper Backup => new TokenPrivilegeHelper("SeBackupPrivilege");
-        public static TokenPrivilegeHelper Restore => new TokenPrivilegeHelper("SeRestorePrivilege");
         public static TokenPrivilegeHelper TakeOwnership => new TokenPrivilegeHelper("SeTakeOwnershipPrivilege");
 
         private readonly string privilegeName;

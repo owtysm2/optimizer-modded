@@ -79,7 +79,7 @@ namespace Optimizer.Properties {
         ///[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenWithCMD\command]
         ///@=&quot;cmd.exe /s /k pushd \&quot;%V\&quot;&quot;
         ///
-        ///[HKEY_CLASSES_ROOT\Drive\shell\OpenWit [rest of string was truncated]&quot;;.
+        ///[HKEY_CLASSES_ROOT\D [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AddOpenWithCMD {
             get {
@@ -109,16 +109,6 @@ namespace Optimizer.Properties {
         internal static string AR {
             get {
                 return ResourceManager.GetString("AR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap banner {
-            get {
-                object obj = ResourceManager.GetObject("banner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -183,6 +173,7 @@ namespace Optimizer.Properties {
         ///	&quot;subPrivacy&quot;: &quot;隐私&quot;,
         ///	&quot;subGaming&quot;: &quot;游戏&quot;,
         ///	&quot;subTouch&quot;: &quot;触碰&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;啟用註冊表備份&quot;,
         ///	&quot;subTaskbar&quot;: &quot;任务栏&quot;,
         ///	&quot;subExtras&quot;: &quot;附加功能&quot;,
         ///	&quot;btnAbout&quot;: &quot;确定&quot;,
@@ -196,7 +187,7 @@ namespace Optimizer.Properties {
         ///	&quot;txtVersion&quot;: &quot;版本: {VN}&quot;,
         ///	&quot;txtBitness&quot;: &quot;您使用的是{BITS}&quot;,
         ///	&quot;onedriveM&quot;: &quot;确定要卸载 OneDrive 吗？ 这将删除您的桌面和文档文件！ 仅在本地帐户上使用此选项！&quot;,
-        ///	&quot;systemRestoreM&quot;: &quot;您确定要禁用系统还原吗？ 这将删除您当前的备份图像！&quot; [rest of string was truncated]&quot;;.
+        ///	&quot;systemRestoreM&quot;:  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CN {
             get {
@@ -223,6 +214,7 @@ namespace Optimizer.Properties {
         ///	&quot;subTaskbar&quot;: &quot;Hlavní panel&quot;,
         ///	&quot;subExtras&quot;: &quot;Extra&quot;,
         ///	&quot;btnAbout&quot;: &quot;OK&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Povolit zálohování registru&quot;,
         ///	&quot;restartButton&quot;: &quot;Restartovat nyní&quot;,
         ///	&quot;restartButton8&quot;: &quot;Restartovat nyní&quot;,
         ///	&quot;restartButton10&quot;: &quot;Restartovat nyní&quot;,
@@ -230,8 +222,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnFind&quot;: &quot;Nalézt&quot;,
         ///	&quot;btnKill&quot;: &quot;Zabít&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Držadla souborů (File Handles)&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Verze: {VN}&quot;,
-        ///	&quot;onedriveM&quot;: &quot;Opravdu chcete odin [rest of string was truncated]&quot;;.
+        ///	&quot;txtVersion&quot;: &quot;V [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CZ {
             get {
@@ -255,6 +246,7 @@ namespace Optimizer.Properties {
         ///	&quot;subPrivacy&quot;: &quot;Datenschutz&quot;,
         ///	&quot;subGaming&quot;: &quot;Gaming&quot;,
         ///	&quot;subTouch&quot;: &quot;Touch&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Registrierungs-Backups aktivieren&quot;,
         ///	&quot;subTaskbar&quot;: &quot;Taskleiste&quot;,
         ///	&quot;subExtras&quot;: &quot;Zusatzfunktionen&quot;,
         ///	&quot;btnAbout&quot;: &quot;OK&quot;,
@@ -265,8 +257,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Beenden&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Dateigriffe&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Neustart zur Anwendung der Änderungen&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Version: {VN}&quot;,
-        ///	&quot;txtBitness&quot;: &quot;Sie ar [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DE {
             get {
@@ -330,8 +321,7 @@ namespace Optimizer.Properties {
         ///rem &quot;DisableAntiSpyware&quot; is discontinued and will be ignored on client devices, as of the August 2020 (version 4.18.2007.8) update to Microsoft Defender Antivirus.
         ///
         ///rem Disable Tamper Protection First !!!!!
-        ///rem https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html
-        ///reg [rest of string was truncated]&quot;;.
+        ///rem https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.ht [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DisableDefenderSafeMode1903Plus {
             get {
@@ -370,7 +360,7 @@ namespace Optimizer.Properties {
         ///
         ///schtasks /end /tn &quot;\Microsoft\Office\OfficeTelemetryAgentFallBack&quot;
         ///schtasks /change /tn &quot;\Microsoft\Office\OfficeTelemetryAgentFallBack&quot; /disable
-        ///schtasks /end /tn &quot;\Microsoft\Office\OfficeTelemetryAgentLogOn&quot; [rest of string was truncated]&quot;;.
+        ///schtasks /end /tn &quot;\Microsoft\Office\OfficeTelemetryAgen [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DisableOfficeTelemetryTasks {
             get {
@@ -384,7 +374,7 @@ namespace Optimizer.Properties {
         ///schtasks /end /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\BthSQM&quot;
         ///schtasks /change /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\BthSQM&quot; /disable
         ///schtasks /end /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask&quot;
-        ///schtasks /change /tn &quot;\Microsoft\Windo [rest of string was truncated]&quot;;.
+        ///schtasks /change /tn &quot;\Microsoft\ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DisableTelemetryTasks {
             get {
@@ -433,6 +423,7 @@ namespace Optimizer.Properties {
         ///	&quot;subTouch&quot;: &quot;Αφή&quot;,
         ///	&quot;subTaskbar&quot;: &quot;Γραμμή Εργασιών&quot;,
         ///	&quot;subExtras&quot;: &quot;Πρόσθετα&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Ενεργοποίηση αντιγράφων ασφαλείας μητρώου&quot;,
         ///	&quot;btnAbout&quot;: &quot;Εντάξει&quot;,
         ///	&quot;restartButton&quot;: &quot;Επανεκκίνηση τώρα&quot;,
         ///	&quot;restartButton8&quot;: &quot;Επανεκκίνηση τώρα&quot;,
@@ -440,9 +431,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnFind&quot;: &quot;Εύρεση&quot;,
         ///	&quot;btnKill&quot;: &quot;Τερματισμός&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;File Handles&quot;,
-        ///	&quot;restartAndApply&quot;: &quot;Επανεκκίνηση για την εφαρμογή των αλλαγών&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Έκδοση: {VN}&quot;,
-        ///	&quot;txtBitness [rest of string was truncated]&quot;;.
+        ///	&quot;restartAndApply&quot;: &quot;Επανεκκίνηση για την εφαρμο [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string EL {
             get {
@@ -529,7 +518,7 @@ namespace Optimizer.Properties {
         ///schtasks /change /tn &quot;\Microsoft\Office\OfficeTelemetryAgentLogOn&quot; /enable
         ///
         ///reg add &quot;HKCU\SOFTWARE\Microsoft\Office\15.0\Outlook\Options\Mail&quot; /v &quot;EnableLogging&quot; /t REG_DWORD /d 1 /f
-        ///reg add &quot;HKCU\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\Mail&quot; /v &quot;EnableLogging&quot; /t  [rest of string was truncated]&quot;;.
+        ///reg add &quot;HKCU\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\Mail&quot; /v &quot;EnableLoggi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string EnableOfficeTelemetryTasks {
             get {
@@ -543,7 +532,7 @@ namespace Optimizer.Properties {
         ///schtasks /change /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask&quot; /enable
         ///schtasks /change /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\UsbCeip&quot; /enable
         ///schtasks /change /tn &quot;\Microsoft\Windows\Customer Experience Improvement Program\Uploader&quot; /enable
-        ///schtasks / [rest of string was truncated]&quot;;.
+        ///schta [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string EnableTelemetryTasks {
             get {
@@ -571,14 +560,14 @@ namespace Optimizer.Properties {
         ///	&quot;subTaskbar&quot;: &quot;Barra de tareas&quot;,
         ///	&quot;subExtras&quot;: &quot;Extras&quot;,
         ///	&quot;btnAbout&quot;: &quot;OK&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Habilitar copias de seguridad del registro&quot;,
         ///	&quot;restartButton&quot;: &quot;Reiniciar ahora&quot;,
         ///	&quot;restartButton8&quot;: &quot;Reiniciar ahora&quot;,
         ///	&quot;restartButton10&quot;: &quot;Reiniciar ahora&quot;,
         ///	&quot;btnFind&quot;: &quot;Encontrar&quot;,
         ///	&quot;btnKill&quot;: &quot;Matar&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Asas de archivo&quot;,
-        ///	&quot;restartAndApply&quot;: &quot;Reiniciar para aplicar cambios&quot;,
-        ///	&quot;onedriveM&quot;: &quot;¿Seguro que quieres desinstalar OneDrive? ¡Est [rest of string was truncated]&quot;;.
+        ///	&quot;restartAndApply&quot;: &quot;Reiniciar para aplicar cambios&quot;, [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ES {
             get {
@@ -600,11 +589,10 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton10&quot;: &quot;راه اندازی مجدد&quot;,
         ///	&quot;btnFind&quot;: &quot;پیدا کردن&quot;,
         ///	&quot;btnKill&quot;: &quot;کشتن&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;فعال‌سازی پشتیبان‌گیری از رجیستری&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;دسته های فایل&quot;,
         ///	&quot;restartAndApply&quot;: &quot;ریست برای اعمال تغییرات&quot;,
-        ///	&quot;txtVersion&quot;: &quot;نسخه: {VN}&quot;,
-        ///	&quot;txtBitness&quot;: &quot;شما کار میکنید با {BITS}&quot;,
-        ///	&quot; [rest of string was truncated]&quot;;.
+        ///	&quot;txtVersion&quot;: &quot;نسخه:  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string FA {
             get {
@@ -628,7 +616,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Tuer&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Poignées de fichier&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Redemarrer pour appliquer les changements&quot;,
-        ///	&quot;onedriveM&quot;: &quot;Voulez-vous vraimen [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Activer les sauve [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string FR {
             get {
@@ -706,8 +694,8 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Ubi&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Držači datoteka&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Ponovno pokrenite za primjenu promjena&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Verzija: {VN}&quot;,
-        ///	&quot;txtBitness&quot;: &quot;Radite s {BITS [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Omogućite sigurnosne kopije registra&quot;,
+        ///	&quot;txtV [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HR {
             get {
@@ -765,8 +753,8 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Hentikan&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Menangani FIle&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Mulai ulang untuk menerapkan perubahan&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Versi: {VN}&quot;,
-        ///	&quot;txtBitness&quot;: &quot;Kamu Bek [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Aktifkan Cadangan Registri&quot;,
+        ///	&quot;txtVer [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ID {
             get {
@@ -800,7 +788,7 @@ namespace Optimizer.Properties {
         ///&quot;NoWorkingDirectory&quot;=&quot;&quot;
         ///
         ///[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
-        ///@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d y &amp;&amp; icacls \&quot;% [rest of string was truncated]&quot;;.
+        ///@=&quot;cmd.exe /c takeown /f \&quot;%1\&quot; /r /d  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InstallTakeOwnership {
             get {
@@ -831,11 +819,11 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton8&quot;: &quot;riavvia ora&quot;,
         ///	&quot;restartButton10&quot;: &quot;riavvia ora&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Riavviare per applicare le modifiche&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Abilita i backup del registro&quot;,
         ///	&quot;txtVersion&quot;: &quot;Versione: {VN}&quot;,
         ///	&quot;btnFind&quot;: &quot;Trova&quot;,
         ///	&quot;btnKill&quot;: &quot;Uccisione&quot;,
-        ///	&quot;trayUnlocker&quot;: &quot;Manici di file&quot;,
-        ///	&quot;txtBitness&quot;: &quot;Architettura: {BITS}&quot; [rest of string was truncated]&quot;;.
+        ///	&quot;trayUnlocker&quot;: &quot;Manic [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IT {
             get {
@@ -867,13 +855,13 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton10&quot;: &quot;今すぐ再起動&quot;,
         ///	&quot;btnFind&quot;: &quot;検索&quot;,
         ///	&quot;btnKill&quot;: &quot;強制終了&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;レジストリバックアップを有効にする&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;ファイル ハンドル&quot;,
         ///	&quot;restartAndApply&quot;: &quot;再起動して変更を適用&quot;,
         ///	&quot;txtVersion&quot;: &quot;バージョン: {VN}&quot;,
         ///	&quot;txtBitness&quot;: &quot;{BITS}で動作しています。&quot;,
         ///	&quot;linkUpdate&quot;: &quot;アップデートが利用可能です&quot;,
-        ///	&quot;lblLab&quot;: &quot;実験的ビルド\n(テスト後に削除されます)&quot;,
-        ///	&quot;performanceSw&quot;:  [rest of string was truncated]&quot;;.
+        ///	&quot;lblLab&quot;: &quot;実験的ビル [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string JA {
             get {
@@ -905,13 +893,13 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton10&quot;: &quot;지금 다시 시작&quot;,
         ///	&quot;btnFind&quot;: &quot;찾기&quot;,
         ///	&quot;btnKill&quot;: &quot;죽이기&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;레지스트리 백업 활성화&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;파일 핸들&quot;,
         ///	&quot;restartAndApply&quot;: &quot;다시 시작하여 변경 사항 적용&quot;,
         ///	&quot;txtVersion&quot;: &quot;버전: {VN}&quot;,
         ///	&quot;txtBitness&quot;: &quot;{BITS}로 작업중 - 한국어: 비너스걸&quot;,
         ///	&quot;linkUpdate&quot;: &quot;업데이트 가능&quot;,
-        ///	&quot;lblLab&quot;: &quot;실험 빌드\n(테스트 후 삭제)&quot;,
-        ///	&quot;performanceSw&quot;: &quot; [rest of string was truncated]&quot;;.
+        ///	&quot;lblLab&quot;: &quot;실험 빌드\n [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string KO {
             get {
@@ -943,10 +931,9 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton10&quot;: &quot;ئێستا ڕیستارتی بکەوە&quot;,
         ///	&quot;btnFind&quot;: &quot;بیدۆزەوە&quot;,
         ///	&quot;btnKill&quot;: &quot;بیکوژە (دایبخە)&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;پشتیگێری لەفایلی تۆمار چالاک بکە&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;دەسکەکانی فایل&quot;,
-        ///	&quot;restartAndApply&quot;: &quot;ڕیستارتی ئەکەیتەوە بۆ بینینی گۆڕانکاریەکان&quot;,
-        ///	&quot;txtVersion&quot;: &quot;وەشان :&quot;,
-        ///	&quot;t [rest of string was truncated]&quot;;.
+        ///	&quot;restartAndApply&quot;: &quot;ڕیستارتی ئەکەیتەوە بۆ ب [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string KU {
             get {
@@ -990,7 +977,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;मार्नुहोस्&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;फाइल ह्यान्डलहरू&quot;,
         ///	&quot;restartAndApply&quot;: &quot;परिवर्तन लागू गर्नका लागि पुन: प्रारंभ गर्नुहोस्&quot;,
-        ///	&quot;t [rest of string was truncated]&quot;;.
+        ///	&quot;r [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string NE {
             get {
@@ -1021,11 +1008,10 @@ namespace Optimizer.Properties {
         ///   &quot;restartButton8&quot;:&quot;Nu opnieuw opstarten&quot;,
         ///   &quot;restartButton10&quot;:&quot;Nu opnieuw opstarten&quot;,
         ///   &quot;restartAndApply&quot;:&quot;Herstart om wijzigingen toe te passen&quot;,
+        ///   &quot;regBackupSw&quot;: &quot;Registerback-ups inschakelen&quot;,
         ///   &quot;txtVersion&quot;:&quot;Versie: {VN}&quot;,
         ///   &quot;btnFind&quot;:&quot;Vind&quot;,
-        ///   &quot;btnKill&quot;:&quot;Dood&quot;,
-        ///   &quot;trayUnlocker&quot;:&quot;Bestandshandvatten&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///   &quot;btnKill&quot;:&quot;D [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string NL {
             get {
@@ -1067,9 +1053,9 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton10&quot;: &quot;Uruchom ponownie teraz&quot;,
         ///	&quot;btnFind&quot;: &quot;Znajdź&quot;,
         ///	&quot;btnKill&quot;: &quot;Zakończ&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Włącz kopie zapasowe rejestru&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Deskryptory plików&quot;,
-        ///	&quot;restartAndApply&quot;: &quot;Uruchom ponownie, aby zastosować zmiany&quot;,
-        ///	&quot;onedriveM&quot;: &quot;Czy na pewno chcesz usunąć u [rest of string was truncated]&quot;;.
+        ///	&quot;restartAndApply&quot;: &quot;Uruchom ponownie, aby zastosować zmi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PL {
             get {
@@ -1084,16 +1070,6 @@ namespace Optimizer.Properties {
             get {
                 object obj = ResourceManager.GetObject("poland", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Poppins_Regular {
-            get {
-                object obj = ResourceManager.GetObject("Poppins_Regular", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -1134,7 +1110,8 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Finalizar&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Alças de arquivo&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Reinicie para aplicar as alterações&quot;,
-        ///	&quot;onedriveM&quot;: &quot;Tem certeza de que deseja desinstalar o On [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Ativar backups de registro&quot;,
+        ///	&quot;onedrive [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PT {
             get {
@@ -1193,8 +1170,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Terminati&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Mânere de fișiere&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Reporniți pentru a aplica modificările&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Versiunea: {VN}&quot;,
-        ///	&quot;txtBitn [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Activați copiile de rezervă [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RO {
             get {
@@ -1225,10 +1201,9 @@ namespace Optimizer.Properties {
         ///	&quot;restartButton8&quot;: &quot;Перезапустить сейчас&quot;,
         ///	&quot;restartButton10&quot;: &quot;Перезапустить сейчас&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Перезапустить, чтобы применить изменения&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;Включить резервное копирование реестра&quot;,
         ///	&quot;txtVersion&quot;: &quot;Версия: {VN}&quot;,
-        ///	&quot;btnFind&quot;: &quot;Находить&quot;,
-        ///	&quot;btnKill&quot;: &quot;Убийство&quot;,
-        ///	&quot;trayUnlocker&quot;: &quot;Дескрипт [rest of string was truncated]&quot;;.
+        ///	&quot;btnFind&quot;: &quot;Нахо [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RU {
             get {
@@ -1356,10 +1331,10 @@ namespace Optimizer.Properties {
         ///	&quot;onedriveM&quot;: &quot;您確定要移除 OneDrive 嗎？這將刪除您的桌面和文件檔案！僅在本機帳戶上使用此選項！&quot;,
         ///	&quot;txtVersion&quot;: &quot;版本：{VN}&quot;,
         ///	&quot;systemRestoreM&quot;: &quot;您確定要停用系統還原嗎？這將刪除您目前的備份映像！&quot;,
+        ///	&quot;regBackupSw&quot;: &quot;啟用註冊表備份&quot;,
         ///	&quot;txtBitness&quot;: &quot;您正在使用 {BITS}&quot;,
         ///	&quot;btnFind&quot;: &quot;尋找&quot;,
-        ///	&quot;btnKill&quot;: &quot;結束&quot;,
-        ///	&quot;trayUnlocker&quot;: &quot;檔案控制&quot;,        /// [rest of string was truncated]&quot;;.
+        ///	&quot;btnKill&quot;: &quot;結束&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TW {
             get {
@@ -1383,8 +1358,7 @@ namespace Optimizer.Properties {
         ///	&quot;btnKill&quot;: &quot;Вимкнути примусово&quot;,
         ///	&quot;trayUnlocker&quot;: &quot;Дескриптор файлів&quot;,
         ///	&quot;restartAndApply&quot;: &quot;Перезапустити для застосування змін&quot;,
-        ///	&quot;txtVersion&quot;: &quot;Версія: {VN}&quot;,
-        ///	&quot; [rest of string was truncated]&quot;;.
+        ///	&quot;regBackupSw&quot;: &quot;Увімкнути резервн [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UA {
             get {
@@ -1428,8 +1402,8 @@ namespace Optimizer.Properties {
         ///&quot;btnKill&quot;: &quot;مار ڈالو&quot;,
         ///&quot;trayUnlocker&quot;: &quot;فائل ہینڈلز&quot;,
         ///&quot;restartAndApply&quot;: &quot;تبدیلیاں لاگو کرنے کے لیے دوبارہ شروع کریں&quot;,
-        ///&quot;txtVersion&quot;: &quot;ورژن: {VN}&quot;,
-        ///&quot;txtBitness&quot;: &quot;آپ {BITS} کے ساتھ کام  [rest of string was truncated]&quot;;.
+        ///&quot;regBackupSw&quot;: &quot;رجسٹری بیک اپ کو فعال کریں&quot;,
+        ///&quot;txtVersion&quot;: &quot;ورژن: [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UR {
             get {

@@ -51,15 +51,6 @@ namespace Optimizer
             return controls;
         }
 
-        internal static Color ToGrayScale(this Color originalColor)
-        {
-            if (originalColor.Equals(Color.Transparent))
-                return originalColor;
-
-            int grayScale = (int)((originalColor.R * .299) + (originalColor.G * .587) + (originalColor.B * .114));
-            return Color.FromArgb(grayScale, grayScale, grayScale);
-        }
-
         internal static string GetWindowsDetails()
         {
             string bitness = Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit";
@@ -249,11 +240,6 @@ namespace Optimizer
             Utilities.RunCommand("powercfg -h on");
         }
 
-        internal static void ActivateMainForm()
-        {
-            Program._MainForm.Activate();
-        }
-
         internal static bool ServiceExists(string serviceName)
         {
             return Array.Exists(ServiceController.GetServices(), (serviceController => serviceController.ServiceName.Equals(serviceName)));
@@ -376,11 +362,6 @@ namespace Optimizer
         internal static void FindFile(string fileName)
         {
             if (File.Exists(fileName)) Process.Start("explorer.exe", $"/select, \"{fileName}\"");
-        }
-
-        internal static void FindFolder(string folder)
-        {
-            if (Directory.Exists(folder)) RunCommand($"explorer.exe \"{folder}\"");
         }
 
         internal static string GetShortcutTargetFile(string shortcutFilename)
@@ -527,31 +508,6 @@ namespace Optimizer
                 }
             }
         }
-
-        // old and untested method
-        //internal static void RestoreWindowsPhotoViewer()
-        //{
-        //    const string PHOTO_VIEWER_SHELL_COMMAND =
-        //        @"%SystemRoot%\System32\rundll32.exe ""%ProgramFiles%\Windows Photo Viewer\PhotoViewer.dll"", ImageView_Fullscreen %1";
-        //    const string PHOTO_VIEWER_CLSID = "{FFE2A43C-56B9-4bf5-9A79-CC6D4285608A}";
-
-        //    Registry.SetValue(@"HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open", "MuiVerb", "@photoviewer.dll,-3043");
-        //    Registry.SetValue(
-        //        @"HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open\command", valueName: null,
-        //        PHOTO_VIEWER_SHELL_COMMAND, RegistryValueKind.ExpandString
-        //    );
-        //    Registry.SetValue(@"HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open\DropTarget", "Clsid", PHOTO_VIEWER_CLSID);
-
-        //    string[] imageTypes = { "Paint.Picture", "giffile", "jpegfile", "pngfile" };
-        //    foreach (string type in imageTypes)
-        //    {
-        //        Registry.SetValue(
-        //            $@"HKEY_CLASSES_ROOT\{type}\shell\open\command", valueName: null,
-        //            PHOTO_VIEWER_SHELL_COMMAND, RegistryValueKind.ExpandString
-        //        );
-        //        Registry.SetValue($@"HKEY_CLASSES_ROOT\{type}\shell\open\DropTarget", "Clsid", PHOTO_VIEWER_CLSID);
-        //    }
-        //}
 
         internal static void EnableProtectedService(string serviceName)
         {
@@ -834,19 +790,6 @@ namespace Optimizer
             catch (Exception ex)
             {
                 Logger.LogError("Utilities.PreventProcessFromRunning", ex.Message, ex.StackTrace);
-            }
-        }
-
-        internal static string GetUserDownloadsFolder()
-        {
-            try
-            {
-                return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", string.Empty).ToString();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("Utilities.GetUserDownloadsFolder", ex.Message, ex.StackTrace);
-                return string.Empty;
             }
         }
 

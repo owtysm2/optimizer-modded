@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Optimizer
@@ -8,15 +7,12 @@ namespace Optimizer
     {
         public event EventHandler ToggleClicked;
 
-        SubForm _subForm;
-
         public ToggleCard()
         {
             InitializeComponent();
 
             this.DoubleBuffered = true;
-
-            _subForm = new SubForm();
+            Toggle.CheckedBackground = OptionsHelper.CurrentOptions.Theme;
 
             this.IsAccessible = true;
             Label.IsAccessible = true;
@@ -53,29 +49,28 @@ namespace Optimizer
             if (ToggleClicked != null) ToggleClicked(sender, e);
         }
 
-        private void Label_MouseLeave(object sender, EventArgs e)
+        protected override void OnHandleCreated(EventArgs e)
         {
-            Label.Font = new System.Drawing.Font(Label.Font, System.Drawing.FontStyle.Regular);
-            Label.ForeColor = Color.White;
+            if (cuiTooltipHover1.Content == string.Empty)
+            {
+                cuiTooltipHover1.Content = Label.Text;
+            }
+            base.OnHandleCreated(e);
         }
 
-        private void Label_MouseEnter(object sender, EventArgs e)
+        internal string LabelTag
         {
-            Label.Font = new System.Drawing.Font(Label.Font, System.Drawing.FontStyle.Underline);
-            Label.ForeColor = OptionsHelper.ForegroundColor;
-        }
+            get => Label.Tag?.ToString();
+            set
+            {
+                Label.Tag = value;
+                if (Label.Tag == null)
+                {
+                    return;
+                }
 
-        private void Label_Click(object sender, EventArgs e)
-        {
-            if (Label.Tag == null) return;
-            _subForm.SetTip(Label.Tag.ToString());
-            _subForm.ShowDialog(this);
-        }
-
-        private void Label_MouseHover(object sender, EventArgs e)
-        {
-            Label.Font = new System.Drawing.Font(Label.Font, System.Drawing.FontStyle.Underline);
-            Label.ForeColor = OptionsHelper.ForegroundColor;
+                cuiTooltipHover1.Content = Label.Tag.ToString();
+            }
         }
     }
 }

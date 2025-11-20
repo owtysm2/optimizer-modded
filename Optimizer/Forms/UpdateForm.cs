@@ -21,7 +21,7 @@ namespace Optimizer
                 btnNo.Text = OptionsHelper.TranslationList["btnNo"].ToString();
                 btnNo.Visible = true;
                 txtChanges.Text = OptionsHelper.TranslationList["btnChangelog"].ToString();
-                txtVersions.Text = $"{Program.GetCurrentVersionTostring()} → {latestVersion}";
+                txtVersions.Text = $"{Program.CurrentVersionString} → {latestVersion}";
                 txtVersions.Visible = true;
 
                 btnOK.DialogResult = DialogResult.Yes;

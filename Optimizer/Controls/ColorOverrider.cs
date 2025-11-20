@@ -24,7 +24,7 @@ namespace Optimizer
         public ColorOverrider()
         {
             // force init color table
-            byte unused = SystemColors.Window.R;
+            _ = SystemColors.Window.R;
 
             var systemDrawingAssembly = typeof(Color).Assembly;
 

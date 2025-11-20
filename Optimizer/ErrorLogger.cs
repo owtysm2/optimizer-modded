@@ -32,7 +32,7 @@ namespace Optimizer
             _silentReportLog = new StringBuilder();
 
             _silentReportLog.AppendLine(Utilities.GetWindowsDetails());
-            _silentReportLog.AppendLine(string.Format("Optimizer {0} - .NET Framework {1} - Experimental build: {2}", Program.GetCurrentVersionTostring(), Utilities.GetNETFramework(), Program.EXPERIMENTAL_BUILD));
+            _silentReportLog.AppendLine(string.Format("Optimizer {0} - .NET Framework {1} - Experimental build: {2}", Program.CurrentVersionString, Utilities.GetNETFramework(), Program.EXPERIMENTAL_BUILD));
             _silentReportLog.AppendLine($"{DateTime.Now.ToLongDateString()} - {DateTime.Now.ToLongTimeString()}");
 
             _silentReportLog.AppendLine();
@@ -62,7 +62,7 @@ namespace Optimizer
                 {
                     File.AppendAllText(ErrorLogFile, Utilities.GetWindowsDetails());
                     File.AppendAllText(ErrorLogFile, Environment.NewLine);
-                    File.AppendAllText(ErrorLogFile, string.Format("Optimizer {0} - .NET Framework {1} - Experimental build: {2}", Program.GetCurrentVersionTostring(), Utilities.GetNETFramework(), Program.EXPERIMENTAL_BUILD));
+                    File.AppendAllText(ErrorLogFile, string.Format("Optimizer {0} - .NET Framework {1} - Experimental build: {2}", Program.CurrentVersionString, Utilities.GetNETFramework(), Program.EXPERIMENTAL_BUILD));
                     File.AppendAllText(ErrorLogFile, Environment.NewLine);
                     File.AppendAllText(ErrorLogFile, Environment.NewLine);
                     File.AppendAllText(ErrorLogFile, Environment.NewLine);
@@ -81,13 +81,6 @@ namespace Optimizer
                 File.AppendAllText(ErrorLogFile, Environment.NewLine);
             }
             catch { }
-            //finally
-            //{
-            //    if (!Options.CurrentOptions.DisableOptimizerTelemetry)
-            //    {
-            //        TelemetryHelper.GenerateTelemetryData(functionName, errorMessage, errorStackTrace);
-            //    }
-            //}
         }
     }
 }

@@ -15,16 +15,18 @@ namespace Optimizer
         /// </summary>
         internal readonly static float Major = 16;
         internal readonly static float Minor = 7;
-        internal readonly static bool EXPERIMENTAL_BUILD = false;
+        internal readonly static bool EXPERIMENTAL_BUILD = true;
 
-        internal static string GetCurrentVersionTostring()
+        public static string CurrentVersionString
         {
-            return $"{Major.ToString()}.{Minor.ToString()}";
+            get;
+            private set;
         }
 
-        internal static float GetCurrentVersionToFloat()
+        public static float CurrentVersionFloat
         {
-            return float.Parse(GetCurrentVersionTostring());
+            get;
+            private set;
         }
 
         internal static bool SILENT_MODE = false;
@@ -58,9 +60,10 @@ namespace Optimizer
         [STAThread]
         static void Main(string[] switches)
         {
+            CurrentVersionString = $"{Major}.{Minor} (modded)";
+            CurrentVersionFloat = Major + (Minor / Minor.ToString().Length);
+
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-            EmbeddedAssembly.Load(_jsonAssembly, _jsonAssembly.Replace("Optimizer.", string.Empty));
 
             DPI_PREFERENCE = Convert.ToInt32(Microsoft.Win32.Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ThemeManager", "LastLoadedDPI", "96"));
             if (DPI_PREFERENCE <= 0)
@@ -102,7 +105,6 @@ namespace Optimizer
             }
 
             CoreHelper.Deploy();
-            FontHelper.LoadFont();
 
             if (switches.Length == 1)
             {
@@ -161,7 +163,7 @@ namespace Optimizer
 
                 if (arg == "/version")
                 {
-                    if (!EXPERIMENTAL_BUILD) MessageBox.Show($"Optimizer: {GetCurrentVersionTostring()}\n\nCoded by: deadmoon © ∞\n\nhttps://github.com/hellzerg/optimizer", "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!EXPERIMENTAL_BUILD) MessageBox.Show($"Optimizer: {CurrentVersionString}\n\nCoded by: deadmoon © ∞\n\nhttps://github.com/hellzerg/optimizer", "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else MessageBox.Show("Optimizer: EXPERIMENTAL BUILD. PLEASE DELETE AFTER TESTING.\n\nCoded by: deadmoon © ∞\n\nhttps://github.com/hellzerg/optimizer", "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Environment.Exit(0);
@@ -385,7 +387,7 @@ namespace Optimizer
             StartSplashForm();
 
             _MainForm = new MainForm(_SplashForm);
-            _MainForm.Load += MainForm_Load;
+            _MainForm.CanCloseSplash += MainForm_CanCloseSplash;
             Application.Run(_MainForm);
         }
 
@@ -395,7 +397,7 @@ namespace Optimizer
             StartSplashForm();
 
             _MainForm = new MainForm(_SplashForm, codes[0], codes[3], codes[2], codes[1], codes[4], codes[5], codes[6], codes[7]);
-            _MainForm.Load += MainForm_Load;
+            _MainForm.CanCloseSplash += MainForm_CanCloseSplash;
             Application.Run(_MainForm);
         }
 
@@ -409,19 +411,16 @@ namespace Optimizer
             splashThread.Start();
         }
 
-        private static void MainForm_Load(object sender, EventArgs e)
+        private static void MainForm_CanCloseSplash(object sender, EventArgs e)
         {
             if (_SplashForm != null && !_SplashForm.Disposing && !_SplashForm.IsDisposed)
+            {
                 _SplashForm.Invoke(new Action(() => _SplashForm.Close()));
+            }
 
             _MainForm.TopMost = true;
             _MainForm.Activate();
             _MainForm.TopMost = false;
-        }
-
-        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            return EmbeddedAssembly.Get(args.Name);
         }
     }
 }

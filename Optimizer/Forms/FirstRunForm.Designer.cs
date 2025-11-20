@@ -1,4 +1,6 @@
 ﻿
+using CuoreUI.Controls;
+
 namespace Optimizer
 {
     partial class FirstRunForm
@@ -30,20 +32,19 @@ namespace Optimizer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstRunForm));
-            this.pictureBox88 = new System.Windows.Forms.PictureBox();
-            this.pictureBox87 = new System.Windows.Forms.PictureBox();
-            this.pictureBox86 = new System.Windows.Forms.PictureBox();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox88 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox87 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox86 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox1 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox2 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox3 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox4 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox5 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox6 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox7 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox8 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox9 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox10 = new CuoreUI.Controls.cuiPictureBox();
             this.radioKorean = new Optimizer.MoonRadio();
             this.radioTaiwan = new Optimizer.MoonRadio();
             this.radioCzech = new Optimizer.MoonRadio();
@@ -58,227 +59,229 @@ namespace Optimizer
             this.radioEnglish = new Optimizer.MoonRadio();
             this.radioRussian = new Optimizer.MoonRadio();
             this.radioPolish = new Optimizer.MoonRadio();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new CuoreUI.Controls.cuiPictureBox();
             this.radioArabic = new Optimizer.MoonRadio();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new CuoreUI.Controls.cuiPictureBox();
             this.radioKurdish = new Optimizer.MoonRadio();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new CuoreUI.Controls.cuiPictureBox();
             this.radioHungarian = new Optimizer.MoonRadio();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new CuoreUI.Controls.cuiPictureBox();
             this.radioRomanian = new Optimizer.MoonRadio();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new CuoreUI.Controls.cuiPictureBox();
             this.radioDutch = new Optimizer.MoonRadio();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new CuoreUI.Controls.cuiPictureBox();
+            this.pictureBox17 = new CuoreUI.Controls.cuiPictureBox();
             this.radioJapanese = new Optimizer.MoonRadio();
             this.radioFarsi = new Optimizer.MoonRadio();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new CuoreUI.Controls.cuiPictureBox();
             this.radioNepali = new Optimizer.MoonRadio();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new CuoreUI.Controls.cuiPictureBox();
             this.radioUkrainian = new Optimizer.MoonRadio();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new CuoreUI.Controls.cuiPictureBox();
             this.radioBulgarian = new Optimizer.MoonRadio();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new CuoreUI.Controls.cuiPictureBox();
             this.radioVietnam = new Optimizer.MoonRadio();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new CuoreUI.Controls.cuiPictureBox();
             this.radioUrdu = new Optimizer.MoonRadio();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox23 = new CuoreUI.Controls.cuiPictureBox();
             this.radioIndonesian = new Optimizer.MoonRadio();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new CuoreUI.Controls.cuiPictureBox();
             this.radioCroatian = new Optimizer.MoonRadio();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox88)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox87)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox86)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            this.pictureBox25 = new CuoreUI.Controls.cuiPictureBox();
+            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.SuspendLayout();
             // 
             // pictureBox88
             // 
-            this.pictureBox88.Image = global::Optimizer.Properties.Resources.greece;
+            this.pictureBox88.Content = global::Optimizer.Properties.Resources.greece;
+            this.pictureBox88.ImageTint = System.Drawing.Color.White;
             this.pictureBox88.Location = new System.Drawing.Point(13, 72);
             this.pictureBox88.Name = "pictureBox88";
+            this.pictureBox88.OutlineThickness = 1F;
+            this.pictureBox88.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox88.Rotation = 0;
+            this.pictureBox88.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox88.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox88.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox88.TabIndex = 83;
             this.pictureBox88.TabStop = false;
             this.pictureBox88.Click += new System.EventHandler(this.pictureBox88_Click);
             // 
             // pictureBox87
             // 
-            this.pictureBox87.Image = global::Optimizer.Properties.Resources.russia;
+            this.pictureBox87.Content = global::Optimizer.Properties.Resources.russia;
+            this.pictureBox87.ImageTint = System.Drawing.Color.White;
             this.pictureBox87.Location = new System.Drawing.Point(13, 43);
             this.pictureBox87.Name = "pictureBox87";
+            this.pictureBox87.OutlineThickness = 1F;
+            this.pictureBox87.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox87.Rotation = 0;
+            this.pictureBox87.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox87.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox87.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox87.TabIndex = 82;
             this.pictureBox87.TabStop = false;
             this.pictureBox87.Click += new System.EventHandler(this.pictureBox87_Click);
             // 
             // pictureBox86
             // 
-            this.pictureBox86.Image = global::Optimizer.Properties.Resources.united_kingdom;
+            this.pictureBox86.Content = global::Optimizer.Properties.Resources.united_kingdom;
+            this.pictureBox86.ImageTint = System.Drawing.Color.White;
             this.pictureBox86.Location = new System.Drawing.Point(13, 14);
             this.pictureBox86.Name = "pictureBox86";
+            this.pictureBox86.OutlineThickness = 1F;
+            this.pictureBox86.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox86.Rotation = 0;
+            this.pictureBox86.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox86.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox86.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox86.TabIndex = 81;
             this.pictureBox86.TabStop = false;
             this.pictureBox86.Click += new System.EventHandler(this.pictureBox86_Click);
             // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnStart.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrchid;
-            this.btnStart.FlatAppearance.BorderSize = 0;
-            this.btnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrchid;
-            this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrchid;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(11, 464);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(406, 31);
-            this.btnStart.TabIndex = 86;
-            this.btnStart.Tag = "themeable";
-            this.btnStart.Text = "✓";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Optimizer.Properties.Resources.turkey;
+            this.pictureBox1.Content = global::Optimizer.Properties.Resources.turkey;
+            this.pictureBox1.ImageTint = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(213, 12);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.OutlineThickness = 1F;
+            this.pictureBox1.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox1.Rotation = 0;
+            this.pictureBox1.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox1.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 87;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Optimizer.Properties.Resources.germany;
+            this.pictureBox2.Content = global::Optimizer.Properties.Resources.germany;
+            this.pictureBox2.ImageTint = System.Drawing.Color.White;
             this.pictureBox2.Location = new System.Drawing.Point(13, 101);
             this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.OutlineThickness = 1F;
+            this.pictureBox2.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox2.Rotation = 0;
+            this.pictureBox2.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox2.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 89;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Optimizer.Properties.Resources.spain;
+            this.pictureBox3.Content = global::Optimizer.Properties.Resources.spain;
+            this.pictureBox3.ImageTint = System.Drawing.Color.White;
             this.pictureBox3.Location = new System.Drawing.Point(213, 41);
             this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.OutlineThickness = 1F;
+            this.pictureBox3.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox3.Rotation = 0;
+            this.pictureBox3.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox3.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 91;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Optimizer.Properties.Resources.brazil;
+            this.pictureBox4.Content = global::Optimizer.Properties.Resources.brazil;
+            this.pictureBox4.ImageTint = System.Drawing.Color.White;
             this.pictureBox4.Location = new System.Drawing.Point(213, 70);
             this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.OutlineThickness = 1F;
+            this.pictureBox4.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox4.Rotation = 0;
+            this.pictureBox4.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox4.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 93;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Optimizer.Properties.Resources.france;
+            this.pictureBox5.Content = global::Optimizer.Properties.Resources.france;
+            this.pictureBox5.ImageTint = System.Drawing.Color.White;
             this.pictureBox5.Location = new System.Drawing.Point(214, 99);
             this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.OutlineThickness = 1F;
+            this.pictureBox5.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox5.Rotation = 0;
+            this.pictureBox5.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox5.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 95;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Optimizer.Properties.Resources.italy;
+            this.pictureBox6.Content = global::Optimizer.Properties.Resources.italy;
+            this.pictureBox6.ImageTint = System.Drawing.Color.White;
             this.pictureBox6.Location = new System.Drawing.Point(13, 130);
             this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.OutlineThickness = 1F;
+            this.pictureBox6.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox6.Rotation = 0;
+            this.pictureBox6.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox6.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 97;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Optimizer.Properties.Resources.china;
+            this.pictureBox7.Content = global::Optimizer.Properties.Resources.china;
+            this.pictureBox7.ImageTint = System.Drawing.Color.White;
             this.pictureBox7.Location = new System.Drawing.Point(214, 130);
             this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.OutlineThickness = 1F;
+            this.pictureBox7.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox7.Rotation = 0;
+            this.pictureBox7.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox7.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 99;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Optimizer.Properties.Resources.czech;
+            this.pictureBox8.Content = global::Optimizer.Properties.Resources.czech;
+            this.pictureBox8.ImageTint = System.Drawing.Color.White;
             this.pictureBox8.Location = new System.Drawing.Point(13, 159);
             this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.OutlineThickness = 1F;
+            this.pictureBox8.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox8.Rotation = 0;
+            this.pictureBox8.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox8.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 101;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::Optimizer.Properties.Resources.china;
+            this.pictureBox9.Content = global::Optimizer.Properties.Resources.china;
+            this.pictureBox9.ImageTint = System.Drawing.Color.White;
             this.pictureBox9.Location = new System.Drawing.Point(214, 160);
             this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.OutlineThickness = 1F;
+            this.pictureBox9.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox9.Rotation = 0;
+            this.pictureBox9.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox9.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 103;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::Optimizer.Properties.Resources.korea;
+            this.pictureBox10.Content = global::Optimizer.Properties.Resources.korea;
+            this.pictureBox10.ImageTint = System.Drawing.Color.White;
             this.pictureBox10.Location = new System.Drawing.Point(214, 189);
             this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.OutlineThickness = 1F;
+            this.pictureBox10.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox10.Rotation = 0;
+            this.pictureBox10.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox10.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 105;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
@@ -497,11 +500,15 @@ namespace Optimizer
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::Optimizer.Properties.Resources.poland;
+            this.pictureBox11.Content = global::Optimizer.Properties.Resources.poland;
+            this.pictureBox11.ImageTint = System.Drawing.Color.White;
             this.pictureBox11.Location = new System.Drawing.Point(13, 188);
             this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.OutlineThickness = 1F;
+            this.pictureBox11.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox11.Rotation = 0;
+            this.pictureBox11.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox11.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 107;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
@@ -523,11 +530,15 @@ namespace Optimizer
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::Optimizer.Properties.Resources.egypt;
+            this.pictureBox12.Content = global::Optimizer.Properties.Resources.egypt;
+            this.pictureBox12.ImageTint = System.Drawing.Color.White;
             this.pictureBox12.Location = new System.Drawing.Point(214, 312);
             this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.OutlineThickness = 1F;
+            this.pictureBox12.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox12.Rotation = 0;
+            this.pictureBox12.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox12.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 109;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
@@ -549,11 +560,15 @@ namespace Optimizer
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::Optimizer.Properties.Resources.kurdish;
+            this.pictureBox13.Content = global::Optimizer.Properties.Resources.kurdish;
+            this.pictureBox13.ImageTint = System.Drawing.Color.White;
             this.pictureBox13.Location = new System.Drawing.Point(13, 310);
             this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.OutlineThickness = 1F;
+            this.pictureBox13.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox13.Rotation = 0;
+            this.pictureBox13.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox13.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 111;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
@@ -575,11 +590,15 @@ namespace Optimizer
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::Optimizer.Properties.Resources.hungary;
+            this.pictureBox14.Content = global::Optimizer.Properties.Resources.hungary;
+            this.pictureBox14.ImageTint = System.Drawing.Color.White;
             this.pictureBox14.Location = new System.Drawing.Point(214, 340);
             this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.OutlineThickness = 1F;
+            this.pictureBox14.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox14.Rotation = 0;
+            this.pictureBox14.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox14.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 113;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
@@ -601,11 +620,15 @@ namespace Optimizer
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Image = global::Optimizer.Properties.Resources.romania;
+            this.pictureBox15.Content = global::Optimizer.Properties.Resources.romania;
+            this.pictureBox15.ImageTint = System.Drawing.Color.White;
             this.pictureBox15.Location = new System.Drawing.Point(13, 339);
             this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.OutlineThickness = 1F;
+            this.pictureBox15.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox15.Rotation = 0;
+            this.pictureBox15.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox15.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 115;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
@@ -627,22 +650,30 @@ namespace Optimizer
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::Optimizer.Properties.Resources.dutch;
+            this.pictureBox16.Content = global::Optimizer.Properties.Resources.dutch;
+            this.pictureBox16.ImageTint = System.Drawing.Color.White;
             this.pictureBox16.Location = new System.Drawing.Point(214, 369);
             this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.OutlineThickness = 1F;
+            this.pictureBox16.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox16.Rotation = 0;
+            this.pictureBox16.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox16.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 117;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::Optimizer.Properties.Resources.japan;
+            this.pictureBox17.Content = global::Optimizer.Properties.Resources.japan;
+            this.pictureBox17.ImageTint = System.Drawing.Color.White;
             this.pictureBox17.Location = new System.Drawing.Point(13, 367);
             this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.OutlineThickness = 1F;
+            this.pictureBox17.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox17.Rotation = 0;
+            this.pictureBox17.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox17.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 119;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
@@ -679,11 +710,15 @@ namespace Optimizer
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Image = global::Optimizer.Properties.Resources.iran;
+            this.pictureBox18.Content = global::Optimizer.Properties.Resources.iran;
+            this.pictureBox18.ImageTint = System.Drawing.Color.White;
             this.pictureBox18.Location = new System.Drawing.Point(214, 222);
             this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.OutlineThickness = 1F;
+            this.pictureBox18.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox18.Rotation = 0;
+            this.pictureBox18.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox18.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 121;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
@@ -705,11 +740,15 @@ namespace Optimizer
             // 
             // pictureBox19
             // 
-            this.pictureBox19.Image = global::Optimizer.Properties.Resources.nepal;
+            this.pictureBox19.Content = global::Optimizer.Properties.Resources.nepal;
+            this.pictureBox19.ImageTint = System.Drawing.Color.White;
             this.pictureBox19.Location = new System.Drawing.Point(13, 222);
             this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.OutlineThickness = 1F;
+            this.pictureBox19.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox19.Rotation = 0;
+            this.pictureBox19.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox19.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 123;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
@@ -731,11 +770,15 @@ namespace Optimizer
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Image = global::Optimizer.Properties.Resources.ukraine;
+            this.pictureBox20.Content = global::Optimizer.Properties.Resources.ukraine;
+            this.pictureBox20.ImageTint = System.Drawing.Color.White;
             this.pictureBox20.Location = new System.Drawing.Point(13, 251);
             this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.OutlineThickness = 1F;
+            this.pictureBox20.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox20.Rotation = 0;
+            this.pictureBox20.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox20.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox20.TabIndex = 127;
             this.pictureBox20.TabStop = false;
             // 
@@ -756,11 +799,15 @@ namespace Optimizer
             // 
             // pictureBox21
             // 
-            this.pictureBox21.Image = global::Optimizer.Properties.Resources.bulgaria;
+            this.pictureBox21.Content = global::Optimizer.Properties.Resources.bulgaria;
+            this.pictureBox21.ImageTint = System.Drawing.Color.White;
             this.pictureBox21.Location = new System.Drawing.Point(214, 251);
             this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.OutlineThickness = 1F;
+            this.pictureBox21.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox21.Rotation = 0;
+            this.pictureBox21.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox21.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox21.TabIndex = 125;
             this.pictureBox21.TabStop = false;
             // 
@@ -781,11 +828,15 @@ namespace Optimizer
             // 
             // pictureBox22
             // 
-            this.pictureBox22.Image = global::Optimizer.Properties.Resources.vietnam;
+            this.pictureBox22.Content = global::Optimizer.Properties.Resources.vietnam;
+            this.pictureBox22.ImageTint = System.Drawing.Color.White;
             this.pictureBox22.Location = new System.Drawing.Point(214, 280);
             this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.OutlineThickness = 1F;
+            this.pictureBox22.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox22.Rotation = 0;
+            this.pictureBox22.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox22.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox22.TabIndex = 129;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Click += new System.EventHandler(this.pictureBox22_Click);
@@ -807,11 +858,15 @@ namespace Optimizer
             // 
             // pictureBox23
             // 
-            this.pictureBox23.Image = global::Optimizer.Properties.Resources.pakistan;
+            this.pictureBox23.Content = global::Optimizer.Properties.Resources.pakistan;
+            this.pictureBox23.ImageTint = System.Drawing.Color.White;
             this.pictureBox23.Location = new System.Drawing.Point(12, 280);
             this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.OutlineThickness = 1F;
+            this.pictureBox23.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox23.Rotation = 0;
+            this.pictureBox23.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox23.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox23.TabIndex = 131;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
@@ -833,11 +888,15 @@ namespace Optimizer
             // 
             // pictureBox24
             // 
-            this.pictureBox24.Image = global::Optimizer.Properties.Resources.indonesia;
+            this.pictureBox24.Content = global::Optimizer.Properties.Resources.indonesia;
+            this.pictureBox24.ImageTint = System.Drawing.Color.White;
             this.pictureBox24.Location = new System.Drawing.Point(214, 397);
             this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.OutlineThickness = 1F;
+            this.pictureBox24.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox24.Rotation = 0;
+            this.pictureBox24.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox24.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox24.TabIndex = 133;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
@@ -859,23 +918,64 @@ namespace Optimizer
             // 
             // pictureBox25
             // 
-            this.pictureBox25.Image = global::Optimizer.Properties.Resources.croatia;
+            this.pictureBox25.Content = global::Optimizer.Properties.Resources.croatia;
+            this.pictureBox25.ImageTint = System.Drawing.Color.White;
             this.pictureBox25.Location = new System.Drawing.Point(13, 397);
             this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.OutlineThickness = 1F;
+            this.pictureBox25.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox25.Rotation = 0;
+            this.pictureBox25.Rounding = new System.Windows.Forms.Padding(3);
             this.pictureBox25.Size = new System.Drawing.Size(32, 19);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox25.TabIndex = 135;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
             // 
+            // cuiButton1
+            // 
+            this.cuiButton1.CheckButton = false;
+            this.cuiButton1.Checked = false;
+            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.Content = "✓";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton1.ForeColor = System.Drawing.Color.Black;
+            this.cuiButton1.HoverBackground = System.Drawing.Color.MediumOrchid;
+            this.cuiButton1.HoverForeColor = System.Drawing.Color.Black;
+            this.cuiButton1.HoverImageTint = System.Drawing.Color.White;
+            this.cuiButton1.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Image = null;
+            this.cuiButton1.ImageAutoCenter = true;
+            this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton1.Location = new System.Drawing.Point(12, 449);
+            this.cuiButton1.Name = "cuiButton1";
+            this.cuiButton1.NormalBackground = System.Drawing.Color.MediumOrchid;
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.Black;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton1.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.OutlineThickness = 1F;
+            this.cuiButton1.PressedBackground = System.Drawing.Color.MediumOrchid;
+            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton1.Size = new System.Drawing.Size(404, 45);
+            this.cuiButton1.TabIndex = 137;
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // FirstRunForm
             // 
-            this.AcceptButton = this.btnStart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.CancelButton = this.btnStart;
             this.ClientSize = new System.Drawing.Size(428, 506);
+            this.Controls.Add(this.cuiButton1);
             this.Controls.Add(this.radioCroatian);
             this.Controls.Add(this.pictureBox25);
             this.Controls.Add(this.radioIndonesian);
@@ -926,7 +1026,6 @@ namespace Optimizer
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.radioTurkish);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pictureBox88);
             this.Controls.Add(this.radioHellenic);
             this.Controls.Add(this.pictureBox87);
@@ -945,34 +1044,6 @@ namespace Optimizer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Optimizer";
             this.Load += new System.EventHandler(this.FirstRunForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox88)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox87)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox86)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -980,62 +1051,62 @@ namespace Optimizer
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox88;
+        private cuiPictureBox pictureBox88;
         private MoonRadio radioHellenic;
-        private System.Windows.Forms.PictureBox pictureBox87;
+        private cuiPictureBox pictureBox87;
         private MoonRadio radioEnglish;
         private MoonRadio radioRussian;
-        private System.Windows.Forms.PictureBox pictureBox86;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private cuiPictureBox pictureBox86;
+        private cuiPictureBox pictureBox1;
         private MoonRadio radioTurkish;
         private MoonRadio radioGerman;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private cuiPictureBox pictureBox2;
         private MoonRadio radioSpanish;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private cuiPictureBox pictureBox3;
         private MoonRadio radioPortuguese;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private cuiPictureBox pictureBox4;
         private MoonRadio radioFrench;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private cuiPictureBox pictureBox5;
         private MoonRadio radioItalian;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private cuiPictureBox pictureBox6;
         private MoonRadio radioChinese;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private cuiPictureBox pictureBox7;
         private MoonRadio radioCzech;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private cuiPictureBox pictureBox8;
         private MoonRadio radioTaiwan;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private cuiPictureBox pictureBox9;
         private MoonRadio radioKorean;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private cuiPictureBox pictureBox10;
         private MoonRadio radioPolish;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private cuiPictureBox pictureBox11;
         private MoonRadio radioArabic;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private cuiPictureBox pictureBox12;
         private MoonRadio radioKurdish;
-        private System.Windows.Forms.PictureBox pictureBox13;
+        private cuiPictureBox pictureBox13;
         private MoonRadio radioHungarian;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private cuiPictureBox pictureBox14;
         private MoonRadio radioRomanian;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private cuiPictureBox pictureBox15;
         private MoonRadio radioDutch;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox17;
+        private cuiPictureBox pictureBox16;
+        private cuiPictureBox pictureBox17;
         private MoonRadio radioJapanese;
         private MoonRadio radioFarsi;
-        private System.Windows.Forms.PictureBox pictureBox18;
+        private cuiPictureBox pictureBox18;
         private MoonRadio radioNepali;
-        private System.Windows.Forms.PictureBox pictureBox19;
+        private cuiPictureBox pictureBox19;
         private MoonRadio radioUkrainian;
-        private System.Windows.Forms.PictureBox pictureBox20;
+        private cuiPictureBox pictureBox20;
         private MoonRadio radioBulgarian;
-        private System.Windows.Forms.PictureBox pictureBox21;
+        private cuiPictureBox pictureBox21;
         private MoonRadio radioVietnam;
-        private System.Windows.Forms.PictureBox pictureBox22;
+        private cuiPictureBox pictureBox22;
         private MoonRadio radioUrdu;
-        private System.Windows.Forms.PictureBox pictureBox23;
+        private cuiPictureBox pictureBox23;
         private MoonRadio radioIndonesian;
-        private System.Windows.Forms.PictureBox pictureBox24;
+        private cuiPictureBox pictureBox24;
         private MoonRadio radioCroatian;
-        private System.Windows.Forms.PictureBox pictureBox25;
+        private cuiPictureBox pictureBox25;
+        private CuoreUI.Controls.cuiButton cuiButton1;
     }
 }

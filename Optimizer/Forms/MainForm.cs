@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using CuoreUI;
+using CuoreUI.Controls;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,7 +56,6 @@ namespace Optimizer
         readonly string _feedImages = "https://raw.githubusercontent.com/hellzerg/optimizer/master/images/feed.zip";
 
         readonly string _licenseLink = "https://www.gnu.org/licenses/gpl-3.0.en.html";
-        readonly string _discordLink = "https://discord.gg/RmHYWMxWfJ";
         readonly string _githubProjectLink = "https://github.com/hellzerg/optimizer";
         readonly string _paypalSupportLink = "https://www.paypal.com/paypalme/supportoptimizer";
 
@@ -89,7 +90,6 @@ namespace Optimizer
         bool _skipSystemRestore = false;
 
         string[] _currentDNS;
-        string[] _availableFonts;
         List<string> _systemVariables = new List<string>();
 
         ColorOverrider _colorOverrider;
@@ -148,7 +148,7 @@ namespace Optimizer
                     return;
                 }
 
-                if (latestVersionFloat > Program.GetCurrentVersionToFloat())
+                if (latestVersionFloat > Program.CurrentVersionFloat)
                 {
                     if (silentCheck)
                     {
@@ -209,7 +209,7 @@ namespace Optimizer
                         }
                     }
                 }
-                else if (latestVersionFloat == Program.GetCurrentVersionToFloat())
+                else if (latestVersionFloat == Program.CurrentVersionFloat)
                 {
                     if (!silentCheck)
                     {
@@ -258,7 +258,6 @@ namespace Optimizer
             edgeTelemetrySw.ToggleClicked += new EventHandler(EdgeTelemetrySw_ToggleClicked);
             gameBarSw.ToggleClicked += new EventHandler(toggleSwitch15_Click);
             uODSw.ToggleClicked += new EventHandler(toggleSwitch14_Click);
-            oldMixerSw.ToggleClicked += new EventHandler(toggleSwitch13_Click);
             disableOneDriveSw.ToggleClicked += new EventHandler(toggleSwitch31_Click);
             oldExplorerSw.ToggleClicked += new EventHandler(toggleSwitch18_Click);
             compatSw.ToggleClicked += new EventHandler(toggleSwitch32_Click);
@@ -752,78 +751,77 @@ namespace Optimizer
         {
             try
             {
-                performanceSw.Label.Tag = OptionsHelper.TranslationList["performanceTip"].ToString();
-                noMenuDelaySw.Label.Tag = OptionsHelper.TranslationList["noMenuDelaySw"].ToString();
-                allTrayIconsSw.Label.Tag = OptionsHelper.TranslationList["allTrayIconsSw"].ToString();
-                networkSw.Label.Tag = OptionsHelper.TranslationList["networkTip"].ToString();
-                defenderSw.Label.Tag = OptionsHelper.TranslationList["defenderTip"].ToString();
-                smartScreenSw.Label.Tag = OptionsHelper.TranslationList["smartScreenTip"].ToString();
-                systemRestoreSw.Label.Tag = OptionsHelper.TranslationList["systemRestoreTip"].ToString();
-                reportingSw.Label.Tag = OptionsHelper.TranslationList["reportingTip"].ToString();
-                telemetryTasksSw.Label.Tag = OptionsHelper.TranslationList["telemetryTasksTip"].ToString();
-                officeTelemetrySw.Label.Tag = OptionsHelper.TranslationList["officeTelemetryTip"].ToString();
-                printSw.Label.Tag = OptionsHelper.TranslationList["printTip"].ToString();
-                faxSw.Label.Tag = OptionsHelper.TranslationList["faxTip"].ToString();
-                mediaSharingSw.Label.Tag = OptionsHelper.TranslationList["mediaSharingTip"].ToString();
-                stickySw.Label.Tag = OptionsHelper.TranslationList["stickyTip"].ToString();
-                homegroupSw.Label.Tag = OptionsHelper.TranslationList["homegroupTip"].ToString();
-                superfetchSw.Label.Tag = OptionsHelper.TranslationList["superfetchTip"].ToString();
-                compatSw.Label.Tag = OptionsHelper.TranslationList["compatTip"].ToString();
-                disableOneDriveSw.Label.Tag = OptionsHelper.TranslationList["disableOneDriveTip"].ToString();
-                oldMixerSw.Label.Tag = OptionsHelper.TranslationList["oldMixerTip"].ToString();
-                oldExplorerSw.Label.Tag = OptionsHelper.TranslationList["oldExplorerTip"].ToString();
-                adsSw.Label.Tag = OptionsHelper.TranslationList["adsTip"].ToString();
-                uODSw.Label.Tag = OptionsHelper.TranslationList["uODTip"].ToString();
-                peopleSw.Label.Tag = OptionsHelper.TranslationList["peopleTip"].ToString();
-                longPathsSw.Label.Tag = OptionsHelper.TranslationList["longPathsTip"].ToString();
-                inkSw.Label.Tag = OptionsHelper.TranslationList["inkTip"].ToString();
-                spellSw.Label.Tag = OptionsHelper.TranslationList["spellTip"].ToString();
-                xboxSw.Label.Tag = OptionsHelper.TranslationList["xboxTip"].ToString();
-                autoUpdatesSw.Label.Tag = OptionsHelper.TranslationList["autoUpdatesTip"].ToString();
-                driversSw.Label.Tag = OptionsHelper.TranslationList["driversTip"].ToString();
-                telemetryServicesSw.Label.Tag = OptionsHelper.TranslationList["telemetryServicesTip"].ToString();
-                privacySw.Label.Tag = OptionsHelper.TranslationList["privacyTip"].ToString();
-                ccSw.Label.Tag = OptionsHelper.TranslationList["ccTip"].ToString();
-                cortanaSw.Label.Tag = OptionsHelper.TranslationList["cortanaTip"].ToString();
-                edgeAiSw.Label.Tag = OptionsHelper.TranslationList["edgeAiTip"].ToString();
-                edgeTelemetrySw.Label.Tag = OptionsHelper.TranslationList["edgeTelemetryTip"].ToString();
-                sensorSw.Label.Tag = OptionsHelper.TranslationList["sensorTip"].ToString();
-                castSw.Label.Tag = OptionsHelper.TranslationList["castTip"].ToString();
-                gameBarSw.Label.Tag = OptionsHelper.TranslationList["gameBarTip"].ToString();
-                insiderSw.Label.Tag = OptionsHelper.TranslationList["insiderTip"].ToString();
-                storeUpdatesSw.Label.Tag = OptionsHelper.TranslationList["storeUpdatesTip"].ToString();
-                tpmSw.Label.Tag = OptionsHelper.TranslationList["tpmTip"].ToString();
-                leftTaskbarSw.Label.Tag = OptionsHelper.TranslationList["leftTaskbarTip"].ToString();
-                snapAssistSw.Label.Tag = OptionsHelper.TranslationList["snapAssistTip"].ToString();
-                widgetsSw.Label.Tag = OptionsHelper.TranslationList["widgetsTip"].ToString();
-                chatSw.Label.Tag = OptionsHelper.TranslationList["chatTip"].ToString();
-                stickersSw.Label.Tag = OptionsHelper.TranslationList["stickersTip"].ToString();
-                classicContextSw.Label.Tag = OptionsHelper.TranslationList["classicContextTip"].ToString();
+                performanceSw.LabelTag = OptionsHelper.TranslationList["performanceTip"].ToString();
+                noMenuDelaySw.LabelTag = OptionsHelper.TranslationList["noMenuDelaySw"].ToString();
+                allTrayIconsSw.LabelTag = OptionsHelper.TranslationList["allTrayIconsSw"].ToString();
+                networkSw.LabelTag = OptionsHelper.TranslationList["networkTip"].ToString();
+                defenderSw.LabelTag = OptionsHelper.TranslationList["defenderTip"].ToString();
+                smartScreenSw.LabelTag = OptionsHelper.TranslationList["smartScreenTip"].ToString();
+                systemRestoreSw.LabelTag = OptionsHelper.TranslationList["systemRestoreTip"].ToString();
+                reportingSw.LabelTag = OptionsHelper.TranslationList["reportingTip"].ToString();
+                telemetryTasksSw.LabelTag = OptionsHelper.TranslationList["telemetryTasksTip"].ToString();
+                officeTelemetrySw.LabelTag = OptionsHelper.TranslationList["officeTelemetryTip"].ToString();
+                printSw.LabelTag = OptionsHelper.TranslationList["printTip"].ToString();
+                faxSw.LabelTag = OptionsHelper.TranslationList["faxTip"].ToString();
+                mediaSharingSw.LabelTag = OptionsHelper.TranslationList["mediaSharingTip"].ToString();
+                stickySw.LabelTag = OptionsHelper.TranslationList["stickyTip"].ToString();
+                homegroupSw.LabelTag = OptionsHelper.TranslationList["homegroupTip"].ToString();
+                superfetchSw.LabelTag = OptionsHelper.TranslationList["superfetchTip"].ToString();
+                compatSw.LabelTag = OptionsHelper.TranslationList["compatTip"].ToString();
+                disableOneDriveSw.LabelTag = OptionsHelper.TranslationList["disableOneDriveTip"].ToString();
+                oldExplorerSw.LabelTag = OptionsHelper.TranslationList["oldExplorerTip"].ToString();
+                adsSw.LabelTag = OptionsHelper.TranslationList["adsTip"].ToString();
+                uODSw.LabelTag = OptionsHelper.TranslationList["uODTip"].ToString();
+                peopleSw.LabelTag = OptionsHelper.TranslationList["peopleTip"].ToString();
+                longPathsSw.LabelTag = OptionsHelper.TranslationList["longPathsTip"].ToString();
+                inkSw.LabelTag = OptionsHelper.TranslationList["inkTip"].ToString();
+                spellSw.LabelTag = OptionsHelper.TranslationList["spellTip"].ToString();
+                xboxSw.LabelTag = OptionsHelper.TranslationList["xboxTip"].ToString();
+                autoUpdatesSw.LabelTag = OptionsHelper.TranslationList["autoUpdatesTip"].ToString();
+                driversSw.LabelTag = OptionsHelper.TranslationList["driversTip"].ToString();
+                telemetryServicesSw.LabelTag = OptionsHelper.TranslationList["telemetryServicesTip"].ToString();
+                privacySw.LabelTag = OptionsHelper.TranslationList["privacyTip"].ToString();
+                ccSw.LabelTag = OptionsHelper.TranslationList["ccTip"].ToString();
+                cortanaSw.LabelTag = OptionsHelper.TranslationList["cortanaTip"].ToString();
+                edgeAiSw.LabelTag = OptionsHelper.TranslationList["edgeAiTip"].ToString();
+                edgeTelemetrySw.LabelTag = OptionsHelper.TranslationList["edgeTelemetryTip"].ToString();
+                sensorSw.LabelTag = OptionsHelper.TranslationList["sensorTip"].ToString();
+                castSw.LabelTag = OptionsHelper.TranslationList["castTip"].ToString();
+                gameBarSw.LabelTag = OptionsHelper.TranslationList["gameBarTip"].ToString();
+                insiderSw.LabelTag = OptionsHelper.TranslationList["insiderTip"].ToString();
+                storeUpdatesSw.LabelTag = OptionsHelper.TranslationList["storeUpdatesTip"].ToString();
+                tpmSw.LabelTag = OptionsHelper.TranslationList["tpmTip"].ToString();
+                leftTaskbarSw.LabelTag = OptionsHelper.TranslationList["leftTaskbarTip"].ToString();
+                snapAssistSw.LabelTag = OptionsHelper.TranslationList["snapAssistTip"].ToString();
+                widgetsSw.LabelTag = OptionsHelper.TranslationList["widgetsTip"].ToString();
+                chatSw.LabelTag = OptionsHelper.TranslationList["chatTip"].ToString();
+                stickersSw.LabelTag = OptionsHelper.TranslationList["stickersTip"].ToString();
+                classicContextSw.LabelTag = OptionsHelper.TranslationList["classicContextTip"].ToString();
                 picUpdate.Tag = OptionsHelper.TranslationList["linkUpdate"].ToString() + "!";
                 picLab.Tag = OptionsHelper.TranslationList["lblLab"].ToString();
                 picRestartNeeded.Tag = OptionsHelper.TranslationList["restartAndApply"].ToString();
-                ffTelemetrySw.Label.Tag = OptionsHelper.TranslationList["ffTelemetryTip"].ToString();
-                vsSw.Label.Tag = OptionsHelper.TranslationList["vsTip"].ToString();
-                chromeTelemetrySw.Label.Tag = OptionsHelper.TranslationList["chromeTelemetryTip"].ToString();
-                gameModeSw.Label.Tag = OptionsHelper.TranslationList["gameModeTip"].ToString();
-                compactModeSw.Label.Tag = OptionsHelper.TranslationList["compactModeTip"].ToString();
-                hibernateSw.Label.Tag = OptionsHelper.TranslationList["hibernateTip"].ToString();
-                winSearchSw.Label.Tag = OptionsHelper.TranslationList["winSearchTip"].ToString();
-                smb1Sw.Label.Tag = OptionsHelper.TranslationList["smbTip"].ToString().Replace("{v}", "v1");
-                smb2Sw.Label.Tag = OptionsHelper.TranslationList["smbTip"].ToString().Replace("{v}", "v2");
-                ntfsStampSw.Label.Tag = OptionsHelper.TranslationList["ntfsStampTip"].ToString();
-                nvidiaTelemetrySw.Label.Tag = OptionsHelper.TranslationList["nvidiaTelemetrySw"].ToString();
-                vbsSw.Label.Tag = OptionsHelper.TranslationList["vbsTip"].ToString();
-                hpetSw.Label.Tag = OptionsHelper.TranslationList["hpetSw"].ToString();
-                loginVerboseSw.Label.Tag = OptionsHelper.TranslationList["loginVerboseSw"].ToString();
-                classicPhotoViewerSw.Label.Tag = OptionsHelper.TranslationList["classicPhotoViewerSw"].ToString();
-                copilotSw.Label.Tag = OptionsHelper.TranslationList["copilotTip"].ToString();
-                hideWeatherSw.Label.Tag = OptionsHelper.TranslationList["hideWeatherSw"].ToString();
-                modernStandbySw.Label.Tag = OptionsHelper.TranslationList["modernStandbySw"].ToString();
-                hideSearchSw.Label.Tag = OptionsHelper.TranslationList["hideSearchSw"].ToString();
-                newsInterestsSw.Label.Tag = OptionsHelper.TranslationList["newsInterestsSw"].ToString();
-                enableUtcSw.Label.Tag = OptionsHelper.TranslationList["enableUtcSw"].ToString();
-                regBackupSw.Label.Tag = OptionsHelper.TranslationList["regBackupSw"].ToString();
+                ffTelemetrySw.LabelTag = OptionsHelper.TranslationList["ffTelemetryTip"].ToString();
+                vsSw.LabelTag = OptionsHelper.TranslationList["vsTip"].ToString();
+                chromeTelemetrySw.LabelTag = OptionsHelper.TranslationList["chromeTelemetryTip"].ToString();
+                gameModeSw.LabelTag = OptionsHelper.TranslationList["gameModeTip"].ToString();
+                compactModeSw.LabelTag = OptionsHelper.TranslationList["compactModeTip"].ToString();
+                hibernateSw.LabelTag = OptionsHelper.TranslationList["hibernateTip"].ToString();
+                winSearchSw.LabelTag = OptionsHelper.TranslationList["winSearchTip"].ToString();
+                smb1Sw.LabelTag = OptionsHelper.TranslationList["smbTip"].ToString().Replace("{v}", "v1");
+                smb2Sw.LabelTag = OptionsHelper.TranslationList["smbTip"].ToString().Replace("{v}", "v2");
+                ntfsStampSw.LabelTag = OptionsHelper.TranslationList["ntfsStampTip"].ToString();
+                nvidiaTelemetrySw.LabelTag = OptionsHelper.TranslationList["nvidiaTelemetrySw"].ToString();
+                vbsSw.LabelTag = OptionsHelper.TranslationList["vbsTip"].ToString();
+                hpetSw.LabelTag = OptionsHelper.TranslationList["hpetSw"].ToString();
+                loginVerboseSw.LabelTag = OptionsHelper.TranslationList["loginVerboseSw"].ToString();
+                classicPhotoViewerSw.LabelTag = OptionsHelper.TranslationList["classicPhotoViewerSw"].ToString();
+                copilotSw.LabelTag = OptionsHelper.TranslationList["copilotTip"].ToString();
+                hideWeatherSw.LabelTag = OptionsHelper.TranslationList["hideWeatherSw"].ToString();
+                modernStandbySw.LabelTag = OptionsHelper.TranslationList["modernStandbySw"].ToString();
+                hideSearchSw.LabelTag = OptionsHelper.TranslationList["hideSearchSw"].ToString();
+                newsInterestsSw.LabelTag = OptionsHelper.TranslationList["newsInterestsSw"].ToString();
+                enableUtcSw.LabelTag = OptionsHelper.TranslationList["enableUtcSw"].ToString();
+                regBackupSw.LabelTag = OptionsHelper.TranslationList["regBackupSw"].ToString();
             }
             catch (Exception err)
             {
@@ -940,12 +938,22 @@ namespace Optimizer
         {
             InitializeComponent();
 
+            if (OptionsHelper.CurrentOptions.UpdateOnLaunch)
+            {
+                if (!Program.EXPERIMENTAL_BUILD && PingerHelper.IsInternetAvailable())
+                {
+                    CheckForUpdate(true);
+                }
+            }
+
+            _splashForm.progressTracker.TasksProgress++;
+
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
             CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
 
             CheckForIllegalCrossThreadCalls = false;
 
-            boxLang.Items.AddRange(new string[]
+            boxLang.Items = (new string[]
             {
                 Constants.ENGLISH,
                 Constants.RUSSIAN,
@@ -977,8 +985,6 @@ namespace Optimizer
                 Constants.CROATIAN
             });
 
-            _splashForm.LoadingStatus.Text = "checking for requirements";
-
             // override tool launch configurations
             _disableStartupTool = (disableStartups.HasValue) ? disableStartups.Value : OptionsHelper.CurrentOptions.DisableStartupTool;
             _disableUWPApps = (disableUWPApps.HasValue) ? disableUWPApps.Value : OptionsHelper.CurrentOptions.DisableUWPApps;
@@ -991,8 +997,19 @@ namespace Optimizer
 
             // theming
             OptionsHelper.ApplyTheme(this);
-            pictureBox1.BackColor = OptionsHelper.CurrentOptions.Theme;
-            colorPicker1.Color = OptionsHelper.CurrentOptions.Theme;
+            pictureBox1.ImageTint = OptionsHelper.CurrentOptions.Theme;
+
+            if (colorPicker1.InvokeRequired)
+            {
+                colorPicker1.Invoke((Action)(() =>
+                {
+                    colorPicker1.Content = OptionsHelper.CurrentOptions.Theme;
+                }));
+            }
+            else
+            {
+                colorPicker1.Content = OptionsHelper.CurrentOptions.Theme;
+            }
 
             launcherMenu.Renderer = new MoonMenuRenderer();
             indiciumMenu.Renderer = new MoonMenuRenderer();
@@ -1006,11 +1023,6 @@ namespace Optimizer
             launcherIcon.Visible = OptionsHelper.CurrentOptions.EnableTray;
             autoStartToggle.ToggleChecked = OptionsHelper.CurrentOptions.AutoStart;
             autoUpdateToggle.ToggleChecked = OptionsHelper.CurrentOptions.UpdateOnLaunch;
-            //telemetrySvcToggle.ToggleChecked = Options.CurrentOptions.DisableOptimizerTelemetry;
-
-            //seperatorNetMon.Visible = Options.CurrentOptions.EnableTray;
-            //trayDownSpeed.Visible = Options.CurrentOptions.EnableTray;
-            //trayUpSpeed.Visible = Options.CurrentOptions.EnableTray;
 
             // fix SSL/TLS error when contacting internet
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -1024,9 +1036,9 @@ namespace Optimizer
             c32.Checked = !Environment.Is64BitOperatingSystem;
 
             // Windows version, architecture, .NET Framework
-            txtOS.Text = Utilities.GetOS();
-            txtBitness.Text = Utilities.GetBitness();
-            txtNetFw.Text = ".NET Framework " + Utilities.GetNETFramework();
+            //txtVersion.Text = txtVersion.Text.Replace("{OS}", Utilities.GetOS());
+            //txtVersion.Text = txtVersion.Text.Replace("{BIT}", Utilities.GetBitness());
+            //txtVersion.Text = txtVersion.Text.Replace("{NETFW}", $".NET Framework {Utilities.GetNETFramework()}");
 
             // system color overriding
             _colorOverrider = new ColorOverrider();
@@ -1073,8 +1085,9 @@ namespace Optimizer
                 LoadWindows10ToggleStates();
 
                 defenderSw.Visible = false;
+                panel16.Top -= defenderSw.Height + 4;
+
                 vbsSw.Visible = false;
-                oldMixerSw.Visible = true;
                 this.Controls.Remove(panelWin11Tweaks);
 
                 if (!_disableUWPApps)
@@ -1086,7 +1099,7 @@ namespace Optimizer
                     tabCollection.TabPages.Remove(modernAppsTab);
                 }
 
-                txtOS.Text += string.Format(" ({0})", Utilities.GetWindows10Build());
+                //txtOS.Text += string.Format(" ({0})", Utilities.GetWindows10Build());
             }
 
             if (Utilities.CurrentWindowsVersion == WindowsVersion.Windows11)
@@ -1096,10 +1109,12 @@ namespace Optimizer
                 LoadWindows11ToggleStates();
 
                 windows10Tab.Text = "Windows 11";
+
                 defenderSw.Visible = false;
+                panel16.Top -= defenderSw.Height + 4;
+
                 vbsSw.Visible = true;
                 panelWin11Tweaks.Visible = true;
-                oldMixerSw.Visible = false;
 
                 if (!_disableUWPApps)
                 {
@@ -1110,10 +1125,10 @@ namespace Optimizer
                     tabCollection.TabPages.Remove(modernAppsTab);
                 }
 
-                txtOS.Text += string.Format(" ({0})", Utilities.GetWindows10Build());
+                //txtOS.Text += string.Format(" ({0})", Utilities.GetWindows10Build());
             }
 
-            _splashForm.LoadingStatus.Text = "loading startup && hosts items";
+            _splashForm.progressTracker.TasksProgress++;
 
             _columnSorter = new ListViewColumnSorter();
             listStartupItems.ListViewItemSorter = _columnSorter;
@@ -1148,7 +1163,6 @@ namespace Optimizer
                 LoadReadyMenusState();
                 GetDesktopItems();
                 GetCustomCommands();
-                LoadAvailableFonts();
                 LoadSystemVariables();
             }
             else
@@ -1156,7 +1170,7 @@ namespace Optimizer
                 tabCollection.TabPages.Remove(integratorTab);
             }
 
-            _splashForm.LoadingStatus.Text = "fetching feed";
+            _splashForm.progressTracker.TasksProgress++;
 
             // APPS DOWNLOADER
             if (!_disableAppsTool)
@@ -1181,18 +1195,7 @@ namespace Optimizer
                 launcherMenu.Items.RemoveByKey("trayCleaner");
             }
 
-            _splashForm.LoadingStatus.Text = "inspecting hardware";
-
-            // INDICIUM
-            if (!_disableIndicium)
-            {
-                GetHardwareSpecs();
-            }
-            else
-            {
-                tabCollection.TabPages.Remove(indiciumTab);
-                launcherMenu.Items.RemoveByKey("trayHW");
-            }
+            _splashForm.progressTracker.TasksProgress++;
 
             // PINGER
             if (!_disablePinger)
@@ -1227,14 +1230,6 @@ namespace Optimizer
                 OptionsHelper.SaveSettings();
             }
 
-            if (OptionsHelper.CurrentOptions.UpdateOnLaunch)
-            {
-                if (!Program.EXPERIMENTAL_BUILD && PingerHelper.IsInternetAvailable())
-                {
-                    CheckForUpdate(true);
-                }
-            }
-
             if (Program.EXPERIMENTAL_BUILD)
             {
                 btnUpdate.Enabled = false;
@@ -1245,7 +1240,21 @@ namespace Optimizer
             LoadTranslation();
             EnableToggleEvents();
 
-            WindowState = FormWindowState.Maximized;
+            // Moved indicium to the end, because GetHardwareSpecs() is now async
+            // trying to await it inside another method and then proceeding with the next
+            // instructions didn't work. at least the WMI calls now don't take ages..
+            // INDICIUM
+            if (!_disableIndicium)
+            {
+                GetHardwareSpecs();
+            }
+            else
+            {
+                tabCollection.TabPages.Remove(indiciumTab);
+                launcherMenu.Items.RemoveByKey("trayHW");
+            }
+
+            CanCloseSplash?.Invoke(this, EventArgs.Empty);
         }
 
         private void LoadSystemVariables()
@@ -1253,16 +1262,6 @@ namespace Optimizer
             listSystemVariables.Items.Clear();
             _systemVariables = IntegratorHelper.GetPathSystemVariables().ToList();
             listSystemVariables.Items.AddRange(_systemVariables.ToArray());
-        }
-
-        private void LoadAvailableFonts()
-        {
-            listFonts.Items.Clear();
-            _availableFonts = FontHelper.GetAvailableFonts().ToArray();
-            listFonts.Items.AddRange(_availableFonts);
-            string currentFont = FontHelper.GetCurrentGlobalFont();
-            lblCurrentFont.Text = !string.IsNullOrEmpty(currentFont) ? currentFont : "-";
-            lblFontsNumber.Text = _availableFonts.Length.ToString();
         }
 
         private void FixTabHeaderWidth(TabControl tabControl)
@@ -1516,7 +1515,7 @@ namespace Optimizer
         {
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.EN)
             {
-                boxLang.Text = Constants.ENGLISH;
+                boxLang.SelectedItem = Constants.ENGLISH;
                 Translate(true);
             }
             else
@@ -1527,132 +1526,151 @@ namespace Optimizer
             // set default window size to fit content
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.RU)
             {
-                boxLang.Text = Constants.RUSSIAN;
+                boxLang.SelectedItem = Constants.RUSSIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.TR)
             {
-                boxLang.Text = Constants.TURKISH;
+                boxLang.SelectedItem = Constants.TURKISH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.EL)
             {
-                boxLang.Text = Constants.HELLENIC;
+                boxLang.SelectedItem = Constants.HELLENIC;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.DE)
             {
-                boxLang.Text = Constants.GERMAN;
+                boxLang.SelectedItem = Constants.GERMAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.PT)
             {
-                boxLang.Text = Constants.PORTUGUESE;
+                boxLang.SelectedItem = Constants.PORTUGUESE;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.FR)
             {
-                boxLang.Text = Constants.FRENCH;
+                boxLang.SelectedItem = Constants.FRENCH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.ES)
             {
-                boxLang.Text = Constants.SPANISH;
+                boxLang.SelectedItem = Constants.SPANISH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.IT)
             {
-                boxLang.Text = Constants.ITALIAN;
+                boxLang.SelectedItem = Constants.ITALIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.CN)
             {
-                boxLang.Text = Constants.CHINESE;
+                boxLang.SelectedItem = Constants.CHINESE;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.TW)
             {
-                boxLang.Text = Constants.TAIWANESE;
+                boxLang.SelectedItem = Constants.TAIWANESE;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.CZ)
             {
-                boxLang.Text = Constants.CZECH;
+                boxLang.SelectedItem = Constants.CZECH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.KO)
             {
-                boxLang.Text = Constants.KOREAN;
+                boxLang.SelectedItem = Constants.KOREAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.PL)
             {
-                boxLang.Text = Constants.POLISH;
+                boxLang.SelectedItem = Constants.POLISH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.AR)
             {
-                boxLang.Text = Constants.ARABIC;
+                boxLang.SelectedItem = Constants.ARABIC;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.KU)
             {
-                boxLang.Text = Constants.KURDISH;
+                boxLang.SelectedItem = Constants.KURDISH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.HU)
             {
-                boxLang.Text = Constants.HUNGARIAN;
+                boxLang.SelectedItem = Constants.HUNGARIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.RO)
             {
-                boxLang.Text = Constants.ROMANIAN;
+                boxLang.SelectedItem = Constants.ROMANIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.NL)
             {
-                boxLang.Text = Constants.DUTCH;
+                boxLang.SelectedItem = Constants.DUTCH;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.UA)
             {
-                boxLang.Text = Constants.UKRAINIAN;
+                boxLang.SelectedItem = Constants.UKRAINIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.JA)
             {
-                boxLang.Text = Constants.JAPANESE;
+                boxLang.SelectedItem = Constants.JAPANESE;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.FA)
             {
-                boxLang.Text = Constants.PERSIAN;
+                boxLang.SelectedItem = Constants.PERSIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.NE)
             {
-                boxLang.Text = Constants.NEPALI;
+                boxLang.SelectedItem = Constants.NEPALI;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.BG)
             {
-                boxLang.Text = Constants.BULGARIAN;
+                boxLang.SelectedItem = Constants.BULGARIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.VN)
             {
-                boxLang.Text = Constants.VIETNAMESE;
+                boxLang.SelectedItem = Constants.VIETNAMESE;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.UR)
             {
-                boxLang.Text = Constants.URDU;
+                boxLang.SelectedItem = Constants.URDU;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.ID)
             {
-                boxLang.Text = Constants.INDONESIAN;
+                boxLang.SelectedItem = Constants.INDONESIAN;
             }
             if (OptionsHelper.CurrentOptions.LanguageCode == LanguageCode.HR)
             {
-                boxLang.Text = Constants.CROATIAN;
+                boxLang.SelectedItem = Constants.CROATIAN;
             }
         }
 
-        private void GetHardwareSpecs()
+        private async void GetHardwareSpecs()
         {
-            GetCPUs();
-            GetRAM();
-            GetGPUs();
-            GetMotherboards();
-            GetStorage();
-            GetNetworkAdapters();
-            GetAudioDevices();
-            GetPeripherals();
-            GetOSInfo();
+            // instead of running these synchronously,
+            // run them at the same time
+            var cpuTask = Task.Run(() => GetCPUs());
+            var ramTask = Task.Run(() => GetRAM());
+            var gpuTask = Task.Run(() => GetGPUs());
+            var motherboardTask = Task.Run(() => GetMotherboards());
+            var storageTask = Task.Run(() => GetStorage());
+            var networkTask = Task.Run(() => GetNetworkAdapters());
+            var audioTask = Task.Run(() => GetAudioDevices());
+            var peripheralTask = Task.Run(() => GetPeripherals());
 
-            _hwDetailed = specsTree.Nodes.Cast<TreeNode>().ToList();
-            _hwSummarized = BuildHardwareSummaryNodes();
+            await Task.WhenAll(cpuTask, ramTask, gpuTask, motherboardTask, storageTask, networkTask, audioTask, peripheralTask);
+            //MessageBox.Show("done");
 
-            specsTree.ExpandAll();
-            if (specsTree.Nodes.Count > 0) specsTree.Nodes[0].EnsureVisible();
+            specsTree.Invoke(new Action(() =>
+            {
+                specsTree.Nodes["cpu"].Nodes.AddRange(cpuTask.Result);
+                specsTree.Nodes["ram"].Nodes.AddRange(ramTask.Result);
+                specsTree.Nodes["gpu"].Nodes.AddRange(gpuTask.Result);
+                specsTree.Nodes["mobo"].Nodes.AddRange(motherboardTask.Result);
+                specsTree.Nodes["disk"].Nodes.AddRange(storageTask.Result);
+                specsTree.Nodes["inet"].Nodes.AddRange(networkTask.Result);
+                specsTree.Nodes["audio"].Nodes.AddRange(audioTask.Result);
+                specsTree.Nodes["dev"].Nodes.AddRange(peripheralTask.Result);
+                GetOSInfo();
 
+                _hwDetailed = specsTree.Nodes.Cast<TreeNode>().ToList();
+                _hwSummarized = BuildHardwareSummaryNodes();
+
+                specsTree.ExpandAll();
+                if (specsTree.Nodes.Count > 0)
+                {
+                    specsTree.Nodes[0].EnsureVisible();
+                }
+            }));
         }
 
         private TreeNode[] BuildHardwareSummaryNodes()
@@ -1723,9 +1741,10 @@ namespace Optimizer
             }
         }
 
-        private void GetAudioDevices()
+        private TreeNode[] GetAudioDevices()
         {
             List<AudioDevice> audios = IndiciumHelper.GetAudioDevices();
+            List<TreeNode> audioNodes = new List<TreeNode>();
 
             if (audios.Count > 0)
             {
@@ -1736,14 +1755,19 @@ namespace Optimizer
                     node.Tag = _primaryItemTag;
                     node.Nodes.Add("Manufacturer: " + device.Manufacturer);
                     node.Nodes.Add("Status: " + device.Status);
-                    specsTree.Nodes["audio"].Nodes.Add(node);
+
+                    audioNodes.Add(node);
+                    //specsTree.Nodes["audio"].Nodes.Add(node);
                 }
             }
+
+            return audioNodes.ToArray();
         }
 
-        private void GetPeripherals()
+        private TreeNode[] GetPeripherals()
         {
             IndiciumHelper.GetPeripherals();
+            List<TreeNode> peripheralNodes = new List<TreeNode>();
 
             if (IndiciumHelper.Keyboards.Count > 0)
             {
@@ -1760,7 +1784,9 @@ namespace Optimizer
                     node.Nodes.Add("Locked: " + keyboard.Locked);
                     kbNodes.Nodes.Add(node);
                 }
-                specsTree.Nodes["dev"].Nodes.Add(kbNodes);
+
+                peripheralNodes.Add(kbNodes);
+                //specsTree.Nodes["dev"].Nodes.Add(kbNodes);
             }
 
             if (IndiciumHelper.PointingDevices.Count > 0)
@@ -1781,13 +1807,18 @@ namespace Optimizer
                     node.Nodes.Add("Locked: " + pointingDevice.Locked);
                     pdNodes.Nodes.Add(node);
                 }
-                specsTree.Nodes["dev"].Nodes.Add(pdNodes);
+
+                peripheralNodes.Add(pdNodes);
+                //specsTree.Nodes["dev"].Nodes.Add(pdNodes);
             }
+
+            return peripheralNodes.ToArray();
         }
 
-        private void GetNetworkAdapters()
+        private TreeNode[] GetNetworkAdapters()
         {
             IndiciumHelper.GetNetworkAdapters();
+            List<TreeNode> wifiNodes = new List<TreeNode>();
 
             if (IndiciumHelper.PhysicalAdapters.Count > 0)
             {
@@ -1807,7 +1838,9 @@ namespace Optimizer
                     node.Nodes.Add("Service Name: " + adapter.ServiceName);
                     physicalsNode.Nodes.Add(node);
                 }
-                specsTree.Nodes["inet"].Nodes.Add(physicalsNode);
+
+                wifiNodes.Add(physicalsNode);
+                //specsTree.Nodes["inet"].Nodes.Add(physicalsNode);
             }
 
             if (IndiciumHelper.VirtualAdapters.Count > 0)
@@ -1827,14 +1860,19 @@ namespace Optimizer
                     node.Nodes.Add("Service Name: " + adapter.ServiceName);
                     virtualsNode.Nodes.Add(node);
                 }
-                specsTree.Nodes["inet"].Nodes.Add(virtualsNode);
+
+                wifiNodes.Add(virtualsNode);
+                //specsTree.Nodes["inet"].Nodes.Add(virtualsNode);
             }
+
+            return wifiNodes.ToArray();
         }
 
-        private void GetStorage()
+        private TreeNode[] GetStorage()
         {
             List<Disk> disks = IndiciumHelper.GetDisks();
             IndiciumHelper.GetVolumes();
+            List<TreeNode> storageNodes = new List<TreeNode>();
 
             if (disks.Count > 0)
             {
@@ -1861,7 +1899,9 @@ namespace Optimizer
 
                     disksNode.Nodes.Add(node);
                 }
-                specsTree.Nodes["disk"].Nodes.Add(disksNode);
+
+                storageNodes.Add(disksNode);
+                //specsTree.Nodes["disk"].Nodes.Add(disksNode);
             }
 
             if (IndiciumHelper.Opticals.Count > 0)
@@ -1916,7 +1956,9 @@ namespace Optimizer
 
                     opticalsNode.Nodes.Add(node);
                 }
-                specsTree.Nodes["disk"].Nodes.Add(opticalsNode);
+
+                storageNodes.Add(opticalsNode);
+                //specsTree.Nodes["disk"].Nodes.Add(opticalsNode);
             }
 
             if (IndiciumHelper.Volumes.Count > 0)
@@ -1971,7 +2013,9 @@ namespace Optimizer
 
                     volumesNode.Nodes.Add(node);
                 }
-                specsTree.Nodes["disk"].Nodes.Add(volumesNode);
+
+                storageNodes.Add(volumesNode);
+                //specsTree.Nodes["disk"].Nodes.Add(volumesNode);
 
                 if (IndiciumHelper.Removables.Count > 0)
                 {
@@ -2025,14 +2069,19 @@ namespace Optimizer
                         node.Nodes.Add("Block Size: " + removable.BlockSize);
                         removablesNode.Nodes.Add(node);
                     }
-                    specsTree.Nodes["disk"].Nodes.Add(removablesNode);
+
+                    storageNodes.Add(removablesNode);
+                    //specsTree.Nodes["disk"].Nodes.Add(removablesNode);
                 }
             }
+
+            return storageNodes.ToArray();
         }
 
-        private void GetCPUs()
+        private TreeNode[] GetCPUs()
         {
             List<CPU> cpus = IndiciumHelper.GetCPUs();
+            List<TreeNode> cpuNodes = new List<TreeNode>();
 
             if (cpus.Count > 0)
             {
@@ -2052,14 +2101,18 @@ namespace Optimizer
                     node.Nodes.Add("Stepping: " + cpu.Stepping);
                     node.Nodes.Add("Revision: " + cpu.Revision);
 
-                    specsTree.Nodes["cpu"].Nodes.Add(node);
+                    cpuNodes.Add(node);
+                    //specsTree.Nodes["cpu"].Nodes.Add(node);
                 }
             }
+
+            return cpuNodes.ToArray();
         }
 
-        private void GetMotherboards()
+        private TreeNode[] GetMotherboards()
         {
             List<Motherboard> mobos = IndiciumHelper.GetMotherboards();
+            List<TreeNode> motherboardNodes = new List<TreeNode>();
 
             if (mobos.Count > 0)
             {
@@ -2085,15 +2138,20 @@ namespace Optimizer
                     node2.Nodes.Add("Version: " + mobo.BIOSVersion);
                     node2.Nodes.Add("Build Number: " + mobo.BIOSBuildNumber);
 
-                    specsTree.Nodes["mobo"].Nodes.Add(node);
-                    specsTree.Nodes["mobo"].Nodes.Add(node2);
+                    motherboardNodes.Add(node);
+                    motherboardNodes.Add(node2);
+                    //specsTree.Nodes["mobo"].Nodes.Add(node);
+                    //specsTree.Nodes["mobo"].Nodes.Add(node2);
                 }
             }
+
+            return motherboardNodes.ToArray();
         }
 
-        private void GetGPUs()
+        private TreeNode[] GetGPUs()
         {
             List<GPU> gpus = IndiciumHelper.GetGPUs();
+            List<TreeNode> gpuNodes = new List<TreeNode>();
 
             if (gpus.Count > 0)
             {
@@ -2110,12 +2168,15 @@ namespace Optimizer
                     node.Nodes.Add("Current Resolution: " + gpu.ResolutionX + " x " + gpu.ResolutionY);
                     node.Nodes.Add("Current Refresh Rate: " + gpu.RefreshRate + " Hz");
 
-                    specsTree.Nodes["gpu"].Nodes.Add(node);
+                    gpuNodes.Add(node);
+                    //specsTree.Nodes["gpu"].Nodes.Add(node);
                 }
             }
+
+            return gpuNodes.ToArray();
         }
 
-        private void GetRAM()
+        private TreeNode[] GetRAM()
         {
             List<RAM> ramInfo = IndiciumHelper.GetRAM();
             VirtualMemory vm = IndiciumHelper.GetVM();
@@ -2124,6 +2185,7 @@ namespace Optimizer
             string memoryType = string.Empty;
             uint memorySpeed = 0;
 
+            List<TreeNode> ramNodes = new List<TreeNode>();
             if (ramInfo.Count > 0)
             {
                 foreach (RAM ram in ramInfo)
@@ -2141,7 +2203,8 @@ namespace Optimizer
                     node.Nodes.Add("Speed: " + ram.Speed + " MHz");
                     node.Nodes.Add("Form Factor: " + ram.FormFactor);
 
-                    specsTree.Nodes["ram"].Nodes.Add(node);
+                    ramNodes.Add(node);
+                    //specsTree.Nodes["ram"].Nodes.Add(node);
                 }
 
                 HardwareSummary.TotalRAM = $"{totalRAM.ToString("GiB")} {memoryType} @ {memorySpeed} MHz";
@@ -2157,8 +2220,11 @@ namespace Optimizer
                 node.Nodes.Add("Available : " + vm.AvailableVirtualMemory.ToString("GiB"));
                 node.Nodes.Add("Used: " + vm.UsedVirtualMemory.ToString("GiB"));
 
-                specsTree.Nodes["ram"].Nodes.Add(node);
+                ramNodes.Add(node);
+                //specsTree.Nodes["ram"].Nodes.Add(node);
             }
+
+            return ramNodes.ToArray();
         }
 
         //private void InitNetworkMonitoring()
@@ -2298,12 +2364,17 @@ namespace Optimizer
                         tc.LabelText = x.Value;
                         continue;
                     }
+                    else if (element is cuiButton cb)
+                    {
+                        cb.Content = x.Value;
+                        continue;
+                    }
 
                     element.Text = x.Value;
                 }
             }
 
-            txtVersion.Text = txtVersion.Text.Replace("{VN}", Program.GetCurrentVersionTostring());
+            txtVersion.Text = txtVersion.Text.Replace("{VN}", Program.CurrentVersionString);
         }
 
         private void GetFootprint()
@@ -2550,7 +2621,6 @@ namespace Optimizer
 
         private void LoadWindows10ToggleStates()
         {
-            oldMixerSw.ToggleChecked = OptionsHelper.CurrentOptions.EnableLegacyVolumeSlider;
             uODSw.ToggleChecked = OptionsHelper.CurrentOptions.UninstallOneDrive;
             gameBarSw.ToggleChecked = OptionsHelper.CurrentOptions.DisableGameBar;
             cortanaSw.ToggleChecked = OptionsHelper.CurrentOptions.DisableCortana;
@@ -2683,6 +2753,7 @@ namespace Optimizer
             foreach (var x in _modernApps)
             {
                 appCard = new AppCard();
+                appCard.BackColor = cuiPanel1.PanelColor;
                 appCard.AutoSize = true;
                 appCard.Anchor = AnchorStyles.None;
                 appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
@@ -2792,6 +2863,7 @@ namespace Optimizer
             {
                 OptionsHelper.CurrentOptions.AppsFolder = txtDownloadFolder.Text;
                 OptionsHelper.SaveSettings();
+                Environment.Exit(0);
             }
         }
 
@@ -3590,19 +3662,6 @@ namespace Optimizer
             OptionsHelper.CurrentOptions.DisableOffice2016Telemetry = officeTelemetrySw.ToggleChecked;
         }
 
-        private void toggleSwitch13_Click(object sender, EventArgs e)
-        {
-            if (oldMixerSw.ToggleChecked)
-            {
-                OptimizeHelper.EnableLegacyVolumeSlider();
-            }
-            else
-            {
-                OptimizeHelper.DisableLegacyVolumeSlider();
-            }
-            OptionsHelper.CurrentOptions.EnableLegacyVolumeSlider = oldMixerSw.ToggleChecked;
-        }
-
         private void toggleSwitch18_Click(object sender, EventArgs e)
         {
             if (oldExplorerSw.ToggleChecked)
@@ -3958,7 +4017,8 @@ namespace Optimizer
                         txtDownloadStatus.Text = string.Format("{0}/{1} - {2} {3} ...", count, maxCount, OptionsHelper.TranslationList["installing"], Path.GetFileNameWithoutExtension(a));
 
                         await p.RunAsync();
-                    };
+                    }
+                    ;
                 }
             }
 
@@ -4034,6 +4094,9 @@ namespace Optimizer
         }
 
         int tempProgress;
+
+        public event EventHandler CanCloseSplash;
+
         private void Downloader_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate
@@ -4062,11 +4125,11 @@ namespace Optimizer
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog d = new FolderBrowserDialog();
+            OpenFolderDialog d = new OpenFolderDialog();
             if (d.ShowDialog() == DialogResult.OK)
             {
-                txtDownloadFolder.Text = d.SelectedPath;
-                OptionsHelper.CurrentOptions.AppsFolder = d.SelectedPath;
+                txtDownloadFolder.Text = d.FolderName;
+                OptionsHelper.CurrentOptions.AppsFolder = d.FolderName;
                 OptionsHelper.SaveSettings();
             }
         }
@@ -4518,11 +4581,6 @@ namespace Optimizer
             }
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(_discordLink);
-        }
-
         private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(_githubProjectLink);
@@ -4573,7 +4631,7 @@ namespace Optimizer
             int markVersion = 0;
             for (int d = 0; d < changelogText.Count; d++)
             {
-                if (changelogText[d].Contains($"## [{Program.GetCurrentVersionTostring()}]"))
+                if (changelogText[d].Contains($"## [{Program.CurrentVersionString}]"))
                 {
                     markVersion = d;
                     break;
@@ -4594,144 +4652,144 @@ namespace Optimizer
 
         private void boxLang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (boxLang.Text == Constants.ENGLISH)
+            if (boxLang.SelectedItem == Constants.ENGLISH)
             {
-                picFlag.Image = Properties.Resources.united_kingdom;
+                picFlag.Content = Properties.Resources.united_kingdom;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.EN;
             }
-            else if (boxLang.Text == Constants.RUSSIAN)
+            else if (boxLang.SelectedItem == Constants.RUSSIAN)
             {
-                picFlag.Image = Properties.Resources.russia;
+                picFlag.Content = Properties.Resources.russia;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.RU;
             }
-            else if (boxLang.Text == Constants.HELLENIC)
+            else if (boxLang.SelectedItem == Constants.HELLENIC)
             {
-                picFlag.Image = Properties.Resources.greece;
+                picFlag.Content = Properties.Resources.greece;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.EL;
             }
-            else if (boxLang.Text == Constants.GERMAN)
+            else if (boxLang.SelectedItem == Constants.GERMAN)
             {
-                picFlag.Image = Properties.Resources.germany;
+                picFlag.Content = Properties.Resources.germany;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.DE;
             }
-            else if (boxLang.Text == Constants.ITALIAN)
+            else if (boxLang.SelectedItem == Constants.ITALIAN)
             {
-                picFlag.Image = Properties.Resources.italy;
+                picFlag.Content = Properties.Resources.italy;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.IT;
             }
-            else if (boxLang.Text == Constants.CZECH)
+            else if (boxLang.SelectedItem == Constants.CZECH)
             {
-                picFlag.Image = Properties.Resources.czech;
+                picFlag.Content = Properties.Resources.czech;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.CZ;
             }
-            else if (boxLang.Text == Constants.TURKISH)
+            else if (boxLang.SelectedItem == Constants.TURKISH)
             {
-                picFlag.Image = Properties.Resources.turkey;
+                picFlag.Content = Properties.Resources.turkey;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.TR;
             }
-            else if (boxLang.Text == Constants.SPANISH)
+            else if (boxLang.SelectedItem == Constants.SPANISH)
             {
-                picFlag.Image = Properties.Resources.spain;
+                picFlag.Content = Properties.Resources.spain;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.ES;
             }
-            else if (boxLang.Text == Constants.PORTUGUESE)
+            else if (boxLang.SelectedItem == Constants.PORTUGUESE)
             {
-                picFlag.Image = Properties.Resources.brazil;
+                picFlag.Content = Properties.Resources.brazil;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.PT;
             }
-            else if (boxLang.Text == Constants.FRENCH)
+            else if (boxLang.SelectedItem == Constants.FRENCH)
             {
-                picFlag.Image = Properties.Resources.france;
+                picFlag.Content = Properties.Resources.france;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.FR;
             }
-            else if (boxLang.Text == Constants.CHINESE)
+            else if (boxLang.SelectedItem == Constants.CHINESE)
             {
-                picFlag.Image = Properties.Resources.china;
+                picFlag.Content = Properties.Resources.china;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.CN;
             }
-            else if (boxLang.Text == Constants.TAIWANESE)
+            else if (boxLang.SelectedItem == Constants.TAIWANESE)
             {
-                picFlag.Image = Properties.Resources.china;
+                picFlag.Content = Properties.Resources.china;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.TW;
             }
-            else if (boxLang.Text == Constants.KOREAN)
+            else if (boxLang.SelectedItem == Constants.KOREAN)
             {
-                picFlag.Image = Properties.Resources.korea;
+                picFlag.Content = Properties.Resources.korea;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.KO;
             }
-            else if (boxLang.Text == Constants.POLISH)
+            else if (boxLang.SelectedItem == Constants.POLISH)
             {
-                picFlag.Image = Properties.Resources.poland;
+                picFlag.Content = Properties.Resources.poland;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.PL;
             }
-            else if (boxLang.Text == Constants.ARABIC)
+            else if (boxLang.SelectedItem == Constants.ARABIC)
             {
-                picFlag.Image = Properties.Resources.egypt;
+                picFlag.Content = Properties.Resources.egypt;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.AR;
             }
-            else if (boxLang.Text == Constants.KURDISH)
+            else if (boxLang.SelectedItem == Constants.KURDISH)
             {
-                picFlag.Image = Properties.Resources.kurdish;
+                picFlag.Content = Properties.Resources.kurdish;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.KU;
             }
-            else if (boxLang.Text == Constants.HUNGARIAN)
+            else if (boxLang.SelectedItem == Constants.HUNGARIAN)
             {
-                picFlag.Image = Properties.Resources.hungary;
+                picFlag.Content = Properties.Resources.hungary;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.HU;
             }
-            else if (boxLang.Text == Constants.ROMANIAN)
+            else if (boxLang.SelectedItem == Constants.ROMANIAN)
             {
-                picFlag.Image = Properties.Resources.romania;
+                picFlag.Content = Properties.Resources.romania;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.RO;
             }
-            else if (boxLang.Text == Constants.DUTCH)
+            else if (boxLang.SelectedItem == Constants.DUTCH)
             {
-                picFlag.Image = Properties.Resources.dutch;
+                picFlag.Content = Properties.Resources.dutch;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.NL;
             }
-            else if (boxLang.Text == Constants.UKRAINIAN)
+            else if (boxLang.SelectedItem == Constants.UKRAINIAN)
             {
-                picFlag.Image = Properties.Resources.ukraine;
+                picFlag.Content = Properties.Resources.ukraine;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.UA;
             }
-            else if (boxLang.Text == Constants.JAPANESE)
+            else if (boxLang.SelectedItem == Constants.JAPANESE)
             {
-                picFlag.Image = Properties.Resources.japan;
+                picFlag.Content = Properties.Resources.japan;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.JA;
             }
-            else if (boxLang.Text == Constants.PERSIAN)
+            else if (boxLang.SelectedItem == Constants.PERSIAN)
             {
-                picFlag.Image = Properties.Resources.iran;
+                picFlag.Content = Properties.Resources.iran;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.FA;
             }
-            else if (boxLang.Text == Constants.NEPALI)
+            else if (boxLang.SelectedItem == Constants.NEPALI)
             {
-                picFlag.Image = Properties.Resources.nepal;
+                picFlag.Content = Properties.Resources.nepal;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.NE;
             }
-            else if (boxLang.Text == Constants.BULGARIAN)
+            else if (boxLang.SelectedItem == Constants.BULGARIAN)
             {
-                picFlag.Image = Properties.Resources.bulgaria;
+                picFlag.Content = Properties.Resources.bulgaria;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.BG;
             }
-            else if (boxLang.Text == Constants.VIETNAMESE)
+            else if (boxLang.SelectedItem == Constants.VIETNAMESE)
             {
-                picFlag.Image = Properties.Resources.vietnam;
+                picFlag.Content = Properties.Resources.vietnam;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.VN;
             }
-            else if (boxLang.Text == Constants.URDU)
+            else if (boxLang.SelectedItem == Constants.URDU)
             {
-                picFlag.Image = Properties.Resources.pakistan;
+                picFlag.Content = Properties.Resources.pakistan;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.UR;
             }
-            else if (boxLang.Text == Constants.INDONESIAN)
+            else if (boxLang.SelectedItem == Constants.INDONESIAN)
             {
-                picFlag.Image = Properties.Resources.indonesia;
+                picFlag.Content = Properties.Resources.indonesia;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.ID;
             }
-            else if (boxLang.Text == Constants.CROATIAN)
+            else if (boxLang.SelectedItem == Constants.CROATIAN)
             {
-                picFlag.Image = Properties.Resources.indonesia;
+                picFlag.Content = Properties.Resources.indonesia;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.HR;
             }
 
@@ -4834,19 +4892,6 @@ namespace Optimizer
             LoadNetworkAdapterConfig();
             pingerTab.Focus();
         }
-
-        // FIX FOR LAGGING WHEN MOVING THE FORM
-        private void MainForm_ResizeBegin(object sender, EventArgs e)
-        {
-            bpanel.Controls.Remove(tabCollection);
-        }
-
-        private void MainForm_ResizeEnd(object sender, EventArgs e)
-        {
-            bpanel.Controls.Add(tabCollection);
-            tabCollection.Dock = DockStyle.Fill;
-        }
-        // END FIX
 
         private void PMB_ToggleClicked(object sender, EventArgs e)
         {
@@ -4988,10 +5033,10 @@ namespace Optimizer
             ConfirmAndReboot();
         }
 
-        private void colorPicker1_ColorChanged(object sender, EventArgs e)
+        private void ContentChanged(object sender, EventArgs e)
         {
-            pictureBox1.BackColor = colorPicker1.Color;
-            OptionsHelper.CurrentOptions.Theme = colorPicker1.Color;
+            pictureBox1.ImageTint = colorPicker1.Content;
+            OptionsHelper.CurrentOptions.Theme = colorPicker1.Content;
             OptionsHelper.ApplyTheme(this);
 
             OptionsHelper.SaveSettings();
@@ -5010,13 +5055,6 @@ namespace Optimizer
             {
                 Utilities.UnregisterAutoStart();
             }
-        }
-
-        private void picLab_Click(object sender, EventArgs e)
-        {
-            SubForm sf = new SubForm();
-            sf.SetTip(translationList["lblLab"].ToString());
-            sf.ShowDialog(this);
         }
 
         private void btnRestoreUwp_Click(object sender, EventArgs e)
@@ -5060,47 +5098,6 @@ namespace Optimizer
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(_featureRequestLink);
-        }
-
-        private void btnRefreshFonts_Click(object sender, EventArgs e)
-        {
-            LoadAvailableFonts();
-        }
-
-        private void btnRestoreFont_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(_uwpRestoreMessage, "Optimizer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                FontHelper.RestoreDefaultGlobalFont();
-                ShowRestartNeeded();
-            }
-        }
-
-        private void btnSetGlobalFont_Click(object sender, EventArgs e)
-        {
-            if (listFonts.SelectedIndex < 0)
-            {
-                return;
-            }
-            if (MessageBox.Show(_uwpRestoreMessage, "Optimizer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                string fontName = listFonts.SelectedItem.ToString();
-                FontHelper.ChangeGlobalFont(fontName);
-                ShowRestartNeeded();
-            }
-        }
-
-        private void txtSearchFonts_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtSearchFonts.Text))
-            {
-                listFonts.Items.Clear();
-                listFonts.Items.AddRange(_availableFonts.Where(x => x.ToLowerInvariant().Contains(txtSearchFonts.Text.ToLowerInvariant().Trim())).ToArray());
-            }
-            else
-            {
-                LoadAvailableFonts();
-            }
         }
 
         private void chkCustomDns_CheckedChanged(object sender, EventArgs e)
@@ -5175,7 +5172,7 @@ namespace Optimizer
         {
             if (listSystemVariables.SelectedItems.Count == 1)
             {
-                var indexToDelete =_systemVariables.FindIndex(x => x.Equals(listSystemVariables.SelectedItem.ToString(), StringComparison.OrdinalIgnoreCase));
+                var indexToDelete = _systemVariables.FindIndex(x => x.Equals(listSystemVariables.SelectedItem.ToString(), StringComparison.OrdinalIgnoreCase));
                 if (indexToDelete != -1)
                 {
                     _systemVariables.RemoveAt(indexToDelete);
@@ -5184,6 +5181,16 @@ namespace Optimizer
                 LoadSystemVariables();
                 IntegratorHelper.ApplyPathSystemVariables();
             }
+        }
+
+        private void cuiButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cuiButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

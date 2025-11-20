@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Optimizer
 {
@@ -7,13 +8,15 @@ namespace Optimizer
         public SplashForm()
         {
             InitializeComponent();
-
-            this.DoubleBuffered = true;
             CheckForIllegalCrossThreadCalls = false;
+            progressTracker.CompletedColor = OptionsHelper.CurrentOptions.Theme;
+            txtVersion.Text = $"{Program.CurrentVersionString}";
+        }
 
-            LoadingStatus.Font = FontHelper.Poppins15;
-
-            pictureBox2.BackColor = OptionsHelper.CurrentOptions.Theme;
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            Show();
         }
     }
 }

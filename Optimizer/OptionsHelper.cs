@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CuoreUI.Controls;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Drawing;
@@ -52,6 +53,14 @@ namespace Optimizer
                     c.FlatAppearance.MouseDownBackColor = c2;
                     c.FlatAppearance.MouseOverBackColor = c2;
                     c.FlatAppearance.BorderSize = 0;
+                }
+
+                if (x is cuiButton cb && cb.Tag?.ToString() != "dontTheme")
+                {
+                    cb.ForeColor = TextColor;
+                    cb.NormalBackground = c1;
+                    cb.HoverBackground = c1;
+                    cb.PressedBackground = c1;
                 }
 
                 if (x is LinkLabel)
