@@ -1,20 +1,25 @@
 <p align="center">
-   <img src="https://raw.githubusercontent.com/hellzerg/optimizer/master/banner.png">
+   <img src="https://raw.githubusercontent.com/owtysm2/optimizer/master/banner.png">
 </p>
 
 <p align="center">
-	<a href="https://github.com/hellzerg/optimizer/releases/download/16.7/Optimizer-16.7.exe" target="_blank">
-		<img src="https://raw.githubusercontent.com/hellzerg/optimizer/master/download-button.png">
+	<a href="https://github.com/owtysm2/optimizer/releases/download/16.7/Optimizer.exe" target="_blank">
+		<img src="https://raw.githubusercontent.com/owtysm2/optimizer/master/download-button.png">
 		<br>
-		<img src="https://raw.githubusercontent.com/hellzerg/optimizer/master/flags.png">
+		<img src="https://raw.githubusercontent.com/owtysm2/optimizer/master/flags.png">
 	</a>
 </p>
+
+> [!TIP]
+> ### This is a **fork**!<br>
+> This is derivative of the GPLv3 project at [hellzerg/optimizer](https://github.com/hellzerg/optimizer).<br>
+> This is not the official one.
 
 <center>
 <h2>ℹ️ Advanced Privacy and Security Configuration Utility</h2> 
 </center>
 
-Welcome to Optimizer, an advanced configuration utility designed to enhance your privacy and security on Windows. This tool is highly recommended for use after a fresh installation of Windows to achieve maximum privacy and security benefits. Depending on your Windows version, Optimizer can also help you apply specific system tweaks.
+Welcome to Optimizer Modded, an unofficial modification of the advanced configuration utility designed to enhance your privacy and security on Windows. This tool is highly recommended for use after a fresh installation of Windows to achieve maximum privacy and security benefits. Depending on your Windows version, Optimizer Modded can also help you apply specific system tweaks.
 
 <center>
 <h2> 🏗️ Key Features:</h2> 
@@ -50,13 +55,13 @@ Welcome to Optimizer, an advanced configuration utility designed to enhance your
 <h2> ⬇️ Downloads</h2> 
 </center>
 
-Find the latest release of Optimizer on the [Releases](https://github.com/hellzerg/optimizer/releases) page.
+Find the latest release of Optimizer Modded on the [Releases](https://github.com/owtysm2/optimizer/releases) page.
 
 <center>
 <h2>🖼️ Screenshots</h2> 
 </center>
 
-View Optimizer in action through our [Screenshots](https://github.com/hellzerg/optimizer/blob/master/IMAGES.md) collection.
+View Optimizer in action through our [Screenshots](https://github.com/owtysm2/optimizer/blob/master/IMAGES.md) collection.
 
 <center>
 <h2> 🆘 How to Disable Defender in Windows 10 1903 and Later</h2> 
@@ -70,37 +75,37 @@ View Optimizer in action through our [Screenshots](https://github.com/hellzerg/o
 <h2>🔨 Automation using Templating</h2> 
 </center>
 
-Explore the possibilities of automation with Optimizer through our [Automation Guide](https://github.com/hellzerg/optimizer/blob/master/AUTOMATION.md).
+Explore the possibilities of automation with Optimizer through our [Automation Guide](https://github.com/owtysm2/optimizer/blob/master/AUTOMATION.md).
 
 <center>
 <h2> 🔨 Command-line Options</h2> 
 </center>
 
-Check out the [Command-line Options](https://github.com/hellzerg/optimizer/blob/master/CONFS.md) available for Optimizer.
+Check out the [Command-line Options](https://github.com/owtysm2/optimizer/blob/master/CONFS.md) available for Optimizer.
 
 <center>
 <h2> ❓ Frequently Asked Questions</h2> 
 </center>
 
-Find answers to common queries in the [FAQ Section](https://github.com/hellzerg/optimizer/blob/master/FAQ.md).
+Find answers to common queries in the [FAQ Section](https://github.com/owtysm2/optimizer/blob/master/FAQ.md).
 
 <center>
 <h2> 📰 Changelog</h2> 
 </center>
 
-Stay updated with the latest changes through the [Changelog](https://github.com/hellzerg/optimizer/blob/master/CHANGELOG.md).
+Stay updated with the latest changes through the [Changelog](https://github.com/owtysm2/optimizer/blob/master/CHANGELOG.md).
 
 <center>
 <h2>🛡️ Security Policy</h2> 
 </center>
 
-Learn about our security measures in the [Security Policy](https://github.com/hellzerg/optimizer/blob/master/SECURITY.md).
+Learn about our security measures in the [Security Policy](https://github.com/owtysm2/optimizer/blob/master/SECURITY.md).
 
 <center>
 <h2> 💻 Compatibility</h2> 
 </center>
 
-- Requires .NET Framework 4.8.1
+- Requires .NET Framework 4.7.2
 - Compatible with Windows 7, 8, 8.1, 10, 11
 - Can run on Windows Server 2008, 2012, 2016, 2019, 2022 using `/unsafe` switch
 
@@ -108,25 +113,20 @@ Learn about our security measures in the [Security Policy](https://github.com/he
 <h2> 📊 Details</h2> 
 </center>
 
-- Latest version: 16.7 (Released: August 18, 2024)
-- SHA256: 03A234060541B686AC4265754AFF43DF9325C21383F90E17F831E67965D717F8
+- Latest version: none
+- SHA256: none
 
 <center>
-<h2> ☕ Buy me a delicious espresso</h2>
+<h2> ☕ Buy the original creator a delicious espresso</h2>
 </center>
 
 If you find this tool useful, consider showing your support by [donating through PayPal](https://www.paypal.com/paypalme/supportoptimizer).
 
 <center>
-<h2> 🌐 Join our Community</h2>
-</center>
-
-Be a part of our [Discord](https://discord.gg/RmHYWMxWfJ) community.
-
-<center>
 <h2> ❤️ Credits and Acknowledgments</h2>
 </center>
 
+- [deadmoon](https://github.com/hellzerg) - The creator of the original [Optimizer](https://github.com/hellzerg/optimizer)
 - [ByteSize](https://github.com/omar/ByteSize) - A useful library by Omar Rahman
 - ColorPicker - Theme engine, courtesy of cat ([GitHub Profile](https://github.com/vadiscode))
 
@@ -134,6 +134,7 @@ Be a part of our [Discord](https://discord.gg/RmHYWMxWfJ) community.
 <h2> ❤️ Translations</h2>
 </center>
 
+These are the translations which were present when this fork was made!
 We'd like to extend our gratitude to the following contributors for their translations:
 
 - Russian: mrkaban
@@ -161,11 +162,3 @@ We'd like to extend our gratitude to the following contributors for their transl
 - Bulgarian
 - Indonesian: ftrsndrya
 - Croatian: zZan54
-
-<center>
-<h2> ❤️ Contribute with a translation</h2>
-</center>
-
-If you would like to translate the app into your language, you can do so, by translating the EN.json and making a PR.
-Don't forget to mention your language's official name, as well as its national flag.
-- [EN.json](https://github.com/hellzerg/optimizer/blob/master/Optimizer/Resources/i18n/EN.json)
