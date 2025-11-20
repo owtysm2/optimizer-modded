@@ -1253,8 +1253,6 @@ namespace Optimizer
                 tabCollection.TabPages.Remove(indiciumTab);
                 launcherMenu.Items.RemoveByKey("trayHW");
             }
-
-            CanCloseSplash?.Invoke(this, EventArgs.Empty);
         }
 
         private void LoadSystemVariables()
@@ -4043,7 +4041,6 @@ namespace Optimizer
                     downloader.Encoding = Encoding.UTF8;
 
                     downloader.DownloadProgressChanged += Downloader_DownloadProgressChanged;
-                    downloader.DownloadFileCompleted += Downloader_DownloadFileCompleted;
 
                     if (pref64)
                     {
@@ -4085,17 +4082,7 @@ namespace Optimizer
             }
         }
 
-        private void Downloader_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            this.BeginInvoke((MethodInvoker)delegate
-            {
-                //txtDownloadStatus.Text = "Finished";
-            });
-        }
-
         int tempProgress;
-
-        public event EventHandler CanCloseSplash;
 
         private void Downloader_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {

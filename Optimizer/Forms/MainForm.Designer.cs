@@ -1913,7 +1913,6 @@ namespace Optimizer
             // 
             // btnRestartDisableDefender
             // 
-            this.btnRestartDisableDefender.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRestartDisableDefender.CheckButton = false;
             this.btnRestartDisableDefender.Checked = false;
             this.btnRestartDisableDefender.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -1925,10 +1924,10 @@ namespace Optimizer
             this.btnRestartDisableDefender.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRestartDisableDefender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnRestartDisableDefender.ForeColor = System.Drawing.Color.White;
-            this.btnRestartDisableDefender.HoverBackground = System.Drawing.Color.White;
+            this.btnRestartDisableDefender.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartDisableDefender.HoverForeColor = System.Drawing.Color.Black;
             this.btnRestartDisableDefender.HoverImageTint = System.Drawing.Color.White;
-            this.btnRestartDisableDefender.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartDisableDefender.HoverOutline = System.Drawing.Color.Empty;
             this.btnRestartDisableDefender.Image = null;
             this.btnRestartDisableDefender.ImageAutoCenter = true;
             this.btnRestartDisableDefender.ImageExpand = new System.Drawing.Point(0, 0);
@@ -1936,15 +1935,15 @@ namespace Optimizer
             this.btnRestartDisableDefender.Location = new System.Drawing.Point(17, 290);
             this.btnRestartDisableDefender.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestartDisableDefender.Name = "btnRestartDisableDefender";
-            this.btnRestartDisableDefender.NormalBackground = System.Drawing.Color.White;
+            this.btnRestartDisableDefender.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartDisableDefender.NormalForeColor = System.Drawing.Color.White;
             this.btnRestartDisableDefender.NormalImageTint = System.Drawing.Color.White;
-            this.btnRestartDisableDefender.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartDisableDefender.NormalOutline = System.Drawing.Color.Empty;
             this.btnRestartDisableDefender.OutlineThickness = 1F;
-            this.btnRestartDisableDefender.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnRestartDisableDefender.PressedBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartDisableDefender.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnRestartDisableDefender.PressedImageTint = System.Drawing.Color.White;
-            this.btnRestartDisableDefender.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartDisableDefender.PressedOutline = System.Drawing.Color.Empty;
             this.btnRestartDisableDefender.Rounding = new System.Windows.Forms.Padding(8);
             this.btnRestartDisableDefender.Size = new System.Drawing.Size(414, 45);
             this.btnRestartDisableDefender.TabIndex = 88;
@@ -1954,7 +1953,6 @@ namespace Optimizer
             // 
             // btnRestart
             // 
-            this.btnRestart.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRestart.CheckButton = false;
             this.btnRestart.Checked = false;
             this.btnRestart.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -1966,10 +1964,10 @@ namespace Optimizer
             this.btnRestart.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnRestart.ForeColor = System.Drawing.Color.White;
-            this.btnRestart.HoverBackground = System.Drawing.Color.White;
+            this.btnRestart.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestart.HoverForeColor = System.Drawing.Color.Black;
             this.btnRestart.HoverImageTint = System.Drawing.Color.White;
-            this.btnRestart.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestart.HoverOutline = System.Drawing.Color.Empty;
             this.btnRestart.Image = null;
             this.btnRestart.ImageAutoCenter = true;
             this.btnRestart.ImageExpand = new System.Drawing.Point(0, 0);
@@ -1977,15 +1975,15 @@ namespace Optimizer
             this.btnRestart.Location = new System.Drawing.Point(17, 241);
             this.btnRestart.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.NormalBackground = System.Drawing.Color.White;
+            this.btnRestart.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestart.NormalForeColor = System.Drawing.Color.White;
             this.btnRestart.NormalImageTint = System.Drawing.Color.White;
-            this.btnRestart.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestart.NormalOutline = System.Drawing.Color.Empty;
             this.btnRestart.OutlineThickness = 1F;
-            this.btnRestart.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnRestart.PressedBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestart.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnRestart.PressedImageTint = System.Drawing.Color.White;
-            this.btnRestart.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestart.PressedOutline = System.Drawing.Color.Empty;
             this.btnRestart.Rounding = new System.Windows.Forms.Padding(8);
             this.btnRestart.Size = new System.Drawing.Size(414, 45);
             this.btnRestart.TabIndex = 87;
@@ -1995,7 +1993,6 @@ namespace Optimizer
             // 
             // btnRestartSafe
             // 
-            this.btnRestartSafe.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRestartSafe.CheckButton = false;
             this.btnRestartSafe.Checked = false;
             this.btnRestartSafe.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -2007,10 +2004,10 @@ namespace Optimizer
             this.btnRestartSafe.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRestartSafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnRestartSafe.ForeColor = System.Drawing.Color.White;
-            this.btnRestartSafe.HoverBackground = System.Drawing.Color.White;
+            this.btnRestartSafe.HoverBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartSafe.HoverForeColor = System.Drawing.Color.Black;
             this.btnRestartSafe.HoverImageTint = System.Drawing.Color.White;
-            this.btnRestartSafe.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartSafe.HoverOutline = System.Drawing.Color.Empty;
             this.btnRestartSafe.Image = null;
             this.btnRestartSafe.ImageAutoCenter = true;
             this.btnRestartSafe.ImageExpand = new System.Drawing.Point(0, 0);
@@ -2018,15 +2015,15 @@ namespace Optimizer
             this.btnRestartSafe.Location = new System.Drawing.Point(17, 192);
             this.btnRestartSafe.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestartSafe.Name = "btnRestartSafe";
-            this.btnRestartSafe.NormalBackground = System.Drawing.Color.White;
+            this.btnRestartSafe.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartSafe.NormalForeColor = System.Drawing.Color.White;
             this.btnRestartSafe.NormalImageTint = System.Drawing.Color.White;
-            this.btnRestartSafe.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartSafe.NormalOutline = System.Drawing.Color.Empty;
             this.btnRestartSafe.OutlineThickness = 1F;
-            this.btnRestartSafe.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnRestartSafe.PressedBackground = System.Drawing.Color.DodgerBlue;
             this.btnRestartSafe.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnRestartSafe.PressedImageTint = System.Drawing.Color.White;
-            this.btnRestartSafe.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRestartSafe.PressedOutline = System.Drawing.Color.Empty;
             this.btnRestartSafe.Rounding = new System.Windows.Forms.Padding(8);
             this.btnRestartSafe.Size = new System.Drawing.Size(414, 45);
             this.btnRestartSafe.TabIndex = 86;

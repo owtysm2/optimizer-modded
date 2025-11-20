@@ -387,7 +387,7 @@ namespace Optimizer
             StartSplashForm();
 
             _MainForm = new MainForm(_SplashForm);
-            _MainForm.CanCloseSplash += MainForm_CanCloseSplash;
+            _MainForm.Load += MainForm_CanCloseSplash;
             Application.Run(_MainForm);
         }
 
@@ -397,7 +397,7 @@ namespace Optimizer
             StartSplashForm();
 
             _MainForm = new MainForm(_SplashForm, codes[0], codes[3], codes[2], codes[1], codes[4], codes[5], codes[6], codes[7]);
-            _MainForm.CanCloseSplash += MainForm_CanCloseSplash;
+            _MainForm.Load += MainForm_CanCloseSplash;
             Application.Run(_MainForm);
         }
 
