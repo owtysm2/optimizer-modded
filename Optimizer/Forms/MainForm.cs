@@ -52,7 +52,7 @@ namespace Optimizer
         DesktopTypePosition _desktopItemPosition = DesktopTypePosition.Top;
 
         public List<AppInfo> AppsFromFeed = new List<AppInfo>();
-        readonly string _feedLink = "https://raw.githubusercontent.com/hellzerg/optimizer/master/feed.json";
+        readonly string _feedLink = "https://raw.githubusercontent.com/owtysm2/optimizer/master/feed.json";
         readonly string _feedImages = "https://raw.githubusercontent.com/hellzerg/optimizer/master/images/feed.zip";
 
         readonly string _licenseLink = "https://www.gnu.org/licenses/gpl-3.0.en.html";
@@ -1014,8 +1014,8 @@ namespace Optimizer
             launcherMenu.Renderer = new MoonMenuRenderer();
             indiciumMenu.Renderer = new MoonMenuRenderer();
 
-            progressDownloader.BackColor = OptionsHelper.ForegroundColor;
-            progressDownloader.ForeColor = OptionsHelper.ForegroundAccentColor;
+            progressDownloader.Foreground = OptionsHelper.ForegroundColor;
+            //progressDownloader.ForeColor = OptionsHelper.ForegroundAccentColor;
 
             // quick access
             _trayMenu = OptionsHelper.CurrentOptions.EnableTray;
@@ -1032,8 +1032,7 @@ namespace Optimizer
             radioProgram.Checked = true;
             radioTop.Checked = true;
             disableOneDriveSw.Visible = false;
-            c64.Checked = Environment.Is64BitOperatingSystem;
-            c32.Checked = !Environment.Is64BitOperatingSystem;
+            cuiComboBox1.SelectedItem = Environment.Is64BitOperatingSystem ? "64-bit" : "32-bit";
 
             // Windows version, architecture, .NET Framework
             //txtVersion.Text = txtVersion.Text.Replace("{OS}", Utilities.GetOS());
@@ -1176,7 +1175,7 @@ namespace Optimizer
             if (!_disableAppsTool)
             {
                 GetFeed();
-                txtDownloadFolder.ReadOnly = true;
+                txtDownloadFolderTextBox.Enabled = false;
             }
             else
             {
@@ -2367,6 +2366,11 @@ namespace Optimizer
                         cb.Content = x.Value;
                         continue;
                     }
+                    else if (element is cuiCheckbox cbx)
+                    {
+                        cbx.Content = x.Value;
+                        continue;
+                    }
 
                     element.Text = x.Value;
                 }
@@ -2419,8 +2423,10 @@ namespace Optimizer
                             appCard.AutoSize = true;
                             appCard.Anchor = AnchorStyles.None;
                             appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                            appCard.appTitle.Text = x.Title;
+                            appCard.appTitle.Content = x.Title;
                             appCard.appTitle.Name = x.Tag;
+                            appCard.appTitle.CheckedForeground = OptionsHelper.ForegroundColor;
+                            appCard.appTitle.CheckedOutlineColor = OptionsHelper.ForegroundColor;
                             appCard.appImage.SizeMode = PictureBoxSizeMode.Zoom;
 
                             tmpImageFileName = x.Image.Substring(x.Image.LastIndexOf("/") + 1, x.Image.Length - (x.Image.LastIndexOf("/") + 1));
@@ -2755,8 +2761,11 @@ namespace Optimizer
                 appCard.AutoSize = true;
                 appCard.Anchor = AnchorStyles.None;
                 appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                appCard.appTitle.Text = x.Key;
+                appCard.appTitle.Content = x.Key;
+                appCard.Width = Width;
                 appCard.appImage.SizeMode = PictureBoxSizeMode.Zoom;
+                appCard.appTitle.CheckedForeground = OptionsHelper.ForegroundColor;
+                appCard.appTitle.CheckedOutlineColor = OptionsHelper.ForegroundColor;
 
                 // gets largest picture
                 try
@@ -2802,7 +2811,7 @@ namespace Optimizer
             foreach (Control c in Utilities.GetSelfAndChildrenRecursive(panelUwp))
             {
                 //if ((c.Name == "chkSelectAllModernApps") || (c.Name == "chkOnlyRemovable")) continue;
-                if (c is MoonCheck && ((MoonCheck)c).Checked)
+                if (c is cuiCheckbox && ((cuiCheckbox)c).Checked)
                 {
                     selectedApps.Add(c.Text);
                 }
@@ -2859,7 +2868,7 @@ namespace Optimizer
             }
             else
             {
-                OptionsHelper.CurrentOptions.AppsFolder = txtDownloadFolder.Text;
+                OptionsHelper.CurrentOptions.AppsFolder = txtDownloadFolderTextBox.Content;
                 OptionsHelper.SaveSettings();
                 Environment.Exit(0);
             }
@@ -3494,7 +3503,7 @@ namespace Optimizer
         {
             foreach (Control c in Utilities.GetSelfAndChildrenRecursive(panelUwp))
             {
-                if (c is MoonCheck mc) mc.Checked = chkSelectAllModernApps.Checked;
+                if (c is cuiCheckbox mc) mc.Checked = chkSelectAllModernApps.Checked;
             }
         }
 
@@ -3912,8 +3921,8 @@ namespace Optimizer
         private void RenderAppDownloaderBusy()
         {
             btnDownloadApps.Enabled = false;
-            changeDownDirB.Enabled = false;
-            txtDownloadFolder.ReadOnly = true;
+            txtDownloadFolderButton.Enabled = false;
+            txtDownloadFolderTextBox.Enabled = false;
 
             linkWarnings.Visible = false;
         }
@@ -3921,8 +3930,8 @@ namespace Optimizer
         private void RenderAppDownloaderFree()
         {
             btnDownloadApps.Enabled = true;
-            changeDownDirB.Enabled = true;
-            txtDownloadFolder.ReadOnly = false;
+            txtDownloadFolderButton.Enabled = true;
+            txtDownloadFolderTextBox.Enabled = true;
 
             linkWarnings.Visible = !string.IsNullOrEmpty(downloadLog);
 
@@ -3937,7 +3946,7 @@ namespace Optimizer
 
         private async void btnDownloadApps_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDownloadFolder.Text) || !Directory.Exists(txtDownloadFolder.Text))
+            if (string.IsNullOrWhiteSpace(txtDownloadFolderTextBox.Content) || !Directory.Exists(txtDownloadFolderTextBox.Content))
             {
                 MessageBox.Show(OptionsHelper.TranslationList["downloadDirInvalid"].ToString(), "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -3952,10 +3961,10 @@ namespace Optimizer
             foreach (Control c in Utilities.GetSelfAndChildrenRecursive(appsTab))
             {
                 if (c.Name == "cAutoInstall") continue;
-                if (c is MoonCheck && ((MoonCheck)c).Checked) maxCount++;
+                if (c is cuiCheckbox && ((cuiCheckbox)c).Checked) maxCount++;
             }
 
-            MoonCheck currentCheck;
+            cuiCheckbox currentCheck;
             Control[] temp;
 
             foreach (AppInfo x in AppsFromFeed)
@@ -3963,13 +3972,13 @@ namespace Optimizer
                 if (string.IsNullOrEmpty(x.Tag)) continue;
                 temp = appsTab.Controls.Find(x.Tag, true);
                 if (!temp.Any()) continue;
-                currentCheck = (MoonCheck)temp[0];
+                currentCheck = (cuiCheckbox)temp[0];
                 if (currentCheck == null) continue;
                 if (!currentCheck.Checked) continue;
 
                 appNameTemp = x.Title;
 
-                if (c64.Checked)
+                if (cuiComboBox1.SelectedItem == "64-bit")
                 {
                     count++;
                     if (string.IsNullOrEmpty(x.Link64))
@@ -3999,14 +4008,14 @@ namespace Optimizer
             if (cAutoInstall.Checked)
             {
                 count = 0;
-                foreach (string a in Directory.GetFiles(txtDownloadFolder.Text, "*.*", SearchOption.TopDirectoryOnly))
+                foreach (string a in Directory.GetFiles(txtDownloadFolderTextBox.Content, "*.*", SearchOption.TopDirectoryOnly))
                 {
                     using (p = new Process())
                     {
                         count++;
                         p.StartInfo.FileName = a;
                         p.EnableRaisingEvents = true;
-                        p.StartInfo.WorkingDirectory = txtDownloadFolder.Text;
+                        p.StartInfo.WorkingDirectory = txtDownloadFolderTextBox.Content;
 
                         // APP-SPECIFIC HACKS //
                         if (a.ToLowerInvariant().Contains("sumatra")) p.StartInfo.Arguments = " -install";
@@ -4023,8 +4032,15 @@ namespace Optimizer
             // reset all checkboxes
             foreach (Control c in Utilities.GetSelfAndChildrenRecursive(appsTab))
             {
-                if (c.Name == "cAutoInstall") continue;
-                if (c is MoonCheck && ((MoonCheck)c).Checked) ((MoonCheck)c).Checked = false;
+                if (c.Name == "cAutoInstall")
+                {
+                    continue;
+                }
+
+                if (c is cuiCheckbox cc && cc.Checked)
+                {
+                    cc.Checked = false;
+                }
             }
 
             RenderAppDownloaderFree();
@@ -4053,7 +4069,7 @@ namespace Optimizer
                             fileExtension = ".exe";
                         }
 
-                        await downloader.DownloadFileTaskAsync(new Uri(app.Link64), Path.Combine(txtDownloadFolder.Text, app.Title + "-x64" + fileExtension));
+                        await downloader.DownloadFileTaskAsync(new Uri(app.Link64), Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x64" + fileExtension));
                     }
                     else
                     {
@@ -4066,7 +4082,7 @@ namespace Optimizer
                             fileExtension = ".exe";
                         }
 
-                        await downloader.DownloadFileTaskAsync(new Uri(app.Link), Path.Combine(txtDownloadFolder.Text, app.Title + "-x86" + fileExtension));
+                        await downloader.DownloadFileTaskAsync(new Uri(app.Link), Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x86" + fileExtension));
                     }
                 }
             }
@@ -4075,10 +4091,10 @@ namespace Optimizer
                 Logger.LogError("MainForm.DownloadApp", ex.Message, ex.StackTrace);
                 downloadLog += "• " + app.Title + ":" + Environment.NewLine + OptionsHelper.TranslationList["linkInvalid"] + Environment.NewLine + Environment.NewLine;
 
-                if (pref64) try { File.Delete(Path.Combine(txtDownloadFolder.Text, app.Title + "-x64.exe")); } catch { }
-                if (!pref64) try { File.Delete(Path.Combine(txtDownloadFolder.Text, app.Title + "-x86.exe")); } catch { }
-                if (pref64) try { File.Delete(Path.Combine(txtDownloadFolder.Text, app.Title + "-x64.msi")); } catch { }
-                if (!pref64) try { File.Delete(Path.Combine(txtDownloadFolder.Text, app.Title + "-x86.msi")); } catch { }
+                if (pref64) try { File.Delete(Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x64.exe")); } catch { }
+                if (!pref64) try { File.Delete(Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x86.exe")); } catch { }
+                if (pref64) try { File.Delete(Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x64.msi")); } catch { }
+                if (!pref64) try { File.Delete(Path.Combine(txtDownloadFolderTextBox.Content, app.Title + "-x86.msi")); } catch { }
             }
         }
 
@@ -4098,13 +4114,11 @@ namespace Optimizer
                 if (Math.Abs(tempProgress) > 100)
                 {
                     txtDownloadStatus.Text = string.Format("({1}/{2}) - {0} ...", appNameTemp, count, maxCount);
-                    progressDownloader.Style = ProgressBarStyle.Marquee;
                 }
                 // if not, show actual progress
                 else
                 {
                     txtDownloadStatus.Text = string.Format("({1}/{2}) - {0} - {3} / {4}", appNameTemp, count, maxCount, ByteSize.FromBytes(e.BytesReceived).ToString("MB"), ByteSize.FromBytes(e.TotalBytesToReceive).ToString("MB"));
-                    progressDownloader.Style = ProgressBarStyle.Continuous;
                     progressDownloader.Value = tempProgress;
                 }
             });
@@ -4115,7 +4129,7 @@ namespace Optimizer
             OpenFolderDialog d = new OpenFolderDialog();
             if (d.ShowDialog() == DialogResult.OK)
             {
-                txtDownloadFolder.Text = d.FolderName;
+                txtDownloadFolderTextBox.Content = d.FolderName;
                 OptionsHelper.CurrentOptions.AppsFolder = d.FolderName;
                 OptionsHelper.SaveSettings();
             }
@@ -4123,7 +4137,7 @@ namespace Optimizer
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Process.Start(txtDownloadFolder.Text);
+            Process.Start(txtDownloadFolderTextBox.Content);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -4321,7 +4335,7 @@ namespace Optimizer
         {
             _trayMenu = false;
 
-            OptionsHelper.CurrentOptions.AppsFolder = txtDownloadFolder.Text;
+            OptionsHelper.CurrentOptions.AppsFolder = txtDownloadFolderTextBox.Content;
             OptionsHelper.SaveSettings();
 
             Application.Exit();

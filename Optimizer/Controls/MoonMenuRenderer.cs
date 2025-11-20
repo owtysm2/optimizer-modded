@@ -10,22 +10,6 @@ namespace Optimizer
 
         }
 
-        //protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
-        //{
-        //    var tsMenuItem = e.Item as ToolStripMenuItem;
-        //    if (tsMenuItem != null)
-        //        e.TextColor = Color.GhostWhite;
-        //    base.OnRenderItemText(e);
-        //}
-
-        //protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
-        //{
-        //    var tsMenuItem = e.Item as ToolStripMenuItem;
-        //    if (tsMenuItem != null)
-        //        e.Graphics.bru
-        //    base.OnRenderSeparator(e);
-        //}
-
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
             var tsMenuItem = e.Item as ToolStripMenuItem;

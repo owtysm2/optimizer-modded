@@ -133,9 +133,6 @@
     <Compile Include="Controls\MoonCheckList.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\MoonProgress.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\MoonMenuRenderer.cs" />
     <Compile Include="ErrorLogger.cs" />
     <Compile Include="Models\AppInfo.cs" />
@@ -143,9 +140,6 @@
     <Compile Include="ByteSize\ByteSize.cs" />
     <Compile Include="ByteSize\DecimalByteSize.cs" />
     <Compile Include="CleanHelper.cs" />
-    <Compile Include="Controls\MoonCheck.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\MoonRadio.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -238,10 +238,15 @@ namespace Optimizer
                     {
                         containerHead = GetTabRect(i);
 
-                        using (GraphicsPath roundedTab = CuoreUI.Helpers.GeneralHelper.RoundRect(
-                            new Rectangle(containerHead.X, containerHead.Y, containerHead.Width - 1, containerHead.Height - 1), 5))
+                        Rectangle tabBackgroundRect = new Rectangle(containerHead.X, containerHead.Y, containerHead.Width - 1, containerHead.Height - 1);
+                        using (GraphicsPath roundedTab = CuoreUI.Helpers.GeneralHelper.RoundRect(tabBackgroundRect, 5))
                         {
                             e.Graphics.FillPath((SelectedIndex == i) ? (bDrag ? brushDrag : brushActive) : brushInActive, roundedTab);
+                        }
+
+                        if (DesignMode && i == SelectedIndex)
+                        {
+                            TextRenderer.DrawText(e.Graphics, SelectedTab.Text, Font, tabBackgroundRect, brushInActiveText.Color);
                         }
 
                         if (BorderEdges && (i == SelectedIndex))

@@ -45,6 +45,11 @@ namespace Optimizer
             {
                 c = x;
 
+                if (c.Tag?.ToString() == "dontTheme")
+                {
+                    return;
+                }
+
                 if (x is Button)
                 {
                     c.ForeColor = TextColor;
@@ -54,16 +59,28 @@ namespace Optimizer
                     c.FlatAppearance.MouseOverBackColor = c2;
                     c.FlatAppearance.BorderSize = 0;
                 }
-
-                if (x is cuiButton cb && cb.Tag?.ToString() != "dontTheme")
+                else if (x is cuiButton cb)
                 {
                     cb.ForeColor = TextColor;
                     cb.NormalBackground = c1;
                     cb.HoverBackground = c1;
                     cb.PressedBackground = c1;
                 }
-
-                if (x is LinkLabel)
+                else if (x is cuiProgressBarHorizontal cpbh)
+                {
+                    cpbh.Foreground = c1;
+                }
+                else if (x is cuiCheckbox cbx)
+                {
+                    cbx.CheckedForeground = c1;
+                    cbx.CheckedOutlineColor = c1;
+                }
+                else if (x is AppCard ac)
+                {
+                    ac.appTitle.CheckedForeground = c1;
+                    ac.appTitle.CheckedOutlineColor = c1;
+                }
+                else if (x is LinkLabel)
                 {
                     if ((string)c.Tag == Constants.THEME_FLAG)
                     {
@@ -72,8 +89,11 @@ namespace Optimizer
                         c.ActiveLinkColor = c2;
                     }
                 }
-
-                if (x is CheckBox || x is RadioButton || x is Label)
+                else if (x is cuiTextBox ctb)
+                {
+                    ctb.FocusOutlineColor = c1;
+                }
+                else if (x is CheckBox || x is RadioButton || x is Label)
                 {
                     if ((string)c.Tag == Constants.THEME_FLAG)
                     {
@@ -149,9 +169,6 @@ namespace Optimizer
                     CurrentOptions.DisableCleaner = false;
                     CurrentOptions.DisableIntegrator = false;
                     CurrentOptions.DisablePinger = false;
-
-                    //CurrentOptions.TelemetryClientID = Guid.NewGuid().ToString().ToUpperInvariant();
-                    //CurrentOptions.DisableOptimizerTelemetry = false;
 
                     CurrentOptions.LanguageCode = LanguageCode.EN;
 
@@ -252,12 +269,6 @@ namespace Optimizer
             {
                 CurrentOptions.Theme = Color.FromArgb(153, 102, 204);
             }
-            // generate random telemetry ID if not present
-            //if (string.IsNullOrEmpty(CurrentOptions.TelemetryClientID))
-            //{
-            //    CurrentOptions.TelemetryClientID = Guid.NewGuid().ToString().ToUpperInvariant();
-            //    SaveSettings();
-            //}
 
             LoadTranslation();
         }

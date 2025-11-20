@@ -29,23 +29,34 @@ namespace Optimizer
         /// </summary>
         private void InitializeComponent()
         {
-            this.appTitle = new Optimizer.MoonCheck();
+            this.appTitle = new CuoreUI.Controls.cuiCheckbox();
             this.appImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.appImage)).BeginInit();
             this.SuspendLayout();
             // 
             // appTitle
             // 
-            this.appTitle.AutoSize = true;
+            this.appTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.appTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.appTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.appTitle.Checked = false;
+            this.appTitle.CheckedForeground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.appTitle.CheckedOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.appTitle.CheckedSymbolColor = System.Drawing.Color.White;
+            this.appTitle.Content = "App Title";
+            this.appTitle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.appTitle.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appTitle.Location = new System.Drawing.Point(36, 4);
+            this.appTitle.MinimumSize = new System.Drawing.Size(16, 16);
             this.appTitle.Name = "appTitle";
-            this.appTitle.Size = new System.Drawing.Size(89, 24);
+            this.appTitle.OutlineStyle = true;
+            this.appTitle.OutlineThickness = 1F;
+            this.appTitle.Rounding = 4;
+            this.appTitle.ShowSymbols = true;
+            this.appTitle.Size = new System.Drawing.Size(161, 24);
             this.appTitle.TabIndex = 165;
-            this.appTitle.Text = "App Title";
-            this.appTitle.UseVisualStyleBackColor = true;
+            this.appTitle.UncheckedForeground = System.Drawing.Color.Empty;
+            this.appTitle.UncheckedOutlineColor = System.Drawing.Color.Gray;
+            this.appTitle.UncheckedSymbolColor = System.Drawing.Color.Empty;
             // 
             // appImage
             // 
@@ -68,7 +79,7 @@ namespace Optimizer
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "AppCard";
-            this.Size = new System.Drawing.Size(172, 33);
+            this.Size = new System.Drawing.Size(200, 33);
             ((System.ComponentModel.ISupportInitialize)(this.appImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -77,7 +88,7 @@ namespace Optimizer
 
         #endregion
 
-        internal MoonCheck appTitle;
+        internal CuoreUI.Controls.cuiCheckbox appTitle;
         internal System.Windows.Forms.PictureBox appImage;
     }
 }
