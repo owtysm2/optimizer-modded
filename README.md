@@ -1,3 +1,11 @@
+> [!TIP]
+> ### This is a **fork**!<br>
+> This is derivative of the GPLv3 project at [hellzerg/optimizer](https://github.com/hellzerg/optimizer).<br>
+> This is not the official one.
+
+> [!CAUTION]
+> No support will be provided. Use this modified version at your own risk. 
+
 <p align="center">
    <img src="https://raw.githubusercontent.com/owtysm2/optimizer/master/banner.png">
 </p>
@@ -10,10 +18,7 @@
 	</a>
 </p>
 
-> [!TIP]
-> ### This is a **fork**!<br>
-> This is derivative of the GPLv3 project at [hellzerg/optimizer](https://github.com/hellzerg/optimizer).<br>
-> This is not the official one.
+---
 
 <center>
 <h2>ℹ️ Advanced Privacy and Security Configuration Utility</h2> 
