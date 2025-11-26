@@ -1,6 +1,7 @@
 ﻿using CuoreUI;
 using CuoreUI.Controls;
 using Newtonsoft.Json;
+using Optimizer.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,28 +44,24 @@ namespace Optimizer
         int _tabHeaderHeightMargin = 6;
         int _tabHeaderWidthMargin = 6;
 
-        //NetworkMonitor _networkMonitor;
-        //double uploadSpeed = 0;
-        //double downloadSpeed = 0;
-        //bool _networkMonitoringSupported = true;
-
         DesktopItemType _desktopItemType = DesktopItemType.Program;
         DesktopTypePosition _desktopItemPosition = DesktopTypePosition.Top;
 
         public List<AppInfo> AppsFromFeed = new List<AppInfo>();
+
+        /* modify these when forking */
         readonly string _feedLink = "https://raw.githubusercontent.com/owtysm2/optimizer/master/feed.json";
-        readonly string _feedImages = "https://raw.githubusercontent.com/hellzerg/optimizer/master/images/feed.zip";
+        readonly string _feedImages = "https://raw.githubusercontent.com/owtysm2/optimizer/master/images/feed.zip";
+        readonly string _moddedGithubProjectLink = "https://github.com/owtysm2/optimizer";
+        /* modify these when forking */
 
         readonly string _licenseLink = "https://www.gnu.org/licenses/gpl-3.0.en.html";
-        readonly string _githubProjectLink = "https://github.com/hellzerg/optimizer";
+        readonly string _originalGithubProjectLink = "https://github.com/hellzerg/optimizer";
+
         readonly string _paypalSupportLink = "https://www.paypal.com/paypalme/supportoptimizer";
 
-        readonly string _latestVersionLink = "https://raw.githubusercontent.com/hellzerg/optimizer/master/version.txt";
-        readonly string _changelogRawLink = "https://raw.githubusercontent.com/hellzerg/optimizer/master/CHANGELOG.md";
-        readonly string _faqSectionLink = "https://github.com/hellzerg/optimizer/blob/master/FAQ.md";
-
-        readonly string _bugReportLink = "https://github.com/hellzerg/optimizer/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=";
-        readonly string _featureRequestLink = "https://github.com/hellzerg/optimizer/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=";
+        readonly string _latestVersionLink = "https://raw.githubusercontent.com/owtysm2/optimizer/master/version.txt";
+        readonly string _faqSectionLink = "https://github.com/owtysm2/optimizer/blob/master/FAQ.md";
 
         string _noNewVersionMessage = "You already have the latest version!";
         string _betaVersionMessage = "You are using an experimental version!";
@@ -118,7 +115,7 @@ namespace Optimizer
 
         private string NewDownloadLink(string latestVersion)
         {
-            return string.Format("https://github.com/hellzerg/optimizer/releases/download/{0}/Optimizer-{0}.exe", latestVersion);
+            return string.Format("https://github.com/owtysm2/optimizer/releases/download/{0}/Optimizer.exe", latestVersion);
         }
 
         private void CheckForUpdate(bool silentCheck = false)
@@ -156,7 +153,9 @@ namespace Optimizer
                         return;
                     }
 
-                    _updateForm = new UpdateForm(_newVersionMessage, true, ParseChangelog(), latestVersion);
+                                           /* i dont' want to post changelogs, so the changelog parameter is empty */
+                    //                                                         ↓↓↓
+                    _updateForm = new UpdateForm(_newVersionMessage, true, string.Empty, latestVersion);
                     if (_updateForm.ShowDialog() == DialogResult.Yes)
                     {
                         try
@@ -1132,7 +1131,7 @@ namespace Optimizer
             _columnSorter = new ListViewColumnSorter();
             listStartupItems.ListViewItemSorter = _columnSorter;
 
-            specsTree.ImageList = imagesHw;
+            specsTree.ImageList = GetHardwareImagesAsImageList();
 
             // STARTUP ITEMS
             if (!_disableStartupTool)
@@ -1199,7 +1198,9 @@ namespace Optimizer
             // PINGER
             if (!_disablePinger)
             {
-                boxDNS.Items.AddRange(PingerHelper.DNSOptions);
+                List<string> boxDnsItemsTemp = boxDNS.Items.ToList();
+                boxDnsItemsTemp.AddRange(PingerHelper.DNSOptions);
+                boxDNS.Items = boxDnsItemsTemp.ToArray();
                 LoadPingerDNSConfig();
                 DisplayCurrentDNS();
                 boxAdapter.SelectedIndexChanged += boxAdapter_SelectedIndexChanged;
@@ -1232,6 +1233,11 @@ namespace Optimizer
             if (Program.EXPERIMENTAL_BUILD)
             {
                 btnUpdate.Enabled = false;
+                btnUpdate.NormalBackground = Color.FromArgb(32, 32, 32);
+                btnUpdate.NormalForeColor = Color.FromArgb(96, 96, 96);
+                btnUpdate.NormalImageTint = btnUpdate.NormalForeColor;
+                btnUpdate.Tag = "dontTheme";
+
                 picLab.Visible = true;
             }
 
@@ -1254,6 +1260,26 @@ namespace Optimizer
             }
         }
 
+        // In the designer, ImageList gets re-encoded and the images lose quality over time
+        // .. at least for me in VS 2022.
+        private ImageList GetHardwareImagesAsImageList()
+        {
+            var il = new ImageList();
+            il.ImageSize = new Size(32, 32);
+            il.ColorDepth = ColorDepth.Depth32Bit;
+
+            il.Images.Add("cpu", hwImages.cpu);
+            il.Images.Add("ram", hwImages.ram);
+            il.Images.Add("gpu", hwImages.gpu);
+            il.Images.Add("mobo", hwImages.mobo);
+            il.Images.Add("disk", hwImages.disk);
+            il.Images.Add("inet", hwImages.inet);
+            il.Images.Add("audio", hwImages.audio);
+            il.Images.Add("dev", hwImages.dev);
+
+            return il;
+        }
+
         private void LoadSystemVariables()
         {
             listSystemVariables.Items.Clear();
@@ -1274,7 +1300,7 @@ namespace Optimizer
                 if (tabHeight > maxTextHeight) maxTextHeight = tabHeight;
             }
 
-            tabControl.ItemSize = new Size(maxTextWidth + _tabHeaderWidthMargin, maxTextHeight + _tabHeaderHeightMargin);
+            tabControl.ItemSize = new Size(4 + maxTextWidth + _tabHeaderWidthMargin, maxTextHeight + _tabHeaderHeightMargin);
         }
 
         private void LoadReadyMenusState()
@@ -1294,8 +1320,14 @@ namespace Optimizer
             if (nics == null) return;
             if (nics.Length == 0) return;
 
-            boxAdapter.Items.AddRange(nics.Select(z => z.Description).ToArray());
-            if (boxAdapter.Items.Count > 0) boxAdapter.SelectedIndex = 0;
+            List<string> newBoxAdapterItems = boxAdapter.Items.ToList();
+            newBoxAdapterItems.AddRange(nics.Select(z => z.Description).ToArray());
+            boxAdapter.Items = newBoxAdapterItems.ToArray();
+
+            if (boxAdapter.Items.Length > 0)
+            {
+                boxAdapter.SelectedIndex = 0;
+            }
 
             linkDNSv4.LinkClicked += linkDNSIP_LinkClicked;
             linkDNSv4A.LinkClicked += linkDNSIP_LinkClicked;
@@ -1307,7 +1339,10 @@ namespace Optimizer
 
         private void LoadNetworkAdapterConfig()
         {
-            if (boxAdapter.Items.Count <= 0) return;
+            if (boxAdapter.Items.Length <= 0)
+            {
+                return;
+            }
 
             PingerHelper.GetActiveNetworkAdapters();
             if (PingerHelper.NetworkAdapters == null) return;
@@ -1458,8 +1493,15 @@ namespace Optimizer
 
         private void ApplySelectedDNS()
         {
-            if (boxAdapter.Items.Count <= 0) return;
-            if (boxAdapter.SelectedIndex <= -1) return;
+            if (boxAdapter.Items.Length <= 0)
+            {
+                return;
+            }
+
+            if (boxAdapter.SelectedIndex <= -1)
+            {
+                return;
+            }
 
             if (boxDNS.Text == Constants.AutomaticDNS)
             {
@@ -2762,7 +2804,7 @@ namespace Optimizer
                 appCard.Anchor = AnchorStyles.None;
                 appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                 appCard.appTitle.Content = x.Key;
-                appCard.Width = Width;
+                appCard.Width = panelUwp.Width - 30;
                 appCard.appImage.SizeMode = PictureBoxSizeMode.Zoom;
                 appCard.appTitle.CheckedForeground = OptionsHelper.ForegroundColor;
                 appCard.appTitle.CheckedOutlineColor = OptionsHelper.ForegroundColor;
@@ -4584,7 +4626,7 @@ namespace Optimizer
 
         private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(_githubProjectLink);
+            Process.Start(_originalGithubProjectLink);
         }
 
         private void btnCopyHW_Click(object sender, EventArgs e)
@@ -4604,51 +4646,6 @@ namespace Optimizer
             d.FileName = $"Optimizer_Hardware_{Environment.MachineName}_{DateTime.Now.ToString("dd-MM-yyyy")}.txt";
 
             if (d.ShowDialog() == DialogResult.OK) File.WriteAllText(d.FileName, GetSpecsToString(specsTree), Encoding.UTF8);
-        }
-
-        private string ParseChangelog()
-        {
-            WebClient client = new WebClient
-            {
-                Encoding = Encoding.UTF8
-            };
-
-            List<string> changelogText = new List<string>();
-
-            try
-            {
-                changelogText = client.DownloadString(_changelogRawLink).Trim().Split(
-                    new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("MainForm.ParseChangelog", ex.Message, ex.StackTrace);
-                MessageBox.Show(ex.Message, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return string.Empty;
-            }
-
-            if (changelogText.Count == 0) return string.Empty;
-
-            int markVersion = 0;
-            for (int d = 0; d < changelogText.Count; d++)
-            {
-                if (changelogText[d].Contains($"## [{Program.CurrentVersionString}]"))
-                {
-                    markVersion = d;
-                    break;
-                }
-                else continue;
-            }
-
-            changelogText.RemoveRange(markVersion, changelogText.Count - markVersion);
-
-            if (changelogText.Count <= 0)
-            {
-                MessageBox.Show(_noNewVersionMessage, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return string.Empty;
-            }
-
-            return string.Join(Environment.NewLine, changelogText).Replace("##", "➤");
         }
 
         private void boxLang_SelectedIndexChanged(object sender, EventArgs e)
@@ -4851,8 +4848,15 @@ namespace Optimizer
 
         private void DisplayCurrentDNS()
         {
-            if (boxAdapter.Items.Count <= 0) return;
-            if (boxAdapter.SelectedIndex <= -1) return;
+            if (boxAdapter.Items.Length <= 0)
+            {
+                return;
+            }
+
+            if (boxAdapter.SelectedIndex <= -1)
+            {
+                return;
+            }
 
             _currentDNS = PingerHelper.GetDNSFromNetworkAdapter(PingerHelper.NetworkAdapters[boxAdapter.SelectedIndex]).ToArray();
 
@@ -5091,16 +5095,6 @@ namespace Optimizer
             }
         }
 
-        private void linkLabel4_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(_bugReportLink);
-        }
-
-        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(_featureRequestLink);
-        }
-
         private void chkCustomDns_CheckedChanged(object sender, EventArgs e)
         {
             label10.Visible = chkCustomDns.Checked;
@@ -5184,14 +5178,41 @@ namespace Optimizer
             }
         }
 
-        private void cuiButton1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Process.Start(_moddedGithubProjectLink);
         }
 
-        private void cuiButton2_Click(object sender, EventArgs e)
+        private void btnSfcScannow_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                Arguments = "/c sfc /scannow",
+                Verb = "runas",
+                UseShellExecute = true
+            });
+        }
+
+        private void btnDismScan_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "dism.exe",
+                Arguments = "/Online /Cleanup-Image /RestoreHealth",
+                Verb = "runas",
+                UseShellExecute = true
+            });
+        }
+
+        private void MainForm_ResizeEnd(object sender, EventArgs e)
+        {
+            tabCollection.Height = Height - bpanel.Top - tabCollection.ItemSize.Height - 2;
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            tabCollection.Height = Height - bpanel.Top - tabCollection.ItemSize.Height - 2;
         }
     }
 }

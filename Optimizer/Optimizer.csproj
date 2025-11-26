@@ -135,6 +135,11 @@
     </Compile>
     <Compile Include="Controls\MoonMenuRenderer.cs" />
     <Compile Include="ErrorLogger.cs" />
+    <Compile Include="Forms\hwImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hwImages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppInfo.cs" />
     <Compile Include="ByteSize\BinaryByteSize.cs" />
     <Compile Include="ByteSize\ByteSize.cs" />
@@ -252,6 +257,10 @@
     <EmbeddedResource Include="Forms\HostsEditorForm.resx">
       <DependentUpon>HostsEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\hwImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>hwImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +376,15 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cpu.png" />
+    <None Include="Resources\gpu.png" />
+    <None Include="Resources\ic_fluent_laptop_24_filled.png" />
+    <None Include="Resources\ic_fluent_keyboard_24_filled.png" />
+    <None Include="Resources\ic_fluent_storage_24_filled.png" />
+    <None Include="Resources\ic_fluent_wifi_1_24_filled.png" />
+    <None Include="Resources\audio.png" />
+    <None Include="Resources\mobo.png" />
+    <None Include="Resources\ram.png" />
     <None Include="Resources\Flags\croatia.png" />
     <None Include="Resources\Flags\indonesia.png" />
     <None Include="Resources\Flags\pakistan.png" />

@@ -66,7 +66,7 @@ namespace Optimizer
             this.btnYes.ImageAutoCenter = true;
             this.btnYes.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnYes.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnYes.Location = new System.Drawing.Point(288, 123);
+            this.btnYes.Location = new System.Drawing.Point(288, 120);
             this.btnYes.Margin = new System.Windows.Forms.Padding(2);
             this.btnYes.Name = "btnYes";
             this.btnYes.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -79,7 +79,7 @@ namespace Optimizer
             this.btnYes.PressedImageTint = System.Drawing.Color.Gray;
             this.btnYes.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnYes.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnYes.Size = new System.Drawing.Size(110, 42);
+            this.btnYes.Size = new System.Drawing.Size(110, 45);
             this.btnYes.TabIndex = 31;
             this.btnYes.Tag = "dontTheme";
             this.btnYes.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -108,7 +108,7 @@ namespace Optimizer
             this.btnNo.ImageAutoCenter = true;
             this.btnNo.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnNo.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnNo.Location = new System.Drawing.Point(168, 123);
+            this.btnNo.Location = new System.Drawing.Point(168, 120);
             this.btnNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNo.Name = "btnNo";
             this.btnNo.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -121,7 +121,7 @@ namespace Optimizer
             this.btnNo.PressedImageTint = System.Drawing.Color.Gray;
             this.btnNo.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNo.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnNo.Size = new System.Drawing.Size(110, 42);
+            this.btnNo.Size = new System.Drawing.Size(110, 45);
             this.btnNo.TabIndex = 32;
             this.btnNo.Tag = "dontTheme";
             this.btnNo.TextAlignment = System.Drawing.StringAlignment.Center;

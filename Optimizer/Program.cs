@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -91,7 +92,18 @@ namespace Optimizer
                 ProcessStartInfo p = new ProcessStartInfo(file);
                 p.Verb = "runas";
                 p.Arguments = string.Join(" ", switches);
-                Process.Start(p);
+
+                try
+                {
+                    Process.Start(p);
+                }
+                catch (Win32Exception)
+                { 
+                    // catch win32 exception when user presses "no" on the UAC prompt
+                    // i think this only affects the dev when running from VS
+                    // but it certainly is less annoying now
+                }
+
                 Environment.Exit(0);
                 return;
             }

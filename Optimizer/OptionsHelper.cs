@@ -37,9 +37,13 @@ namespace Optimizer
         private static void SetTheme(Form f, Color c1, Color c2)
         {
             dynamic c;
+
             ForegroundColor = c1;
             ForegroundAccentColor = c2;
+
             TextColor = GetContrastColor(CurrentOptions.Theme);
+            var TextColorHover = Color.FromArgb(192, TextColor);
+            var TextColorPress = Color.FromArgb(156, TextColor);
 
             Utilities.GetSelfAndChildrenRecursive(f).ToList().ForEach(x =>
             {
@@ -59,9 +63,21 @@ namespace Optimizer
                     c.FlatAppearance.MouseOverBackColor = c2;
                     c.FlatAppearance.BorderSize = 0;
                 }
+                else if (x is ToggleCard tc)
+                {
+                    tc.Toggle.CheckedBackground = c1;
+                    tc.Toggle.CheckedForeground = TextColor;
+                }
                 else if (x is cuiButton cb)
                 {
                     cb.ForeColor = TextColor;
+                    cb.HoverForeColor = TextColorHover;
+                    cb.PressedForeColor = TextColorPress;
+
+                    cb.NormalImageTint = TextColor;
+                    cb.HoverImageTint = TextColorHover;
+                    cb.PressedImageTint = TextColorPress;
+
                     cb.NormalBackground = c1;
                     cb.HoverBackground = c1;
                     cb.PressedBackground = c1;

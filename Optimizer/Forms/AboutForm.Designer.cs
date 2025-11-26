@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new CuoreUI.Controls.cuiPictureBox();
             this.l1 = new System.Windows.Forms.Label();
             this.l2 = new System.Windows.Forms.LinkLabel();
             this.t1 = new System.Windows.Forms.Timer(this.components);
@@ -39,12 +39,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Optimizer.Properties.Resources.logo;
+            this.pictureBox1.Content = global::Optimizer.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(10, 10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -62,12 +61,12 @@
             // l2
             // 
             this.l2.AutoSize = true;
-            this.l2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.l2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.l2.Location = new System.Drawing.Point(102, 68);
+            this.l2.Location = new System.Drawing.Point(102, 38);
             this.l2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.l2.Name = "l2";
-            this.l2.Size = new System.Drawing.Size(0, 28);
+            this.l2.Size = new System.Drawing.Size(0, 20);
             this.l2.TabIndex = 35;
             this.l2.Tag = "themeable";
             this.l2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.l2_LinkClicked);
@@ -110,7 +109,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private CuoreUI.Controls.cuiPictureBox pictureBox1;
         private System.Windows.Forms.Label l1;
         private System.Windows.Forms.LinkLabel l2;
         private System.Windows.Forms.Timer t1;
