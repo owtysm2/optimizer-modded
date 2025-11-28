@@ -90,6 +90,7 @@ namespace Optimizer
                 {
                     cbx.CheckedForeground = c1;
                     cbx.CheckedOutlineColor = c1;
+                    cbx.CheckedSymbolColor = TextColor;
                 }
                 else if (x is AppCard ac)
                 {
