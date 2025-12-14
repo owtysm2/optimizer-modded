@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Text;
 
 namespace Optimizer
 {
@@ -72,16 +71,6 @@ namespace Optimizer
 
         #region Operators
 
-        public static bool operator ==(HslColor left, HslColor right)
-        {
-            return (((left.A == right.A) && (left.H == right.H)) && ((left.S == right.S) && (left.L == right.L)));
-        }
-
-        public static bool operator !=(HslColor left, HslColor right)
-        {
-            return !(left == right);
-        }
-
         public static implicit operator HslColor(Color color)
         {
             return new HslColor(color);
@@ -90,45 +79,6 @@ namespace Optimizer
         public static implicit operator Color(HslColor color)
         {
             return color.ToRgbColor();
-        }
-
-        #endregion
-
-        #region Overridden Methods
-
-        public override bool Equals(object obj)
-        {
-            if (obj is HslColor color)
-            {
-                if (((this.A == color.A) && (this.H == color.H)) && ((this.S == color.S) && (this.L == color.L)))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return (((this.alpha.GetHashCode() ^ this.hue.GetHashCode()) ^ this.saturation.GetHashCode()) ^ this.luminance.GetHashCode());
-        }
-
-        public override string ToString()
-        {
-            StringBuilder builder;
-
-            builder = new StringBuilder();
-            builder.Append(this.GetType().Name);
-            builder.Append(" [");
-            builder.Append("H=");
-            builder.Append(this.H);
-            builder.Append(", S=");
-            builder.Append(this.S);
-            builder.Append(", L=");
-            builder.Append(this.L);
-            builder.Append("]");
-
-            return builder.ToString();
         }
 
         #endregion

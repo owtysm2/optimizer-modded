@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.CodeDom;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,13 +12,15 @@ namespace Optimizer
 {
     internal static class OptionsHelper
     {
-        internal static Color ForegroundColor = Color.FromArgb(153, 102, 204);
-        internal static Color ForegroundAccentColor = Color.FromArgb(134, 89, 179);
+        internal static Color DefaultForegroundColor = Color.FromArgb(73, 235, 149);
+
+        internal static Color ForegroundColor = DefaultForegroundColor;
+        internal static Color ForegroundAccentColor = ColorHelper.ChangeColorBrightness(ForegroundColor, 0.7);
         internal static Color BackgroundColor = Color.FromArgb(10, 10, 10);
         internal static Color BackAccentColor = Color.FromArgb(40, 40, 40);
         internal static Color TextColor;
 
-        internal readonly static string SettingsFile = CoreHelper.CoreFolder + "\\Optimizer.json";
+        internal readonly static string SettingsFile = CoreHelper.CoreFolder + "\\Optimizer Modded.json";
 
         internal static Options CurrentOptions = new Options();
 
@@ -31,15 +34,15 @@ namespace Optimizer
 
         internal static void ApplyTheme(Form f)
         {
-            SetTheme(f, CurrentOptions.Theme, ColorHelper.ChangeColorBrightness(CurrentOptions.Theme, 0.7));
+            SetTheme(f, CurrentOptions.Theme);
         }
 
-        private static void SetTheme(Form f, Color c1, Color c2)
+        private static void SetTheme(Form f, Color newForegroundColor)
         {
             dynamic c;
 
-            ForegroundColor = c1;
-            ForegroundAccentColor = c2;
+            ForegroundColor = newForegroundColor;
+            ForegroundAccentColor = ColorHelper.ChangeColorBrightness(newForegroundColor, 0.7);
 
             TextColor = GetContrastColor(CurrentOptions.Theme);
             var TextColorHover = Color.FromArgb(192, TextColor);
@@ -57,15 +60,15 @@ namespace Optimizer
                 if (x is Button)
                 {
                     c.ForeColor = TextColor;
-                    c.BackColor = c1;
-                    c.FlatAppearance.BorderColor = c1;
-                    c.FlatAppearance.MouseDownBackColor = c2;
-                    c.FlatAppearance.MouseOverBackColor = c2;
+                    c.BackColor = ForegroundColor;
+                    c.FlatAppearance.BorderColor = ForegroundColor;
+                    c.FlatAppearance.MouseDownBackColor = ForegroundAccentColor;
+                    c.FlatAppearance.MouseOverBackColor = ForegroundAccentColor;
                     c.FlatAppearance.BorderSize = 0;
                 }
                 else if (x is ToggleCard tc)
                 {
-                    tc.Toggle.CheckedBackground = c1;
+                    tc.Toggle.CheckedBackground = ForegroundColor;
                     tc.Toggle.CheckedForeground = TextColor;
                 }
                 else if (x is cuiButton cb)
@@ -78,43 +81,48 @@ namespace Optimizer
                     cb.HoverImageTint = TextColorHover;
                     cb.PressedImageTint = TextColorPress;
 
-                    cb.NormalBackground = c1;
-                    cb.HoverBackground = c1;
-                    cb.PressedBackground = c1;
+                    cb.NormalBackground = ForegroundColor;
+                    cb.HoverBackground = ForegroundColor;
+                    cb.PressedBackground = ForegroundColor;
                 }
                 else if (x is cuiProgressBarHorizontal cpbh)
                 {
-                    cpbh.Foreground = c1;
+                    cpbh.Foreground = ForegroundColor;
                 }
                 else if (x is cuiCheckbox cbx)
                 {
-                    cbx.CheckedForeground = c1;
-                    cbx.CheckedOutlineColor = c1;
+                    cbx.CheckedForeground = ForegroundColor;
+                    cbx.CheckedOutlineColor = ForegroundColor;
                     cbx.CheckedSymbolColor = TextColor;
                 }
                 else if (x is AppCard ac)
                 {
-                    ac.appTitle.CheckedForeground = c1;
-                    ac.appTitle.CheckedOutlineColor = c1;
+                    ac.appTitle.CheckedForeground = ForegroundColor;
+                    ac.appTitle.CheckedOutlineColor = ForegroundColor;
+                }
+                else if (x is cuiListbox cl)
+                {
+                    cl.ItemSelectedBackgroundColor = ForegroundColor;
+                    cl.SelectedForegroundColor = TextColor;
                 }
                 else if (x is LinkLabel)
                 {
                     if ((string)c.Tag == Constants.THEME_FLAG)
                     {
-                        c.LinkColor = c1;
-                        c.VisitedLinkColor = c1;
-                        c.ActiveLinkColor = c2;
+                        c.LinkColor = ForegroundColor;
+                        c.VisitedLinkColor = ForegroundColor;
+                        c.ActiveLinkColor = ForegroundAccentColor;
                     }
                 }
                 else if (x is cuiTextBox ctb)
                 {
-                    ctb.FocusOutlineColor = c1;
+                    ctb.FocusOutlineColor = ForegroundColor;
                 }
                 else if (x is CheckBox || x is RadioButton || x is Label)
                 {
                     if ((string)c.Tag == Constants.THEME_FLAG)
                     {
-                        c.ForeColor = c1;
+                        c.ForeColor = ForegroundColor;
                     }
                 }
 
@@ -165,13 +173,13 @@ namespace Optimizer
                 if (File.Exists(SettingsFile) && File.ReadAllText(SettingsFile).Contains("\"Color\":"))
                 {
                     Options tmpJson = JsonConvert.DeserializeObject<Options>(File.ReadAllText(SettingsFile));
-                    tmpJson.Theme = Color.FromArgb(153, 102, 204);
+                    tmpJson.Theme = DefaultForegroundColor;
                     CurrentOptions = tmpJson;
                 }
                 else
                 {
                     // DEFAULT OPTIONS
-                    CurrentOptions.Theme = Color.FromArgb(153, 102, 204);
+                    CurrentOptions.Theme = DefaultForegroundColor;
                     CurrentOptions.AppsFolder = string.Empty;
                     CurrentOptions.EnableTray = false;
                     CurrentOptions.AutoStart = false;
@@ -284,7 +292,7 @@ namespace Optimizer
             // prevent options from corruption
             if (CurrentOptions.Theme == Color.Empty || CurrentOptions.Theme == Color.FromArgb(0, 0, 0, 0))
             {
-                CurrentOptions.Theme = Color.FromArgb(153, 102, 204);
+                CurrentOptions.Theme = DefaultForegroundColor;
             }
 
             LoadTranslation();

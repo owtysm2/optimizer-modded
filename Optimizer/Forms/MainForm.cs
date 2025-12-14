@@ -3001,11 +3001,6 @@ namespace Optimizer
             GetStartupItems();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HostsHelper.LocateHosts();
-        }
-
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             HostsEditorForm f = new HostsEditorForm();
@@ -5213,6 +5208,11 @@ namespace Optimizer
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             tabCollection.Height = Height - bpanel.Top - tabCollection.ItemSize.Height - 2;
+        }
+
+        private void hostsLocateBtn_Click(object sender, EventArgs e)
+        {
+            HostsHelper.LocateHosts();
         }
     }
 }

@@ -91,7 +91,7 @@ namespace Optimizer
             this.txtVersion.AutoSize = true;
             this.txtVersion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVersion.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtVersion.Location = new System.Drawing.Point(61, 37);
+            this.txtVersion.Location = new System.Drawing.Point(60, 37);
             this.txtVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(81, 15);

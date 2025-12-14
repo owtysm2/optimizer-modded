@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listPreview = new MoonList();
+            this.listPreview = new CuoreUI.Controls.cuiListbox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private MoonList listPreview;
+        private CuoreUI.Controls.cuiListbox listPreview;
     }
 }

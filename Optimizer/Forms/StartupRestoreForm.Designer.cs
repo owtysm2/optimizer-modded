@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.backupL = new System.Windows.Forms.Label();
-            this.listRestoreItems = new Optimizer.MoonList();
+            this.listRestoreItems = new CuoreUI.Controls.cuiListbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNoBackups = new System.Windows.Forms.Label();
             this.previewBackupB = new System.Windows.Forms.Button();
@@ -181,7 +181,7 @@
         #endregion
 
         private System.Windows.Forms.Label backupL;
-        private MoonList listRestoreItems;
+        private CuoreUI.Controls.cuiListbox listRestoreItems;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button previewBackupB;
         private System.Windows.Forms.Button restoreBackupB;

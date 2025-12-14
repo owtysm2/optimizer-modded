@@ -319,6 +319,19 @@
         Or1XDUvsfwF2NxSS8a1e0QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="hostsLocateBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAWJJREFUSEvdlbtK
+        RDEQhlfXwkJEd219BDv1BXwCW99AS0vvoIWt+jiCb+GlVDvBOyh4/eSHmSWbc3LOmlULf/hJSGbmTybD
+        pNH4SwADZYztsgAMxmsOoNmXUBgcaAMto+YjZXY9w52AGeAEuAdugFuj5nuhvXEoxS4BhwWvwhEwGful
+        0JVSS4dOKrwDHwFfbRQWzX4O2AU2gC3jJrANLBREgHFLTRXmzXYp3ijBvtk2XWAMuACegQfg0cYn4ByY
+        MruDIIhu9hbxxfbkO+o3SSKqrkNzVgo/A6EQvq7iaIeBhoFlYB1YAVaBNZvvAJfmqFNWIRRohQJ65DrU
+        BReSAnrkK9ssy61XUR0qBbxMU/ntBf9c4DoyyoH76rCFKrqzTT2oDHPoxaCuMNERMJFj2/wJnIWBvV1P
+        W0fVTZQuXfM7lI98T4HZMHbcEvTJ6E1y2GkPhc+psNAHkrHizz6XcdxfxRcxXHKnD6m1RQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="regFixB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -353,7 +366,7 @@ any application only by typing your desired keyword.</value>
         LigqAdJ/gNgoJbU4mYGB0QDIzi4vKQCKM84BskWSssHsDSB2UUiQM5B9BMjmS4ewr4DYSRD2ExC7COgJ
         IPsLSH06mM3EATYHwpYBsUtSK0D2MjjnF1QWZaZnlCgYWlpaKjim5CelKgRXFpek5hYreOYl5xcV5Bcl
         lqSmANVC3AcGghCFoBDTAGq00GSgMgDFA4T1ORAcvoxiZxBiCJBcWlQGZTIyGRPmI8yYI8HA4L+UgYHl
-        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAALAAAACwAB5DetvwAAABh0
+        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAAK/wAACv8BNGKaggAAABh0
         RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAiBJREFUSEutVT2rGkEUff8kvFRHRRG0c12J
         NlrYCWI+wcbGLpGAWFnaimCpoCS8VwhqkRgLEextLcTGMgmCKZPccCe7w+7M+DTPXDiw3HPPuePMnfHm
         5oEAYAH4BOArgJ8AyAF/c445S9WdDQBPAHwA8Mtjegpc85E1qo8xADwHcDQYnQNrXqh+vgDwFsBvg/hS
@@ -474,7 +487,7 @@ any application only by typing your desired keyword.</value>
         LigqAdJ/gNgoJbU4mYGB0QDIzi4vKQCKM84BskWSssHsDSB2UUiQM5B9BMjmS4ewr4DYSRD2ExC7COgJ
         IPsLSH06mM3EATYHwpYBsUtSK0D2MjjnF1QWZaZnlCgYWlpaKjim5CelKgRXFpek5hYreOYl5xcV5Bcl
         lqSmANVC3AcGghCFoBDTAGq00GSgMgDFA4T1ORAcvoxiZxBiCJBcWlQGZTIyGRPmI8yYI8HA4L+UgYHl
-        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAALAAAACwAB5DetvwAAABh0
+        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAAK/wAACv8BNGKaggAAABh0
         RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAq9JREFUSEuVVcFKG1EU9U+KXR0JIoILIVGo
         uBCiC3FhSJoGdKmomEKhCxdCtiK4NDuDKQZx4SINLYifIIoLURGRgJA2ixRCYtNbzmvmMXNnJrEHDhPm
         vnvOu/fdNxkY6AEAMQBfAdQA/AYgXfI33zEW03l9AeANgCKAjks0jFzzhTlaJxAAkgAaAUL9yJyU1vMA
@@ -498,7 +511,7 @@ any application only by typing your desired keyword.</value>
         LigqAdJ/gNgoJbU4mYGB0QDIzi4vKQCKM84BskWSssHsDSB2UUiQM5B9BMjmS4ewr4DYSRD2ExC7COgJ
         IPsLSH06mM3EATYHwpYBsUtSK0D2MjjnF1QWZaZnlCgYWlpaKjim5CelKgRXFpek5hYreOYl5xcV5Bcl
         lqSmANVC3AcGghCFoBDTAGq00GSgMgDFA4T1ORAcvoxiZxBiCJBcWlQGZTIyGRPmI8yYI8HA4L+UgYHl
-        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAALAAAACwAB5DetvwAAABh0
+        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAAK/wAACv8BNGKaggAAABh0
         RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAiBJREFUSEutVT2rGkEUff8kvFRHRRG0c12J
         NlrYCWI+wcbGLpGAWFnaimCpoCS8VwhqkRgLEextLcTGMgmCKZPccCe7w+7M+DTPXDiw3HPPuePMnfHm
         5oEAYAH4BOArgJ8AyAF/c445S9WdDQBPAHwA8Mtjegpc85E1qo8xADwHcDQYnQNrXqh+vgDwFsBvg/hS
@@ -519,7 +532,7 @@ any application only by typing your desired keyword.</value>
         LigqAdJ/gNgoJbU4mYGB0QDIzi4vKQCKM84BskWSssHsDSB2UUiQM5B9BMjmS4ewr4DYSRD2ExC7COgJ
         IPsLSH06mM3EATYHwpYBsUtSK0D2MjjnF1QWZaZnlCgYWlpaKjim5CelKgRXFpek5hYreOYl5xcV5Bcl
         lqSmANVC3AcGghCFoBDTAGq00GSgMgDFA4T1ORAcvoxiZxBiCJBcWlQGZTIyGRPmI8yYI8HA4L+UgYHl
-        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAALAAAACwAB5DetvwAAABh0
+        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAAK/wAACv8BNGKaggAAABh0
         RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAnlJREFUSEudlctrWkEUxvOflHT1LdS/QIS6
         CEkWCiErH21Wxri1UCkRQgKSbR5k4UIXElpi1qHFkKUg7ty59oHxUYgVFayecqbe4Xq86qUffKAz5/zO
         vTNn5m5trREAN4AfALoA/gCgufk3j/GcW+ZtFIB3AL4BmJqgq8wx3zlHciwFIADgtwVokzknKHkLAhAH
@@ -542,7 +555,7 @@ any application only by typing your desired keyword.</value>
         LigqAdJ/gNgoJbU4mYGB0QDIzi4vKQCKM84BskWSssHsDSB2UUiQM5B9BMjmS4ewr4DYSRD2ExC7COgJ
         IPsLSH06mM3EATYHwpYBsUtSK0D2MjjnF1QWZaZnlCgYWlpaKjim5CelKgRXFpek5hYreOYl5xcV5Bcl
         lqSmANVC3AcGghCFoBDTAGq00GSgMgDFA4T1ORAcvoxiZxBiCJBcWlQGZTIyGRPmI8yYI8HA4L+UgYHl
-        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAALAAAACwAB5DetvwAAABh0
+        D0LMpJeBYYEOAwP/VISYmiEDg4A+A8O+OQDAxk/9b5LlBAAAAAlwSFlzAAAK/wAACv8BNGKaggAAABh0
         RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAnNJREFUSEuVVTurWkEQvv8k3FSjaKOIjQ/i
         6w9ooSbRQix9JhCItgoXVAQt7EUS7i1tEhKwUTsLK18gIpZJQGLhe8JsjnJ2Pb4++PCc3Z3vOzs7Oz48
         XAAAmADgGwD8AoAtAKBEeqYxmjOJcVcBAK8A4AsA7GSi50hrvlKMqKMIAPADwF8FoWukmLeiHgcA+AAA
@@ -1484,7 +1497,7 @@ any application only by typing your desired keyword.</value>
   <data name="pictureBox1.Content" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAuZJREFUeF7t0lFu
+        vAAADrwBlbxySQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAuZJREFUeF7t0lFu
         2zAURcHuf9MtAsRoOo1j2aakS+rOZ2CRh+/l16+qqqqqqqqqqqqqqqqqqqqqOtTvT/69LuC2/P4TXJDL
         v/F3tSCXLn9fC3HZ9/hdLcAlP+L3NTGXu5Xn1IRc6rM8rybiMl/luTUBl/guz69gLm8U76lALm0076sg
         Lmsv3lsBXNLevL9O5HKOYkedwKUczZ46kMs4i111AJdwNvtqRw4/hZ21A4eexNYazIGnsbcGcthp7K2B

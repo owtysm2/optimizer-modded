@@ -63,6 +63,16 @@ namespace Optimizer
                     using (GraphicsPath expanderPath = CuoreUI.Helpers.GeneralHelper.RoundTriangle(
                         nodeExpanderRect, rounding: 2, pointingDown: e.Node.IsExpanded))
                     {
+                        if (!e.Node.IsExpanded)
+                        {
+                            using (var m = new Matrix())
+                            {
+                                m.Translate(nodeExpanderRect.X + nodeExpanderRect.Width + 8, 0);
+                                m.Scale(-1, 1);
+                                expanderPath.Transform(m);
+                            }
+                        }
+
                         e.Graphics.FillPath(Brushes.DimGray, expanderPath);
                     }
                 }

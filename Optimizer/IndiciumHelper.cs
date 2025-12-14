@@ -34,9 +34,6 @@ namespace Optimizer
                     cpu.L3CacheSize = ByteSize.FromKiloBytes(Convert.ToDouble(mo.Properties["L3CacheSize"].Value));
                     cpu.Cores = Convert.ToUInt32(mo.Properties["NumberOfCores"].Value);
 
-                    // ThreadCount is for Windows 10+
-                    //cpu.Threads = Convert.ToUInt32(mo.Properties["ThreadCount"].Value);
-
                     cpu.LogicalCpus = Convert.ToUInt32(mo.Properties["NumberOfLogicalProcessors"].Value);
 
                     if (Utilities.CurrentWindowsVersion != WindowsVersion.Windows7)
@@ -247,23 +244,25 @@ namespace Optimizer
 
                     volume.BlockSize = Convert.ToUInt64(mo.Properties["BlockSize"].Value);
                     volume.Capacity = ByteSize.FromBytes(Convert.ToDouble(mo.Properties["Capacity"].Value));
-                    bool temp = Convert.ToBoolean(mo.Properties["Compressed"].Value);
-                    volume.Compressed = (temp) ? "Yes" : "No";
                     volume.DriveLetter = Convert.ToString(mo.Properties["DriveLetter"].Value);
-                    UInt32 i = Convert.ToUInt32(mo.Properties["DriveType"].Value);
-                    volume.DriveType = SanitizeDriveType(i);
                     volume.FileSystem = Convert.ToString(mo.Properties["FileSystem"].Value);
                     volume.FreeSpace = ByteSize.FromBytes(Convert.ToDouble(mo.Properties["FreeSpace"].Value));
                     volume.UsedSpace = volume.Capacity.Subtract(volume.FreeSpace);
-                    bool temp2 = Convert.ToBoolean(mo.Properties["IndexingEnabled"].Value);
-                    volume.Indexing = (temp2) ? "Yes" : "No";
                     volume.Label = Convert.ToString(mo.Properties["Label"].Value);
 
-                    if (i == 2)
+                    bool isCompressed = Convert.ToBoolean(mo.Properties["Compressed"].Value);
+                    volume.Compressed = isCompressed ? "Yes" : "No";
+                    bool isIndexingEnabled = Convert.ToBoolean(mo.Properties["IndexingEnabled"].Value);
+                    volume.Indexing = isIndexingEnabled ? "Yes" : "No";
+
+                    UInt32 driveTypeInt = Convert.ToUInt32(mo.Properties["DriveType"].Value);
+                    volume.DriveType = SanitizeDriveType(driveTypeInt);
+
+                    if (driveTypeInt == 2)
                     {
                         Removables.Add(volume);
                     }
-                    else if (i == 5)
+                    else if (driveTypeInt == 5)
                     {
                         Opticals.Add(volume);
                     }
@@ -374,12 +373,13 @@ namespace Optimizer
                     adapter.AdapterType = Convert.ToString(mo.Properties["AdapterType"].Value);
                     adapter.Manufacturer = Convert.ToString(mo.Properties["Manufacturer"].Value);
                     adapter.ProductName = Convert.ToString(mo.Properties["ProductName"].Value);
-                    bool temp = Convert.ToBoolean(mo.Properties["PhysicalAdapter"].Value);
-                    adapter.PhysicalAdapter = (temp) ? "Yes" : "No";
                     adapter.MacAddress = Convert.ToString(mo.Properties["MacAddress"].Value);
                     adapter.ServiceName = Convert.ToString(mo.Properties["ServiceName"].Value);
 
-                    if (temp)
+                    bool isPhysicalAdapter = Convert.ToBoolean(mo.Properties["PhysicalAdapter"].Value);
+                    adapter.PhysicalAdapter = (isPhysicalAdapter) ? "Yes" : "No";
+
+                    if (isPhysicalAdapter)
                     {
                         PhysicalAdapters.Add(adapter);
                     }
