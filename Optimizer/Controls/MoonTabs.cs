@@ -31,25 +31,6 @@ namespace Optimizer
         [Category("Custom"), Description("The size of the components Indicator."), DefaultValue(0)]
         public int IndicatorSize { get; set; } = 0;
 
-        private int _DividerSize = 0;
-        [Category("Custom"), Description("The size of the components Divider."), DefaultValue(0)]
-        public int DividerSize
-        {
-            get => _DividerSize;
-            set => _DividerSize = value.LimitToRange(0, 0);
-        }
-
-        [Category("Custom"), Description("Indicates whether or not you can rearrange the components Tabpages.  CLICK on the Tabpages HEADER with the LEFT mousebutton and HOLD DOWN the <SHIFT> KEY, to drag it LEFT or RIGHT."), DefaultValue(false)]
-        public bool CanDrag { get; set; }
-
-        StringFormat format = new StringFormat { Alignment = StringAlignment.Center };
-
-        private Bitmap bitDrag = default(Bitmap);
-
-        private bool bDrag, bMouseDown, bShiftKey;
-        private Point ptPreviousLocation, ptMaxDrag;
-        private int DraggedIndex = -1;
-
         protected override CreateParams CreateParams
         {
             [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
@@ -96,157 +77,41 @@ namespace Optimizer
             ItemSize = new Size(ItemSize.Width, 36);
         }
 
-        private void SetDragState() => bDrag = (CanDrag && bMouseDown && bShiftKey);
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            bMouseDown = true;
-            SetDragState();
-            if (SelectedIndex == -1) return;
-            Rectangle rectDrag = GetTabRect(SelectedIndex);
-            ptPreviousLocation = new Point(rectDrag.X, rectDrag.Y);
-            rectDrag.Width += 1; rectDrag.Height += 1;
-            Bitmap src = new Bitmap(Width, Height);
-            DrawToBitmap(src, ClientRectangle);
-
-            using (Graphics g = Graphics.FromImage(bitDrag = new Bitmap(rectDrag.Width, rectDrag.Height)))
-            {
-                g.DrawImage(src, new Rectangle(0, 0, bitDrag.Width, bitDrag.Height), rectDrag, GraphicsUnit.Pixel);
-            }
-        }
-
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            if (bDrag)
-            {
-                if (Alignment == TabAlignment.Top || Alignment == TabAlignment.Bottom)
-                {
-                    ptPreviousLocation = new Point(((e.X < 0) ? 0 : (e.X > ptMaxDrag.X) ? ptMaxDrag.X : e.X), (Alignment == TabAlignment.Top ? BorderSize : ptMaxDrag.Y));
-                }
-
-                if (Alignment == TabAlignment.Right || Alignment == TabAlignment.Left)
-                {
-                    ptPreviousLocation = new Point(ptMaxDrag.X, ((e.Y < 0) ? 0 : (e.Y > ptMaxDrag.Y) ? ptMaxDrag.Y : e.Y));
-                }
-                for (int i = 0; i < TabCount; i++)
-                {
-                    if (GetTabRect(i).Contains(PointToClient(Cursor.Position))) { DraggedIndex = i; break; }
-                }
-
-                Invalidate();
-            }
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            void SwapTabPages(TabPage inDestTab)
-            {
-                int SourceIndex = TabPages.IndexOf(SelectedTab);
-                int DestinationIndex = TabPages.IndexOf(inDestTab);
-
-                TabPages[DestinationIndex] = SelectedTab;
-                TabPages[SourceIndex] = inDestTab;
-
-                if (SelectedIndex == SourceIndex) { SelectedIndex = DestinationIndex; }
-                else if (SelectedIndex == DestinationIndex) { SelectedIndex = SourceIndex; }
-            }
-
-            bDrag = bMouseDown = false;
-
-            if (DraggedIndex > -1)
-            {
-                SwapTabPages(TabPages[DraggedIndex]);
-                DraggedIndex = -1;
-            }
-
-            SetDragState();
-            Invalidate();
-        }
-
-        protected override void OnKeyDown(KeyEventArgs ke) { bShiftKey = ke.Shift; SetDragState(); }
-
-        protected override void OnKeyUp(KeyEventArgs e) { bDrag = bShiftKey = false; SetDragState(); }
-
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.FromArgb(20, 20, 20));
+            e.Graphics.Clear(Parent.BackColor);
 
             Rectangle container = new Rectangle(0, 0, Width - (BorderSize % 2), Height - (BorderSize % 2));
-            Rectangle containerHead = default(Rectangle);
+            Rectangle containerHead;
 
-            if (TabCount > 0)
-            {
-                using (SolidBrush brushBackgroundTab = new SolidBrush(Color.FromArgb(20, 20, 20)))
-                using (SolidBrush brushDivider = new SolidBrush(OptionsHelper.ForegroundColor))
-                {
-                    {
-                        e.Graphics.FillRectangle(brushBackgroundTab, DisplayRectangle);
-                    }
-
-                    {
-                        if (SelectedIndex == -1) return;
-                        Rectangle rectDivider = GetTabRect(SelectedIndex);
-
-                        if (Alignment == TabAlignment.Top || Alignment == TabAlignment.Bottom)
-                        {
-                            e.Graphics.FillRectangle(brushDivider,
-                                                     0,
-                                                     (((Alignment == TabAlignment.Top) ? (TabPages[SelectedIndex].Top - DividerSize - (DividerSize % 2)) :
-                                                     (TabPages[SelectedIndex].Bottom + (DividerSize % 2)))),
-                                                     (Width - BorderSize), DividerSize
-                                                    );
-                        }
-
-                        if (Alignment == TabAlignment.Right || Alignment == TabAlignment.Left)
-                        {
-                            e.Graphics.FillRectangle(brushDivider,
-                                                     ((Alignment == TabAlignment.Right) ? (TabPages[SelectedIndex].Right + (DividerSize % 2)) : TabPages[SelectedIndex].Left - DividerSize - (DividerSize % 2)),
-                                                     BorderSize,
-                                                     DividerSize,
-                                                     (Height - (BorderSize * 2))
-                                                     );
-                        }
-                    }
-                }
-            }
-
-            SolidBrush brushActiveText;
-
-            using (Pen penActive = new Pen(OptionsHelper.ForegroundColor))
-            using (Pen penBorder = new Pen(Color.FromArgb(20, 20, 20), 0))
             using (SolidBrush brushActive = new SolidBrush(OptionsHelper.ForegroundColor))
             using (SolidBrush brushInActive = new SolidBrush(Color.FromArgb(20, 20, 20)))
             using (SolidBrush brushAlternative = new SolidBrush(OptionsHelper.ForegroundColor))
             using (SolidBrush brushActiveIndicator = new SolidBrush(ControlPaint.Light(OptionsHelper.ForegroundColor)))
             using (SolidBrush brushInActiveIndicator = new SolidBrush(OptionsHelper.ForegroundColor))
-            using (brushActiveText = new SolidBrush(OptionsHelper.TextColor))
+            using (SolidBrush brushActiveText = new SolidBrush(OptionsHelper.TextColor))
             using (SolidBrush brushInActiveText = new SolidBrush(Color.White))
-            using (SolidBrush brushDrag = new SolidBrush(ControlPaint.Dark(OptionsHelper.ForegroundColor)))
             {
                 //if (MoonManager.THEME_PREFERENCE == THEME.LIGHT) brushActiveText = new SolidBrush(Color.White);
-
-                penBorder.Alignment = penActive.Alignment = PenAlignment.Inset;
-                e.Graphics.DrawRectangle(penBorder, container);
 
                 if (TabCount > 0)
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    ptMaxDrag = new Point(0, 0);
 
                     for (int i = 0; i < TabCount; i++)
                     {
                         containerHead = GetTabRect(i);
 
                         Rectangle tabBackgroundRect = new Rectangle(containerHead.X, containerHead.Y, containerHead.Width - 1, containerHead.Height - 1);
-                        using (GraphicsPath roundedTab = CuoreUI.Helpers.GeneralHelper.RoundRect(tabBackgroundRect, 5))
+                        using (GraphicsPath roundedTab = CuoreUI.Helpers.GeneralHelper.RoundRect(tabBackgroundRect, 8))
                         {
-                            e.Graphics.FillPath((SelectedIndex == i) ? (bDrag ? brushDrag : brushActive) : brushInActive, roundedTab);
+                            e.Graphics.FillPath((SelectedIndex == i) ? brushActive : brushInActive, roundedTab);
                         }
 
-                        if (DesignMode && i == SelectedIndex)
+                        if (i < TabPages.Count && i >= 0)
                         {
-                            TextRenderer.DrawText(e.Graphics, SelectedTab.Text, Font, tabBackgroundRect, brushInActiveText.Color);
+                            TextRenderer.DrawText(e.Graphics, TabPages[i].Text, Font, tabBackgroundRect, (i == SelectedIndex) ? brushActiveText.Color : brushInActiveText.Color);
                         }
 
                         if (BorderEdges && (i == SelectedIndex))
@@ -284,29 +149,6 @@ namespace Optimizer
                             e.Graphics.DrawLine(new Pen(ControlPaint.Light(brushActive.Color)), ptB, ptC);
                             e.Graphics.DrawLine(new Pen(ControlPaint.Dark(brushActive.Color)), ptC, ptD);
                         }
-
-                        if (!(bDrag && i == SelectedIndex))
-                        {
-                            int angle = 0;
-                            if (Alignment == TabAlignment.Right) angle = 90;
-                            if (Alignment == TabAlignment.Left) angle = 270;
-
-                            float w, h;
-                            w = h = 0f;
-
-                            if (Alignment == TabAlignment.Top || Alignment == TabAlignment.Bottom) { w = containerHead.X + (containerHead.Width / 2); }
-                            if (Alignment == TabAlignment.Right || Alignment == TabAlignment.Left) { w = containerHead.X; h = containerHead.Y + (containerHead.Height / 2); }
-
-                            if (Alignment == TabAlignment.Top || Alignment == TabAlignment.Bottom) { h = containerHead.Y + ((Alignment == TabAlignment.Top) ? IndicatorSize : 0) + ((containerHead.Height - IndicatorSize) / 2); }
-                            if (Alignment == TabAlignment.Right || Alignment == TabAlignment.Left) { w += (((Alignment == TabAlignment.Right) ? 0 : IndicatorSize) + ((containerHead.Width - IndicatorSize) / 2)); }
-
-                            e.Graphics.TranslateTransform(w, h);
-                            Size textSize = e.Graphics.MeasureString(TabPages[i].Text, Font).ToSize();
-                            e.Graphics.RotateTransform(angle);
-                            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-                            e.Graphics.DrawString(TabPages[i].Text, Font, ((SelectedIndex == i) ? brushActiveText : brushInActiveText), new PointF((-textSize.Width / 2f), (-textSize.Height / 2f)));
-                            e.Graphics.ResetTransform();
-                        }
                     }
                 }
             }
@@ -315,19 +157,10 @@ namespace Optimizer
 
     public static class MoonTabHelper
     {
-        public static int LimitToRange(this int value, int inclusiveMinimum, int inclusiveMaximum)
-        {
-            if (value < inclusiveMinimum) { return inclusiveMinimum; }
-            if (value > inclusiveMaximum) { return inclusiveMaximum; }
-            return value;
-        }
-
         public static void Swap<T>(ref T a, ref T b)
         {
             T temp = a;
             a = b; b = temp;
         }
-
-        public static int TagToInt(object inObject) => Convert.ToInt32((inObject as Control).Tag);
     }
 }

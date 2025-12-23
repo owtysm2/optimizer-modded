@@ -2,6 +2,7 @@
 using CuoreUI.Controls;
 using Newtonsoft.Json;
 using Optimizer.Forms;
+using Optimizer.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -153,7 +155,7 @@ namespace Optimizer
                         return;
                     }
 
-                                           /* i dont' want to post changelogs, so the changelog parameter is empty */
+                    /* i dont' want to post changelogs, so the changelog parameter is empty */
                     //                                                         ↓↓↓
                     _updateForm = new UpdateForm(_newVersionMessage, true, string.Empty, latestVersion);
                     if (_updateForm.ShowDialog() == DialogResult.Yes)
@@ -936,6 +938,14 @@ namespace Optimizer
         public MainForm(SplashForm _splashForm, bool? disableIndicium = null, bool? disableHostsEditor = null, bool? disableCommonApps = null, bool? disableUWPApps = null, bool? disableStartups = null, bool? disableCleaner = null, bool? disableIntegrator = null, bool? disablePinger = null)
         {
             InitializeComponent();
+
+            // makes the things behind preset panel look nicer when its opened
+            // (this is not a "woah rounding in winforms, yay!"-type trick, but rather just a visual QoL fix)
+            // (kinda related): 1 px is left below intentionally, for better contrast
+            panel18.Left = cuiButton1.Left + ((cuiButton1.Width - panel18.Width) / 2);
+            panel18.Top = cuiButton1.Bottom + 1;
+            panel18.Height = 44 * cuiPanel2.Controls.Count;
+            panel18.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, panel18.Width, panel18.Height, 13, 13));
 
             if (OptionsHelper.CurrentOptions.UpdateOnLaunch)
             {
@@ -3152,7 +3162,7 @@ namespace Optimizer
                 itemtoaddgroup.Text = OptionsHelper.TranslationList["itemtoaddgroup"];
                 checkDefaultIcon.Visible = true;
                 checkDefaultIcon.Text = OptionsHelper.TranslationList["checkDefaultIcon"];
-                txtItemName.Clear();
+                txtItemName.Content = string.Empty;
                 txtItem.ReadOnly = true;
                 txtIcon.ReadOnly = true;
                 _desktopItemType = DesktopItemType.Program;
@@ -3168,7 +3178,7 @@ namespace Optimizer
                 txtItem.Clear();
                 itemtoaddgroup.Text = OptionsHelper.TranslationList["folderToAdd"];
                 checkDefaultIcon.Text = OptionsHelper.TranslationList["checkDefaultFolderIcon"];
-                txtItemName.Clear();
+                txtItemName.Content = string.Empty;
                 txtItem.ReadOnly = true;
                 txtIcon.ReadOnly = true;
                 _desktopItemType = DesktopItemType.Folder;
@@ -3185,7 +3195,7 @@ namespace Optimizer
                 itemtoaddgroup.Text = OptionsHelper.TranslationList["linkToAdd"];
                 checkDefaultIcon.Visible = true;
                 txtItem.Text = "http://";
-                txtItemName.Clear();
+                txtItemName.Content = string.Empty;
                 txtItem.ReadOnly = false;
                 txtIcon.ReadOnly = true;
                 _desktopItemType = DesktopItemType.Link;
@@ -3202,7 +3212,7 @@ namespace Optimizer
                 itemtoaddgroup.Text = OptionsHelper.TranslationList["fileToAdd"];
                 checkDefaultIcon.Visible = true;
                 txtItem.Clear();
-                txtItemName.Clear();
+                txtItemName.Content = string.Empty;
                 txtItem.ReadOnly = true;
                 txtIcon.ReadOnly = true;
                 _desktopItemType = DesktopItemType.File;
@@ -3221,7 +3231,7 @@ namespace Optimizer
                 itemtoaddgroup.Text = OptionsHelper.TranslationList["commandToAdd"];
                 checkDefaultIcon.Visible = true;
                 checkDefaultIcon.Text = OptionsHelper.TranslationList["checkNoIcon"];
-                txtItemName.Clear();
+                txtItemName.Content = string.Empty;
                 txtItem.ReadOnly = false;
                 txtIcon.ReadOnly = true;
                 _desktopItemType = DesktopItemType.Command;
@@ -3460,7 +3470,7 @@ namespace Optimizer
             txtItem.Clear();
             txtIcon.Clear();
             checkDefaultIcon.Checked = true;
-            txtItemName.Clear();
+            txtItemName.Content = string.Empty;
 
             if (radioLink.Checked)
             {
@@ -4174,7 +4184,10 @@ namespace Optimizer
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Process.Start(txtDownloadFolderTextBox.Content);
+            if (Directory.Exists(txtDownloadFolderTextBox.Content))
+            {
+                Process.Start(txtDownloadFolderTextBox.Content);
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -5213,6 +5226,125 @@ namespace Optimizer
         private void hostsLocateBtn_Click(object sender, EventArgs e)
         {
             HostsHelper.LocateHosts();
+        }
+
+        private void cuiButton1_Click(object sender, EventArgs e)
+        {
+            panel18.Visible = !panel18.Visible;
+        }
+
+        private void cuiButton2_Click(object sender, EventArgs e)
+        {
+            panel18.Visible = false;
+
+            string presetName = ((cuiButton)sender).Content;
+            Color presetColor = ((cuiButton)sender).ForeColor;
+            (Image, string)[] dangerousEntries =
+            {
+                (Resources.FluentIcons.ic_fluent_dock_row_24_filled, "Remove Start Menu Ads"),
+                (Resources.FluentIcons.ic_fluent_data_area_24_filled, "Reduce Windows Telemetry"),
+                (Resources.FluentIcons.ic_fluent_rocket_24_filled, "Optimize Windows Performance"),
+                (Resources.FluentIcons.ext, "Show File Extensions"),
+                (Resources.FluentIcons.ic_fluent_eye_hide_24_filled, "Show Hidden Files"),
+                (Resources.FluentIcons.min_crossed, "Disable \"Shake to Minimize\""),
+                (Resources.FluentIcons.gpu, "Change GPU Scheduling"),
+                (Resources.FluentIcons.ic_fluent_task_list_rtl_24_filled, "Modify System Task Priority"),
+            };
+            using (PresetPreviewForm ppf = new PresetPreviewForm(presetName, presetColor, dangerousEntries))
+            {
+                if (ppf.ShowDialog() == DialogResult.Yes)
+                {
+                    // General Tab
+                    officeTelemetrySw.ToggleChecked = true;
+                    ffTelemetrySw.ToggleChecked = true;
+                    chromeTelemetrySw.ToggleChecked = true;
+                    nvidiaTelemetrySw.ToggleChecked = true;
+                    vsSw.ToggleChecked = true;
+                    telemetryTasksSw.ToggleChecked = true;
+                    performanceSw.ToggleChecked = true;
+
+                    // Windows 10/11 Tab
+                    if (Utilities.CurrentWindowsVersion == WindowsVersion.Windows10 || Utilities.CurrentWindowsVersion == WindowsVersion.Windows11)
+                    {
+                        telemetryServicesSw.ToggleChecked = true;
+                        privacySw.ToggleChecked = true;
+                        adsSw.ToggleChecked = true;
+                        edgeTelemetrySw.ToggleChecked = true;
+                    }
+                }
+            }
+        }
+
+        private void cuiButton3_Click(object sender, EventArgs e)
+        {
+            panel18.Visible = false;
+
+            string presetName = ((cuiButton)sender).Content;
+            Color presetColor = ((cuiButton)sender).ForeColor;
+            (Image, string)[] dangerousEntries =
+            {
+                (Resources.FluentIcons.ic_fluent_data_area_24_filled, "All of the Basic Preset's tweaks"),
+                (Resources.FluentIcons.cross_onedrive, "Remove OneDrive"),
+                (Resources.FluentIcons.cross_copilot, "Remove Copilot AI"),
+                (Resources.FluentIcons.ic_fluent_sleep_24_filled, "Disable Hibernate && Superfetch"),
+                (Resources.FluentIcons.win, "Disable SMBv1 && SMBv2"),
+                (Resources.FluentIcons.translate, "Disable spell-checking"),
+                (Resources.FluentIcons.translate, "Disable Windows Ink"),
+                (Resources.FluentIcons.ic_fluent_data_area_24_filled, "Disable more telemetry"),
+                (Resources.FluentIcons.win, "Disable Media Sharing"),
+                (Resources.FluentIcons.win, "Disable MyPeople"),
+                (Resources.FluentIcons.min_crossed, "Disable Snap-Assist"),
+                (Resources.FluentIcons.win, "Disable stickers, chats & widgets"),
+            };
+            using (PresetPreviewForm ppf = new PresetPreviewForm(presetName, presetColor, dangerousEntries))
+            {
+                if (ppf.ShowDialog() == DialogResult.Yes)
+                {
+                    // General Tab
+                    officeTelemetrySw.ToggleChecked = true;
+                    ffTelemetrySw.ToggleChecked = true;
+                    chromeTelemetrySw.ToggleChecked = true;
+                    nvidiaTelemetrySw.ToggleChecked = true;
+                    vsSw.ToggleChecked = true;
+                    telemetryTasksSw.ToggleChecked = true;
+                    performanceSw.ToggleChecked = true;
+
+                    mediaSharingSw.ToggleChecked = true;
+                    homegroupSw.ToggleChecked = true;
+                    smb1Sw.ToggleChecked = true;
+                    smb2Sw.ToggleChecked = true;
+                    disableOneDriveSw.ToggleChecked = true;
+                    superfetchSw.ToggleChecked = true;
+                    hibernateSw.ToggleChecked = true;
+
+                    // Windows 10/11 Tab
+                    if (Utilities.CurrentWindowsVersion == WindowsVersion.Windows10 || Utilities.CurrentWindowsVersion == WindowsVersion.Windows11)
+                    {
+                        telemetryServicesSw.ToggleChecked = true;
+                        privacySw.ToggleChecked = true;
+                        adsSw.ToggleChecked = true;
+                        edgeTelemetrySw.ToggleChecked = true;
+
+                        cortanaSw.ToggleChecked = true;
+                        newsInterestsSw.ToggleChecked = true;
+                        edgeAiSw.ToggleChecked = true;
+                        castSw.ToggleChecked = true;
+                        peopleSw.ToggleChecked = true;
+                        inkSw.ToggleChecked = true;
+                        spellSw.ToggleChecked = true;
+                        snapAssistSw.ToggleChecked = true;
+                        copilotSw.ToggleChecked = true;
+                        widgetsSw.ToggleChecked = true;
+                        chatSw.ToggleChecked = true;
+                        stickersSw.ToggleChecked = true;
+                    }
+                }
+            }
+        }
+
+        private void MainForm_Click(object sender, EventArgs e)
+        {
+            panel18.Visible = false;
         }
     }
 }

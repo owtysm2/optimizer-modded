@@ -97,7 +97,10 @@ namespace Optimizer
 
             for (int i = 0; i < readyMadeMenusItems.Length; i++)
             {
-                if (!File.Exists(readyMadeMenusItems[i])) File.WriteAllText(readyMadeMenusItems[i], readyMadeMenusFiles[i]);
+                if (!File.Exists(readyMadeMenusItems[i]))
+                {
+                    File.WriteAllText(readyMadeMenusItems[i], readyMadeMenusFiles[i]);
+                }
             }
 
             for (int i = 0; i < scriptItems.Length; i++)

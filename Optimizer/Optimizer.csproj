@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -68,8 +70,7 @@
       <HintPath>..\packages\Costura.Fody.6.0.0\lib\netstandard2.0\Costura.dll</HintPath>
     </Reference>
     <Reference Include="CuoreUI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CuoreUI\CuoreUI\bin\Release\net472\CuoreUI.dll</HintPath>
+      <HintPath>..\packages\CuoreUI.Winforms.2025.12.14\lib\net472\CuoreUI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -98,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorHelper.cs" />
+    <Compile Include="Controls\DangerousItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DangerousItem.Designer.cs">
+      <DependentUpon>DangerousItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MoonSelect.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -136,6 +143,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>hwImages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PresetPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PresetPreviewForm.Designer.cs">
+      <DependentUpon>PresetPreviewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AppInfo.cs" />
     <Compile Include="ByteSize\BinaryByteSize.cs" />
@@ -207,6 +220,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\FluentIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FluentIcons.resx</DependentUpon>
+    </Compile>
     <Compile Include="SilentOps.cs" />
     <Compile Include="Forms\SplashForm.cs">
       <SubType>Form</SubType>
@@ -232,6 +250,9 @@
     <Compile Include="TokenPrivilegeHelper.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="UWPHelper.cs" />
+    <EmbeddedResource Include="Controls\DangerousItem.resx">
+      <DependentUpon>DangerousItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ToggleCard.resx">
       <DependentUpon>ToggleCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +286,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PresetPreviewForm.resx">
+      <DependentUpon>PresetPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +305,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StartupRestoreForm.resx">
       <DependentUpon>StartupRestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FluentIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FluentIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -373,6 +401,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\min-crossed.png" />
+    <None Include="Resources\ic_fluent_task_list_rtl_24_filled.png" />
+    <None Include="Resources\ic_fluent_rocket_24_filled.png" />
+    <None Include="Resources\ic_fluent_eye_hide_24_filled.png" />
+    <None Include="Resources\ic_fluent_dock_row_24_filled.png" />
+    <None Include="Resources\ic_fluent_data_area_24_filled.png" />
+    <None Include="Resources\ext.png" />
     <None Include="Resources\cpu.png" />
     <None Include="Resources\gpu.png" />
     <None Include="Resources\ic_fluent_laptop_24_filled.png" />
