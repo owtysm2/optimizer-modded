@@ -37,12 +37,14 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.scrollToUnlockLabel = new CuoreUI.Controls.cuiLabel();
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
-            this.scrollToUnlockLabel = new CuoreUI.Controls.cuiLabel();
+            this.cuiPanelGradient1 = new CuoreUI.Controls.cuiPanelGradient();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cuiPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.cuiPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -174,6 +176,18 @@
             this.panel1.Size = new System.Drawing.Size(270, 24);
             this.panel1.TabIndex = 81;
             // 
+            // scrollToUnlockLabel
+            // 
+            this.scrollToUnlockLabel.Content = "Scroll\\ down\\ to\\ unlock\\ the\\ \"OK\"\\ button\\.";
+            this.scrollToUnlockLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scrollToUnlockLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.scrollToUnlockLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
+            this.scrollToUnlockLabel.Location = new System.Drawing.Point(0, 0);
+            this.scrollToUnlockLabel.Name = "scrollToUnlockLabel";
+            this.scrollToUnlockLabel.Size = new System.Drawing.Size(270, 17);
+            this.scrollToUnlockLabel.TabIndex = 0;
+            this.scrollToUnlockLabel.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // cuiButton1
             // 
             this.cuiButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -221,8 +235,9 @@
             this.cuiPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiPanel2.Controls.Add(this.cuiPanelGradient1);
             this.cuiPanel2.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.cuiPanel2.Name = "cuiPanel2";
             this.cuiPanel2.OutlineThickness = 1F;
             this.cuiPanel2.PanelColor = System.Drawing.Color.Empty;
@@ -231,17 +246,19 @@
             this.cuiPanel2.Size = new System.Drawing.Size(293, 460);
             this.cuiPanel2.TabIndex = 83;
             // 
-            // scrollToUnlockLabel
+            // cuiPanelGradient1
             // 
-            this.scrollToUnlockLabel.Content = "Scroll\\ down\\ to\\ unlock\\ the\\ \"OK\"\\ button\\.";
-            this.scrollToUnlockLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scrollToUnlockLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.scrollToUnlockLabel.HorizontalAlignment = System.Drawing.StringAlignment.Center;
-            this.scrollToUnlockLabel.Location = new System.Drawing.Point(0, 0);
-            this.scrollToUnlockLabel.Name = "scrollToUnlockLabel";
-            this.scrollToUnlockLabel.Size = new System.Drawing.Size(270, 17);
-            this.scrollToUnlockLabel.TabIndex = 0;
-            this.scrollToUnlockLabel.VerticalAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiPanelGradient1.GradientAngle = 90F;
+            this.cuiPanelGradient1.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanelGradient1.Name = "cuiPanelGradient1";
+            this.cuiPanelGradient1.OutlineThickness = 1F;
+            this.cuiPanelGradient1.PanelColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(46)))));
+            this.cuiPanelGradient1.PanelColor2 = System.Drawing.Color.Transparent;
+            this.cuiPanelGradient1.PanelOutlineColor1 = System.Drawing.Color.Empty;
+            this.cuiPanelGradient1.PanelOutlineColor2 = System.Drawing.Color.Empty;
+            this.cuiPanelGradient1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanelGradient1.Size = new System.Drawing.Size(293, 94);
+            this.cuiPanelGradient1.TabIndex = 0;
             // 
             // PresetPreviewForm
             // 
@@ -265,6 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cuiPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.cuiPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -282,5 +300,6 @@
         private CuoreUI.Controls.cuiButton cuiButton1;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private CuoreUI.Controls.cuiLabel scrollToUnlockLabel;
+        private CuoreUI.Controls.cuiPanelGradient cuiPanelGradient1;
     }
 }

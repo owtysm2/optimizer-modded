@@ -42,48 +42,6 @@ namespace Optimizer
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Audio", 6, 6);
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Peripherals", 7, 7);
             this.bpanel = new System.Windows.Forms.Panel();
-            this.indiciumMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolHWCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolHWGoogle = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolHWDuck = new System.Windows.Forms.ToolStripMenuItem();
-            this.defineCommandDialog = new System.Windows.Forms.OpenFileDialog();
-            this.defineProgramDialog = new System.Windows.Forms.OpenFileDialog();
-            this.defineFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.defineFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DefineProgramIconDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DefineFolderIconDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DefineURLIconDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DefineFileIconDialog = new System.Windows.Forms.OpenFileDialog();
-            this.DefineCommandIconDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ExportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.launcherMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.trayStartup = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayCleaner = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayPinger = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayHosts = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayAD = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayHW = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayRegistry = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.trayOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayRestartExplorer = new System.Windows.Forms.ToolStripMenuItem();
-            this.trayUnlocker = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.trayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.launcherIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtVersion = new System.Windows.Forms.Label();
-            this.restartAndApply = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new CuoreUI.Controls.cuiPictureBox();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
-            this.cuiButton3 = new CuoreUI.Controls.cuiButton();
-            this.cuiButton2 = new CuoreUI.Controls.cuiButton();
-            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
-            this.picRestartNeeded = new System.Windows.Forms.PictureBox();
-            this.picLab = new System.Windows.Forms.PictureBox();
-            this.picUpdate = new System.Windows.Forms.PictureBox();
             this.tabCollection = new Optimizer.MoonTabs();
             this.universalTab = new System.Windows.Forms.TabPage();
             this.enableUtcSw = new Optimizer.ToggleCard();
@@ -341,6 +299,10 @@ namespace Optimizer
             this.indiciumTab = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.specsTree = new Optimizer.MoonTree();
+            this.indiciumMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolHWCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolHWGoogle = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolHWDuck = new System.Windows.Forms.ToolStripMenuItem();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnCopyHW = new CuoreUI.Controls.cuiButton();
             this.btnSaveHW = new CuoreUI.Controls.cuiButton();
@@ -468,15 +430,45 @@ namespace Optimizer
             this.btnViewLog = new CuoreUI.Controls.cuiButton();
             this.btnUpdate = new CuoreUI.Controls.cuiButton();
             this.btnResetConfig = new CuoreUI.Controls.cuiButton();
+            this.defineCommandDialog = new System.Windows.Forms.OpenFileDialog();
+            this.defineProgramDialog = new System.Windows.Forms.OpenFileDialog();
+            this.defineFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.defineFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.DefineProgramIconDialog = new System.Windows.Forms.OpenFileDialog();
+            this.DefineFolderIconDialog = new System.Windows.Forms.OpenFileDialog();
+            this.DefineURLIconDialog = new System.Windows.Forms.OpenFileDialog();
+            this.DefineFileIconDialog = new System.Windows.Forms.OpenFileDialog();
+            this.DefineCommandIconDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ExportDialog = new System.Windows.Forms.SaveFileDialog();
+            this.launcherMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.trayStartup = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayCleaner = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayPinger = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayHosts = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayAD = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayHW = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayRegistry = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.trayOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayRestartExplorer = new System.Windows.Forms.ToolStripMenuItem();
+            this.trayUnlocker = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.trayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.launcherIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtVersion = new System.Windows.Forms.Label();
+            this.restartAndApply = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new CuoreUI.Controls.cuiPictureBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
+            this.cuiButton3 = new CuoreUI.Controls.cuiButton();
+            this.cuiButton2 = new CuoreUI.Controls.cuiButton();
+            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
+            this.picRestartNeeded = new System.Windows.Forms.PictureBox();
+            this.picLab = new System.Windows.Forms.PictureBox();
+            this.picUpdate = new System.Windows.Forms.PictureBox();
             this.bpanel.SuspendLayout();
-            this.indiciumMenu.SuspendLayout();
-            this.launcherMenu.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.cuiPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestartNeeded)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLab)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             this.tabCollection.SuspendLayout();
             this.universalTab.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -511,6 +503,7 @@ namespace Optimizer
             this.panel2.SuspendLayout();
             this.indiciumTab.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.indiciumMenu.SuspendLayout();
             this.panel11.SuspendLayout();
             this.integratorTab.SuspendLayout();
             this.synapse.SuspendLayout();
@@ -544,6 +537,13 @@ namespace Optimizer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).BeginInit();
+            this.launcherMenu.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.cuiPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestartNeeded)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             this.SuspendLayout();
             // 
             // bpanel
@@ -557,520 +557,6 @@ namespace Optimizer
             this.bpanel.Name = "bpanel";
             this.bpanel.Size = new System.Drawing.Size(1299, 801);
             this.bpanel.TabIndex = 2;
-            // 
-            // indiciumMenu
-            // 
-            this.indiciumMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.indiciumMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.indiciumMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.indiciumMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolHWCopy,
-            this.toolHWGoogle,
-            this.toolHWDuck});
-            this.indiciumMenu.Name = "launcherMenu";
-            this.indiciumMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.indiciumMenu.ShowImageMargin = false;
-            this.indiciumMenu.Size = new System.Drawing.Size(223, 76);
-            // 
-            // toolHWCopy
-            // 
-            this.toolHWCopy.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolHWCopy.ForeColor = System.Drawing.Color.White;
-            this.toolHWCopy.Name = "toolHWCopy";
-            this.toolHWCopy.Size = new System.Drawing.Size(222, 24);
-            this.toolHWCopy.Text = "Copy";
-            this.toolHWCopy.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolHWCopy.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolHWGoogle
-            // 
-            this.toolHWGoogle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolHWGoogle.ForeColor = System.Drawing.Color.White;
-            this.toolHWGoogle.Name = "toolHWGoogle";
-            this.toolHWGoogle.Size = new System.Drawing.Size(222, 24);
-            this.toolHWGoogle.Text = "Search with Google...";
-            this.toolHWGoogle.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolHWGoogle.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolHWDuck
-            // 
-            this.toolHWDuck.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolHWDuck.ForeColor = System.Drawing.Color.White;
-            this.toolHWDuck.Name = "toolHWDuck";
-            this.toolHWDuck.Size = new System.Drawing.Size(222, 24);
-            this.toolHWDuck.Text = "Search with DuckDuckGo...";
-            this.toolHWDuck.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolHWDuck.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // defineCommandDialog
-            // 
-            this.defineCommandDialog.Filter = "Executables [*.exe]|*.exe";
-            this.defineCommandDialog.Title = "Optimizer";
-            this.defineCommandDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineCmd_FileOk);
-            // 
-            // defineProgramDialog
-            // 
-            this.defineProgramDialog.Filter = "Executables [*.exe]|*.exe";
-            this.defineProgramDialog.Title = "Optimizer";
-            this.defineProgramDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineProgramDialog_FileOk);
-            // 
-            // defineFolderDialog
-            // 
-            this.defineFolderDialog.Description = "Optimizer";
-            // 
-            // defineFileDialog
-            // 
-            this.defineFileDialog.Filter = "All files [*.*]|*.*";
-            this.defineFileDialog.Title = "Optimizer";
-            this.defineFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFileDialog_FileOk);
-            // 
-            // DefineProgramIconDialog
-            // 
-            this.DefineProgramIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
-            this.DefineProgramIconDialog.Title = "Optimizer";
-            this.DefineProgramIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineProgramIconDialog_FileOk);
-            // 
-            // DefineFolderIconDialog
-            // 
-            this.DefineFolderIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
-            this.DefineFolderIconDialog.Title = "Optimizer";
-            this.DefineFolderIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFolderIconDialog_FileOk);
-            // 
-            // DefineURLIconDialog
-            // 
-            this.DefineURLIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
-            this.DefineURLIconDialog.Title = "Optimizer";
-            this.DefineURLIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineURLIconDialog_FileOk);
-            // 
-            // DefineFileIconDialog
-            // 
-            this.DefineFileIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
-            this.DefineFileIconDialog.Title = "Optimizer";
-            this.DefineFileIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFileIconDialog_FileOk);
-            // 
-            // DefineCommandIconDialog
-            // 
-            this.DefineCommandIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
-            this.DefineCommandIconDialog.Title = "Optimizer";
-            this.DefineCommandIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineCommandIconDialog_FileOk);
-            // 
-            // ExportDialog
-            // 
-            this.ExportDialog.Filter = "Text [*.txt]|*.txt";
-            this.ExportDialog.Title = "Optimizer";
-            // 
-            // launcherMenu
-            // 
-            this.launcherMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.launcherMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.launcherMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.launcherMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trayStartup,
-            this.trayCleaner,
-            this.trayPinger,
-            this.trayHosts,
-            this.trayAD,
-            this.trayHW,
-            this.trayRegistry,
-            this.toolStripSeparator1,
-            this.trayOptions,
-            this.trayRestartExplorer,
-            this.trayUnlocker,
-            this.toolStripSeparator2,
-            this.trayExit});
-            this.launcherMenu.Name = "launcherMenu";
-            this.launcherMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.launcherMenu.Size = new System.Drawing.Size(221, 302);
-            // 
-            // trayStartup
-            // 
-            this.trayStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayStartup.ForeColor = System.Drawing.Color.White;
-            this.trayStartup.Image = ((System.Drawing.Image)(resources.GetObject("trayStartup.Image")));
-            this.trayStartup.Name = "trayStartup";
-            this.trayStartup.Size = new System.Drawing.Size(220, 26);
-            this.trayStartup.Text = "Startup Manager";
-            this.trayStartup.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayStartup.Click += new System.EventHandler(this.startupItem_Click);
-            // 
-            // trayCleaner
-            // 
-            this.trayCleaner.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayCleaner.ForeColor = System.Drawing.Color.White;
-            this.trayCleaner.Image = ((System.Drawing.Image)(resources.GetObject("trayCleaner.Image")));
-            this.trayCleaner.Name = "trayCleaner";
-            this.trayCleaner.Size = new System.Drawing.Size(220, 26);
-            this.trayCleaner.Text = "PC Cleaner";
-            this.trayCleaner.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayCleaner.Click += new System.EventHandler(this.cleanerItem_Click);
-            // 
-            // trayPinger
-            // 
-            this.trayPinger.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayPinger.ForeColor = System.Drawing.Color.White;
-            this.trayPinger.Image = ((System.Drawing.Image)(resources.GetObject("trayPinger.Image")));
-            this.trayPinger.Name = "trayPinger";
-            this.trayPinger.Size = new System.Drawing.Size(220, 26);
-            this.trayPinger.Text = "Pinger Tool";
-            this.trayPinger.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayPinger.Click += new System.EventHandler(this.pingerItem_Click);
-            // 
-            // trayHosts
-            // 
-            this.trayHosts.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayHosts.ForeColor = System.Drawing.Color.White;
-            this.trayHosts.Image = ((System.Drawing.Image)(resources.GetObject("trayHosts.Image")));
-            this.trayHosts.Name = "trayHosts";
-            this.trayHosts.Size = new System.Drawing.Size(220, 26);
-            this.trayHosts.Text = "HOSTS Editor";
-            this.trayHosts.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayHosts.Click += new System.EventHandler(this.hostsItem_Click);
-            // 
-            // trayAD
-            // 
-            this.trayAD.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayAD.ForeColor = System.Drawing.Color.White;
-            this.trayAD.Image = ((System.Drawing.Image)(resources.GetObject("trayAD.Image")));
-            this.trayAD.Name = "trayAD";
-            this.trayAD.Size = new System.Drawing.Size(220, 26);
-            this.trayAD.Text = "Apps Downloader";
-            this.trayAD.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayAD.Click += new System.EventHandler(this.appsItem_Click);
-            // 
-            // trayHW
-            // 
-            this.trayHW.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayHW.ForeColor = System.Drawing.Color.White;
-            this.trayHW.Image = ((System.Drawing.Image)(resources.GetObject("trayHW.Image")));
-            this.trayHW.Name = "trayHW";
-            this.trayHW.Size = new System.Drawing.Size(220, 26);
-            this.trayHW.Text = "Hardware Information";
-            this.trayHW.Click += new System.EventHandler(this.trayHW_Click);
-            // 
-            // trayRegistry
-            // 
-            this.trayRegistry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayRegistry.ForeColor = System.Drawing.Color.White;
-            this.trayRegistry.Image = ((System.Drawing.Image)(resources.GetObject("trayRegistry.Image")));
-            this.trayRegistry.Name = "trayRegistry";
-            this.trayRegistry.Size = new System.Drawing.Size(220, 26);
-            this.trayRegistry.Text = "Registry Repair";
-            this.trayRegistry.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayRegistry.Click += new System.EventHandler(this.trayRegistry_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
-            this.toolStripSeparator1.Tag = "";
-            // 
-            // trayOptions
-            // 
-            this.trayOptions.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayOptions.ForeColor = System.Drawing.Color.White;
-            this.trayOptions.Image = ((System.Drawing.Image)(resources.GetObject("trayOptions.Image")));
-            this.trayOptions.Name = "trayOptions";
-            this.trayOptions.Size = new System.Drawing.Size(220, 26);
-            this.trayOptions.Text = "Options";
-            this.trayOptions.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayOptions.Click += new System.EventHandler(this.trayOptions_Click);
-            // 
-            // trayRestartExplorer
-            // 
-            this.trayRestartExplorer.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayRestartExplorer.ForeColor = System.Drawing.Color.White;
-            this.trayRestartExplorer.Image = ((System.Drawing.Image)(resources.GetObject("trayRestartExplorer.Image")));
-            this.trayRestartExplorer.Name = "trayRestartExplorer";
-            this.trayRestartExplorer.Size = new System.Drawing.Size(220, 26);
-            this.trayRestartExplorer.Text = "Restart Explorer";
-            this.trayRestartExplorer.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.trayRestartExplorer.Click += new System.EventHandler(this.restartExpolorerItem_Click);
-            // 
-            // trayUnlocker
-            // 
-            this.trayUnlocker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.trayUnlocker.ForeColor = System.Drawing.Color.White;
-            this.trayUnlocker.Image = ((System.Drawing.Image)(resources.GetObject("trayUnlocker.Image")));
-            this.trayUnlocker.Name = "trayUnlocker";
-            this.trayUnlocker.Size = new System.Drawing.Size(220, 26);
-            this.trayUnlocker.Text = "Find Handles";
-            this.trayUnlocker.Click += new System.EventHandler(this.trayUnlocker_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
-            // 
-            // trayExit
-            // 
-            this.trayExit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trayExit.ForeColor = System.Drawing.Color.White;
-            this.trayExit.Image = ((System.Drawing.Image)(resources.GetObject("trayExit.Image")));
-            this.trayExit.Name = "trayExit";
-            this.trayExit.Size = new System.Drawing.Size(220, 26);
-            this.trayExit.Text = "Exit";
-            this.trayExit.Click += new System.EventHandler(this.exitItem_Click);
-            // 
-            // launcherIcon
-            // 
-            this.launcherIcon.ContextMenuStrip = this.launcherMenu;
-            this.launcherIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("launcherIcon.Icon")));
-            this.launcherIcon.Text = "Optimizer";
-            this.launcherIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.launcherIcon_MouseDoubleClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(66, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Optimizer";
-            // 
-            // txtVersion
-            // 
-            this.txtVersion.AutoSize = true;
-            this.txtVersion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVersion.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtVersion.Location = new System.Drawing.Point(67, 37);
-            this.txtVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(33, 15);
-            this.txtVersion.TabIndex = 1;
-            this.txtVersion.Text = "{VN}";
-            // 
-            // restartAndApply
-            // 
-            this.restartAndApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.restartAndApply.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.restartAndApply.ForeColor = System.Drawing.Color.Gray;
-            this.restartAndApply.Location = new System.Drawing.Point(1000, 23);
-            this.restartAndApply.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.restartAndApply.Name = "restartAndApply";
-            this.restartAndApply.Size = new System.Drawing.Size(254, 21);
-            this.restartAndApply.TabIndex = 74;
-            this.restartAndApply.Tag = "themeable";
-            this.restartAndApply.Text = "Restart needed";
-            this.restartAndApply.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.restartAndApply.Visible = false;
-            this.restartAndApply.Click += new System.EventHandler(this.restartAndApply_Click);
-            this.restartAndApply.MouseEnter += new System.EventHandler(this.restartAndApply_MouseEnter);
-            this.restartAndApply.MouseLeave += new System.EventHandler(this.restartAndApply_MouseLeave);
-            this.restartAndApply.MouseHover += new System.EventHandler(this.restartAndApply_MouseHover);
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.pictureBox1);
-            this.panel17.Location = new System.Drawing.Point(19, 17);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(38, 38);
-            this.panel17.TabIndex = 76;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Content = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Content")));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.ImageTint = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.OutlineThickness = 1F;
-            this.pictureBox1.PanelOutlineColor = System.Drawing.Color.Empty;
-            this.pictureBox1.Rotation = 0;
-            this.pictureBox1.Rounding = new System.Windows.Forms.Padding(8);
-            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
-            this.pictureBox1.TabIndex = 75;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.cuiPanel2);
-            this.panel18.Location = new System.Drawing.Point(123, 43);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(152, 22);
-            this.panel18.TabIndex = 78;
-            this.panel18.Visible = false;
-            // 
-            // cuiPanel2
-            // 
-            this.cuiPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cuiPanel2.Controls.Add(this.cuiButton3);
-            this.cuiPanel2.Controls.Add(this.cuiButton2);
-            this.cuiPanel2.Location = new System.Drawing.Point(2, 1);
-            this.cuiPanel2.Name = "cuiPanel2";
-            this.cuiPanel2.OutlineThickness = 1F;
-            this.cuiPanel2.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel2.Size = new System.Drawing.Size(148, 18);
-            this.cuiPanel2.TabIndex = 0;
-            // 
-            // cuiButton3
-            // 
-            this.cuiButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.cuiButton3.CheckButton = false;
-            this.cuiButton3.Checked = false;
-            this.cuiButton3.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton3.CheckedForeColor = System.Drawing.Color.White;
-            this.cuiButton3.CheckedImageTint = System.Drawing.Color.White;
-            this.cuiButton3.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton3.Content = "Advanced";
-            this.cuiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cuiButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.cuiButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cuiButton3.HoverBackground = System.Drawing.Color.Empty;
-            this.cuiButton3.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cuiButton3.HoverImageTint = System.Drawing.Color.Empty;
-            this.cuiButton3.HoverOutline = System.Drawing.Color.Empty;
-            this.cuiButton3.Image = null;
-            this.cuiButton3.ImageAutoCenter = true;
-            this.cuiButton3.ImageExpand = new System.Drawing.Point(-1, -1);
-            this.cuiButton3.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.cuiButton3.Location = new System.Drawing.Point(20, 50);
-            this.cuiButton3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
-            this.cuiButton3.Name = "cuiButton3";
-            this.cuiButton3.NormalBackground = System.Drawing.Color.Empty;
-            this.cuiButton3.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cuiButton3.NormalImageTint = System.Drawing.Color.Empty;
-            this.cuiButton3.NormalOutline = System.Drawing.Color.Empty;
-            this.cuiButton3.OutlineThickness = 1F;
-            this.cuiButton3.PressedBackground = System.Drawing.Color.Empty;
-            this.cuiButton3.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cuiButton3.PressedImageTint = System.Drawing.Color.Empty;
-            this.cuiButton3.PressedOutline = System.Drawing.Color.Empty;
-            this.cuiButton3.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiButton3.Size = new System.Drawing.Size(108, 20);
-            this.cuiButton3.TabIndex = 79;
-            this.cuiButton3.Tag = "dontTheme";
-            this.cuiButton3.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton3.TextOffset = new System.Drawing.Point(1, 0);
-            this.cuiButton3.Click += new System.EventHandler(this.cuiButton3_Click);
-            // 
-            // cuiButton2
-            // 
-            this.cuiButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.cuiButton2.CheckButton = false;
-            this.cuiButton2.Checked = false;
-            this.cuiButton2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton2.CheckedForeColor = System.Drawing.Color.White;
-            this.cuiButton2.CheckedImageTint = System.Drawing.Color.White;
-            this.cuiButton2.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton2.Content = "Basic";
-            this.cuiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.cuiButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
-            this.cuiButton2.HoverBackground = System.Drawing.Color.Empty;
-            this.cuiButton2.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.cuiButton2.HoverImageTint = System.Drawing.Color.Empty;
-            this.cuiButton2.HoverOutline = System.Drawing.Color.Empty;
-            this.cuiButton2.Image = null;
-            this.cuiButton2.ImageAutoCenter = true;
-            this.cuiButton2.ImageExpand = new System.Drawing.Point(-1, -1);
-            this.cuiButton2.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.cuiButton2.Location = new System.Drawing.Point(20, 12);
-            this.cuiButton2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
-            this.cuiButton2.Name = "cuiButton2";
-            this.cuiButton2.NormalBackground = System.Drawing.Color.Empty;
-            this.cuiButton2.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
-            this.cuiButton2.NormalImageTint = System.Drawing.Color.Empty;
-            this.cuiButton2.NormalOutline = System.Drawing.Color.Empty;
-            this.cuiButton2.OutlineThickness = 1F;
-            this.cuiButton2.PressedBackground = System.Drawing.Color.Empty;
-            this.cuiButton2.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
-            this.cuiButton2.PressedImageTint = System.Drawing.Color.Empty;
-            this.cuiButton2.PressedOutline = System.Drawing.Color.Empty;
-            this.cuiButton2.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiButton2.Size = new System.Drawing.Size(108, 20);
-            this.cuiButton2.TabIndex = 79;
-            this.cuiButton2.Tag = "dontTheme";
-            this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton2.TextOffset = new System.Drawing.Point(1, 0);
-            this.cuiButton2.Click += new System.EventHandler(this.cuiButton2_Click);
-            // 
-            // cuiButton1
-            // 
-            this.cuiButton1.CheckButton = false;
-            this.cuiButton1.Checked = false;
-            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
-            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton1.Content = "Presets";
-            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.cuiButton1.ForeColor = System.Drawing.Color.Gray;
-            this.cuiButton1.HoverBackground = System.Drawing.Color.Empty;
-            this.cuiButton1.HoverForeColor = System.Drawing.Color.Silver;
-            this.cuiButton1.HoverImageTint = System.Drawing.Color.Silver;
-            this.cuiButton1.HoverOutline = System.Drawing.Color.Empty;
-            this.cuiButton1.Image = ((System.Drawing.Image)(resources.GetObject("cuiButton1.Image")));
-            this.cuiButton1.ImageAutoCenter = true;
-            this.cuiButton1.ImageExpand = new System.Drawing.Point(-1, -1);
-            this.cuiButton1.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.cuiButton1.Location = new System.Drawing.Point(150, 17);
-            this.cuiButton1.Name = "cuiButton1";
-            this.cuiButton1.NormalBackground = System.Drawing.Color.Empty;
-            this.cuiButton1.NormalForeColor = System.Drawing.Color.Gray;
-            this.cuiButton1.NormalImageTint = System.Drawing.Color.Gray;
-            this.cuiButton1.NormalOutline = System.Drawing.Color.Empty;
-            this.cuiButton1.OutlineThickness = 1F;
-            this.cuiButton1.PressedBackground = System.Drawing.Color.Empty;
-            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.cuiButton1.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
-            this.cuiButton1.PressedOutline = System.Drawing.Color.Empty;
-            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiButton1.Size = new System.Drawing.Size(72, 20);
-            this.cuiButton1.TabIndex = 77;
-            this.cuiButton1.Tag = "dontTheme";
-            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton1.TextOffset = new System.Drawing.Point(1, 0);
-            this.cuiButton1.Click += new System.EventHandler(this.cuiButton1_Click);
-            // 
-            // picRestartNeeded
-            // 
-            this.picRestartNeeded.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRestartNeeded.Image = ((System.Drawing.Image)(resources.GetObject("picRestartNeeded.Image")));
-            this.picRestartNeeded.Location = new System.Drawing.Point(1254, 22);
-            this.picRestartNeeded.Name = "picRestartNeeded";
-            this.picRestartNeeded.Size = new System.Drawing.Size(24, 24);
-            this.picRestartNeeded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRestartNeeded.TabIndex = 73;
-            this.picRestartNeeded.TabStop = false;
-            this.picRestartNeeded.Visible = false;
-            this.picRestartNeeded.Click += new System.EventHandler(this.picRestartNeeded_Click);
-            // 
-            // picLab
-            // 
-            this.picLab.Image = ((System.Drawing.Image)(resources.GetObject("picLab.Image")));
-            this.picLab.Location = new System.Drawing.Point(46, 41);
-            this.picLab.Name = "picLab";
-            this.picLab.Size = new System.Drawing.Size(18, 18);
-            this.picLab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLab.TabIndex = 72;
-            this.picLab.TabStop = false;
-            this.picLab.Visible = false;
-            // 
-            // picUpdate
-            // 
-            this.picUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picUpdate.Image = ((System.Drawing.Image)(resources.GetObject("picUpdate.Image")));
-            this.picUpdate.Location = new System.Drawing.Point(46, 41);
-            this.picUpdate.Name = "picUpdate";
-            this.picUpdate.Size = new System.Drawing.Size(18, 18);
-            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picUpdate.TabIndex = 71;
-            this.picUpdate.TabStop = false;
-            this.picUpdate.Visible = false;
-            this.picUpdate.Click += new System.EventHandler(this.picUpdate_Click);
             // 
             // tabCollection
             // 
@@ -3299,7 +2785,7 @@ namespace Optimizer
             this.cAutoInstall.Content = "Install after downloading";
             this.cAutoInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cAutoInstall.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAutoInstall.Location = new System.Drawing.Point(5472, 1292);
+            this.cAutoInstall.Location = new System.Drawing.Point(6086, 1458);
             this.cAutoInstall.MinimumSize = new System.Drawing.Size(16, 16);
             this.cAutoInstall.Name = "cAutoInstall";
             this.cAutoInstall.OutlineStyle = true;
@@ -3318,7 +2804,7 @@ namespace Optimizer
             this.progressDownloader.Background = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.progressDownloader.Flipped = false;
             this.progressDownloader.Foreground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.progressDownloader.Location = new System.Drawing.Point(8, 1328);
+            this.progressDownloader.Location = new System.Drawing.Point(8, 1494);
             this.progressDownloader.MaxValue = 100;
             this.progressDownloader.Name = "progressDownloader";
             this.progressDownloader.Rounding = 5;
@@ -3336,7 +2822,7 @@ namespace Optimizer
             this.btnDownloadApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownloadApps.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownloadApps.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadApps.Location = new System.Drawing.Point(5678, 1321);
+            this.btnDownloadApps.Location = new System.Drawing.Point(6292, 1487);
             this.btnDownloadApps.Margin = new System.Windows.Forms.Padding(2);
             this.btnDownloadApps.Name = "btnDownloadApps";
             this.btnDownloadApps.Size = new System.Drawing.Size(203, 35);
@@ -3434,7 +2920,7 @@ namespace Optimizer
             this.txtDownloadStatus.AutoSize = true;
             this.txtDownloadStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownloadStatus.ForeColor = System.Drawing.Color.LightGray;
-            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 1303);
+            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 1469);
             this.txtDownloadStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtDownloadStatus.Name = "txtDownloadStatus";
             this.txtDownloadStatus.Size = new System.Drawing.Size(32, 19);
@@ -3450,7 +2936,7 @@ namespace Optimizer
             this.linkWarnings.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkWarnings.ForeColor = System.Drawing.Color.Gold;
             this.linkWarnings.LinkColor = System.Drawing.Color.Gold;
-            this.linkWarnings.Location = new System.Drawing.Point(4, 1343);
+            this.linkWarnings.Location = new System.Drawing.Point(4, 1509);
             this.linkWarnings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkWarnings.Name = "linkWarnings";
             this.linkWarnings.Size = new System.Drawing.Size(92, 19);
@@ -3485,7 +2971,7 @@ namespace Optimizer
             this.goToDownloadsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goToDownloadsB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToDownloadsB.ForeColor = System.Drawing.Color.White;
-            this.goToDownloadsB.Location = new System.Drawing.Point(5472, 1321);
+            this.goToDownloadsB.Location = new System.Drawing.Point(6086, 1487);
             this.goToDownloadsB.Margin = new System.Windows.Forms.Padding(2);
             this.goToDownloadsB.Name = "goToDownloadsB";
             this.goToDownloadsB.Size = new System.Drawing.Size(203, 35);
@@ -5752,6 +5238,50 @@ namespace Optimizer
             this.specsTree.TabIndex = 0;
             this.specsTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.specsTree_NodeMouseClick);
             // 
+            // indiciumMenu
+            // 
+            this.indiciumMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.indiciumMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indiciumMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.indiciumMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolHWCopy,
+            this.toolHWGoogle,
+            this.toolHWDuck});
+            this.indiciumMenu.Name = "launcherMenu";
+            this.indiciumMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.indiciumMenu.ShowImageMargin = false;
+            this.indiciumMenu.Size = new System.Drawing.Size(223, 76);
+            // 
+            // toolHWCopy
+            // 
+            this.toolHWCopy.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolHWCopy.ForeColor = System.Drawing.Color.White;
+            this.toolHWCopy.Name = "toolHWCopy";
+            this.toolHWCopy.Size = new System.Drawing.Size(222, 24);
+            this.toolHWCopy.Text = "Copy";
+            this.toolHWCopy.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolHWCopy.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolHWGoogle
+            // 
+            this.toolHWGoogle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolHWGoogle.ForeColor = System.Drawing.Color.White;
+            this.toolHWGoogle.Name = "toolHWGoogle";
+            this.toolHWGoogle.Size = new System.Drawing.Size(222, 24);
+            this.toolHWGoogle.Text = "Search with Google...";
+            this.toolHWGoogle.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolHWGoogle.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolHWDuck
+            // 
+            this.toolHWDuck.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolHWDuck.ForeColor = System.Drawing.Color.White;
+            this.toolHWDuck.Name = "toolHWDuck";
+            this.toolHWDuck.Size = new System.Drawing.Size(222, 24);
+            this.toolHWDuck.Text = "Search with DuckDuckGo...";
+            this.toolHWDuck.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolHWDuck.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
@@ -7386,14 +6916,14 @@ namespace Optimizer
             this.picFlag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.picFlag.Content = ((System.Drawing.Image)(resources.GetObject("picFlag.Content")));
             this.picFlag.ImageTint = System.Drawing.Color.White;
-            this.picFlag.Location = new System.Drawing.Point(89, 42);
+            this.picFlag.Location = new System.Drawing.Point(30, 17);
             this.picFlag.Margin = new System.Windows.Forms.Padding(12);
             this.picFlag.Name = "picFlag";
             this.picFlag.OutlineThickness = 1F;
             this.picFlag.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.picFlag.Rotation = 0;
             this.picFlag.Rounding = new System.Windows.Forms.Padding(4);
-            this.picFlag.Size = new System.Drawing.Size(92, 51);
+            this.picFlag.Size = new System.Drawing.Size(32, 19);
             this.picFlag.TabIndex = 96;
             // 
             // boxLang
@@ -7407,7 +6937,7 @@ namespace Optimizer
         "Item 1",
         "Item 2",
         "Item 3"};
-            this.boxLang.Location = new System.Drawing.Point(48, 2);
+            this.boxLang.Location = new System.Drawing.Point(14, 3);
             this.boxLang.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
             this.boxLang.MaxDropDownHeight = 320;
             this.boxLang.Name = "boxLang";
@@ -7417,7 +6947,7 @@ namespace Optimizer
             this.boxLang.Rounding = 8;
             this.boxLang.SelectedIndex = -1;
             this.boxLang.SelectedItem = "";
-            this.boxLang.Size = new System.Drawing.Size(768, 122);
+            this.boxLang.Size = new System.Drawing.Size(261, 45);
             this.boxLang.SortAlphabetically = true;
             this.boxLang.TabIndex = 97;
             this.boxLang.SelectedIndexChanged += new System.EventHandler(this.boxLang_SelectedIndexChanged);
@@ -7562,11 +7092,12 @@ namespace Optimizer
             // colorPicker1
             // 
             this.colorPicker1.Content = System.Drawing.Color.DodgerBlue;
-            this.colorPicker1.Location = new System.Drawing.Point(90, 436);
+            this.colorPicker1.Location = new System.Drawing.Point(29, 160);
             this.colorPicker1.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
-            this.colorPicker1.MinimumSize = new System.Drawing.Size(108, 104);
+            this.colorPicker1.MaximumSize = new System.Drawing.Size(130, 130);
+            this.colorPicker1.MinimumSize = new System.Drawing.Size(130, 130);
             this.colorPicker1.Name = "colorPicker1";
-            this.colorPicker1.Size = new System.Drawing.Size(408, 370);
+            this.colorPicker1.Size = new System.Drawing.Size(130, 130);
             this.colorPicker1.TabIndex = 97;
             this.colorPicker1.WheelThickness = 16;
             this.colorPicker1.ContentChanged += new System.EventHandler(this.ContentChanged);
@@ -7969,6 +7500,476 @@ namespace Optimizer
             this.btnResetConfig.TextOffset = new System.Drawing.Point(1, 0);
             this.btnResetConfig.Click += new System.EventHandler(this.btnResetConfig_Click);
             // 
+            // defineCommandDialog
+            // 
+            this.defineCommandDialog.Filter = "Executables [*.exe]|*.exe";
+            this.defineCommandDialog.Title = "Optimizer";
+            this.defineCommandDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineCmd_FileOk);
+            // 
+            // defineProgramDialog
+            // 
+            this.defineProgramDialog.Filter = "Executables [*.exe]|*.exe";
+            this.defineProgramDialog.Title = "Optimizer";
+            this.defineProgramDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineProgramDialog_FileOk);
+            // 
+            // defineFolderDialog
+            // 
+            this.defineFolderDialog.Description = "Optimizer";
+            // 
+            // defineFileDialog
+            // 
+            this.defineFileDialog.Filter = "All files [*.*]|*.*";
+            this.defineFileDialog.Title = "Optimizer";
+            this.defineFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFileDialog_FileOk);
+            // 
+            // DefineProgramIconDialog
+            // 
+            this.DefineProgramIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
+            this.DefineProgramIconDialog.Title = "Optimizer";
+            this.DefineProgramIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineProgramIconDialog_FileOk);
+            // 
+            // DefineFolderIconDialog
+            // 
+            this.DefineFolderIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
+            this.DefineFolderIconDialog.Title = "Optimizer";
+            this.DefineFolderIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFolderIconDialog_FileOk);
+            // 
+            // DefineURLIconDialog
+            // 
+            this.DefineURLIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
+            this.DefineURLIconDialog.Title = "Optimizer";
+            this.DefineURLIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineURLIconDialog_FileOk);
+            // 
+            // DefineFileIconDialog
+            // 
+            this.DefineFileIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
+            this.DefineFileIconDialog.Title = "Optimizer";
+            this.DefineFileIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineFileIconDialog_FileOk);
+            // 
+            // DefineCommandIconDialog
+            // 
+            this.DefineCommandIconDialog.Filter = "Icon [*.ico]|*.ico|Executable [*.exe]|*.exe";
+            this.DefineCommandIconDialog.Title = "Optimizer";
+            this.DefineCommandIconDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.DefineCommandIconDialog_FileOk);
+            // 
+            // ExportDialog
+            // 
+            this.ExportDialog.Filter = "Text [*.txt]|*.txt";
+            this.ExportDialog.Title = "Optimizer";
+            // 
+            // launcherMenu
+            // 
+            this.launcherMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.launcherMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.launcherMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.launcherMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trayStartup,
+            this.trayCleaner,
+            this.trayPinger,
+            this.trayHosts,
+            this.trayAD,
+            this.trayHW,
+            this.trayRegistry,
+            this.toolStripSeparator1,
+            this.trayOptions,
+            this.trayRestartExplorer,
+            this.trayUnlocker,
+            this.toolStripSeparator2,
+            this.trayExit});
+            this.launcherMenu.Name = "launcherMenu";
+            this.launcherMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.launcherMenu.Size = new System.Drawing.Size(221, 302);
+            // 
+            // trayStartup
+            // 
+            this.trayStartup.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayStartup.ForeColor = System.Drawing.Color.White;
+            this.trayStartup.Image = ((System.Drawing.Image)(resources.GetObject("trayStartup.Image")));
+            this.trayStartup.Name = "trayStartup";
+            this.trayStartup.Size = new System.Drawing.Size(220, 26);
+            this.trayStartup.Text = "Startup Manager";
+            this.trayStartup.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayStartup.Click += new System.EventHandler(this.startupItem_Click);
+            // 
+            // trayCleaner
+            // 
+            this.trayCleaner.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayCleaner.ForeColor = System.Drawing.Color.White;
+            this.trayCleaner.Image = ((System.Drawing.Image)(resources.GetObject("trayCleaner.Image")));
+            this.trayCleaner.Name = "trayCleaner";
+            this.trayCleaner.Size = new System.Drawing.Size(220, 26);
+            this.trayCleaner.Text = "PC Cleaner";
+            this.trayCleaner.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayCleaner.Click += new System.EventHandler(this.cleanerItem_Click);
+            // 
+            // trayPinger
+            // 
+            this.trayPinger.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayPinger.ForeColor = System.Drawing.Color.White;
+            this.trayPinger.Image = ((System.Drawing.Image)(resources.GetObject("trayPinger.Image")));
+            this.trayPinger.Name = "trayPinger";
+            this.trayPinger.Size = new System.Drawing.Size(220, 26);
+            this.trayPinger.Text = "Pinger Tool";
+            this.trayPinger.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayPinger.Click += new System.EventHandler(this.pingerItem_Click);
+            // 
+            // trayHosts
+            // 
+            this.trayHosts.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayHosts.ForeColor = System.Drawing.Color.White;
+            this.trayHosts.Image = ((System.Drawing.Image)(resources.GetObject("trayHosts.Image")));
+            this.trayHosts.Name = "trayHosts";
+            this.trayHosts.Size = new System.Drawing.Size(220, 26);
+            this.trayHosts.Text = "HOSTS Editor";
+            this.trayHosts.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayHosts.Click += new System.EventHandler(this.hostsItem_Click);
+            // 
+            // trayAD
+            // 
+            this.trayAD.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayAD.ForeColor = System.Drawing.Color.White;
+            this.trayAD.Image = ((System.Drawing.Image)(resources.GetObject("trayAD.Image")));
+            this.trayAD.Name = "trayAD";
+            this.trayAD.Size = new System.Drawing.Size(220, 26);
+            this.trayAD.Text = "Apps Downloader";
+            this.trayAD.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayAD.Click += new System.EventHandler(this.appsItem_Click);
+            // 
+            // trayHW
+            // 
+            this.trayHW.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayHW.ForeColor = System.Drawing.Color.White;
+            this.trayHW.Image = ((System.Drawing.Image)(resources.GetObject("trayHW.Image")));
+            this.trayHW.Name = "trayHW";
+            this.trayHW.Size = new System.Drawing.Size(220, 26);
+            this.trayHW.Text = "Hardware Information";
+            this.trayHW.Click += new System.EventHandler(this.trayHW_Click);
+            // 
+            // trayRegistry
+            // 
+            this.trayRegistry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayRegistry.ForeColor = System.Drawing.Color.White;
+            this.trayRegistry.Image = ((System.Drawing.Image)(resources.GetObject("trayRegistry.Image")));
+            this.trayRegistry.Name = "trayRegistry";
+            this.trayRegistry.Size = new System.Drawing.Size(220, 26);
+            this.trayRegistry.Text = "Registry Repair";
+            this.trayRegistry.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayRegistry.Click += new System.EventHandler(this.trayRegistry_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.White;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator1.Tag = "";
+            // 
+            // trayOptions
+            // 
+            this.trayOptions.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayOptions.ForeColor = System.Drawing.Color.White;
+            this.trayOptions.Image = ((System.Drawing.Image)(resources.GetObject("trayOptions.Image")));
+            this.trayOptions.Name = "trayOptions";
+            this.trayOptions.Size = new System.Drawing.Size(220, 26);
+            this.trayOptions.Text = "Options";
+            this.trayOptions.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayOptions.Click += new System.EventHandler(this.trayOptions_Click);
+            // 
+            // trayRestartExplorer
+            // 
+            this.trayRestartExplorer.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayRestartExplorer.ForeColor = System.Drawing.Color.White;
+            this.trayRestartExplorer.Image = ((System.Drawing.Image)(resources.GetObject("trayRestartExplorer.Image")));
+            this.trayRestartExplorer.Name = "trayRestartExplorer";
+            this.trayRestartExplorer.Size = new System.Drawing.Size(220, 26);
+            this.trayRestartExplorer.Text = "Restart Explorer";
+            this.trayRestartExplorer.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.trayRestartExplorer.Click += new System.EventHandler(this.restartExpolorerItem_Click);
+            // 
+            // trayUnlocker
+            // 
+            this.trayUnlocker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.trayUnlocker.ForeColor = System.Drawing.Color.White;
+            this.trayUnlocker.Image = ((System.Drawing.Image)(resources.GetObject("trayUnlocker.Image")));
+            this.trayUnlocker.Name = "trayUnlocker";
+            this.trayUnlocker.Size = new System.Drawing.Size(220, 26);
+            this.trayUnlocker.Text = "Find Handles";
+            this.trayUnlocker.Click += new System.EventHandler(this.trayUnlocker_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+            // 
+            // trayExit
+            // 
+            this.trayExit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trayExit.ForeColor = System.Drawing.Color.White;
+            this.trayExit.Image = ((System.Drawing.Image)(resources.GetObject("trayExit.Image")));
+            this.trayExit.Name = "trayExit";
+            this.trayExit.Size = new System.Drawing.Size(220, 26);
+            this.trayExit.Text = "Exit";
+            this.trayExit.Click += new System.EventHandler(this.exitItem_Click);
+            // 
+            // launcherIcon
+            // 
+            this.launcherIcon.ContextMenuStrip = this.launcherMenu;
+            this.launcherIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("launcherIcon.Icon")));
+            this.launcherIcon.Text = "Optimizer";
+            this.launcherIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.launcherIcon_MouseDoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(66, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Optimizer";
+            // 
+            // txtVersion
+            // 
+            this.txtVersion.AutoSize = true;
+            this.txtVersion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVersion.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtVersion.Location = new System.Drawing.Point(67, 37);
+            this.txtVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(33, 15);
+            this.txtVersion.TabIndex = 1;
+            this.txtVersion.Text = "{VN}";
+            // 
+            // restartAndApply
+            // 
+            this.restartAndApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restartAndApply.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.restartAndApply.ForeColor = System.Drawing.Color.Gray;
+            this.restartAndApply.Location = new System.Drawing.Point(1000, 23);
+            this.restartAndApply.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.restartAndApply.Name = "restartAndApply";
+            this.restartAndApply.Size = new System.Drawing.Size(254, 21);
+            this.restartAndApply.TabIndex = 74;
+            this.restartAndApply.Tag = "themeable";
+            this.restartAndApply.Text = "Restart needed";
+            this.restartAndApply.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.restartAndApply.Visible = false;
+            this.restartAndApply.Click += new System.EventHandler(this.restartAndApply_Click);
+            this.restartAndApply.MouseEnter += new System.EventHandler(this.restartAndApply_MouseEnter);
+            this.restartAndApply.MouseLeave += new System.EventHandler(this.restartAndApply_MouseLeave);
+            this.restartAndApply.MouseHover += new System.EventHandler(this.restartAndApply_MouseHover);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.pictureBox1);
+            this.panel17.Location = new System.Drawing.Point(19, 17);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(38, 38);
+            this.panel17.TabIndex = 76;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Content = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Content")));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.ImageTint = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.OutlineThickness = 1F;
+            this.pictureBox1.PanelOutlineColor = System.Drawing.Color.Empty;
+            this.pictureBox1.Rotation = 0;
+            this.pictureBox1.Rounding = new System.Windows.Forms.Padding(8);
+            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.TabIndex = 75;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.cuiPanel2);
+            this.panel18.Location = new System.Drawing.Point(123, 43);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(152, 22);
+            this.panel18.TabIndex = 78;
+            this.panel18.Visible = false;
+            // 
+            // cuiPanel2
+            // 
+            this.cuiPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiPanel2.Controls.Add(this.cuiButton3);
+            this.cuiPanel2.Controls.Add(this.cuiButton2);
+            this.cuiPanel2.Location = new System.Drawing.Point(2, 1);
+            this.cuiPanel2.Name = "cuiPanel2";
+            this.cuiPanel2.OutlineThickness = 1F;
+            this.cuiPanel2.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanel2.Size = new System.Drawing.Size(148, 18);
+            this.cuiPanel2.TabIndex = 0;
+            // 
+            // cuiButton3
+            // 
+            this.cuiButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiButton3.CheckButton = false;
+            this.cuiButton3.Checked = false;
+            this.cuiButton3.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton3.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton3.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton3.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton3.Content = "Advanced";
+            this.cuiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.cuiButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cuiButton3.HoverBackground = System.Drawing.Color.Empty;
+            this.cuiButton3.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cuiButton3.HoverImageTint = System.Drawing.Color.Empty;
+            this.cuiButton3.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton3.Image = null;
+            this.cuiButton3.ImageAutoCenter = true;
+            this.cuiButton3.ImageExpand = new System.Drawing.Point(-1, -1);
+            this.cuiButton3.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.cuiButton3.Location = new System.Drawing.Point(20, 50);
+            this.cuiButton3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
+            this.cuiButton3.Name = "cuiButton3";
+            this.cuiButton3.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton3.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cuiButton3.NormalImageTint = System.Drawing.Color.Empty;
+            this.cuiButton3.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton3.OutlineThickness = 1F;
+            this.cuiButton3.PressedBackground = System.Drawing.Color.Empty;
+            this.cuiButton3.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cuiButton3.PressedImageTint = System.Drawing.Color.Empty;
+            this.cuiButton3.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton3.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton3.Size = new System.Drawing.Size(108, 20);
+            this.cuiButton3.TabIndex = 79;
+            this.cuiButton3.Tag = "dontTheme";
+            this.cuiButton3.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton3.TextOffset = new System.Drawing.Point(1, 0);
+            this.cuiButton3.Click += new System.EventHandler(this.cuiButton3_Click);
+            // 
+            // cuiButton2
+            // 
+            this.cuiButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiButton2.CheckButton = false;
+            this.cuiButton2.Checked = false;
+            this.cuiButton2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton2.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton2.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton2.Content = "Basic";
+            this.cuiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.cuiButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
+            this.cuiButton2.HoverBackground = System.Drawing.Color.Empty;
+            this.cuiButton2.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cuiButton2.HoverImageTint = System.Drawing.Color.Empty;
+            this.cuiButton2.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.Image = null;
+            this.cuiButton2.ImageAutoCenter = true;
+            this.cuiButton2.ImageExpand = new System.Drawing.Point(-1, -1);
+            this.cuiButton2.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.cuiButton2.Location = new System.Drawing.Point(20, 12);
+            this.cuiButton2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
+            this.cuiButton2.Name = "cuiButton2";
+            this.cuiButton2.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton2.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.Empty;
+            this.cuiButton2.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.OutlineThickness = 1F;
+            this.cuiButton2.PressedBackground = System.Drawing.Color.Empty;
+            this.cuiButton2.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(128)))), ((int)(((byte)(152)))), ((int)(((byte)(134)))));
+            this.cuiButton2.PressedImageTint = System.Drawing.Color.Empty;
+            this.cuiButton2.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton2.Size = new System.Drawing.Size(108, 20);
+            this.cuiButton2.TabIndex = 79;
+            this.cuiButton2.Tag = "dontTheme";
+            this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton2.TextOffset = new System.Drawing.Point(1, 0);
+            this.cuiButton2.Click += new System.EventHandler(this.cuiButton2_Click);
+            // 
+            // cuiButton1
+            // 
+            this.cuiButton1.CheckButton = false;
+            this.cuiButton1.Checked = false;
+            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.Content = "Presets";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.cuiButton1.ForeColor = System.Drawing.Color.Gray;
+            this.cuiButton1.HoverBackground = System.Drawing.Color.Empty;
+            this.cuiButton1.HoverForeColor = System.Drawing.Color.Silver;
+            this.cuiButton1.HoverImageTint = System.Drawing.Color.Silver;
+            this.cuiButton1.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton1.Image = ((System.Drawing.Image)(resources.GetObject("cuiButton1.Image")));
+            this.cuiButton1.ImageAutoCenter = true;
+            this.cuiButton1.ImageExpand = new System.Drawing.Point(-1, -1);
+            this.cuiButton1.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.cuiButton1.Location = new System.Drawing.Point(150, 17);
+            this.cuiButton1.Name = "cuiButton1";
+            this.cuiButton1.NormalBackground = System.Drawing.Color.Empty;
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.Gray;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.Gray;
+            this.cuiButton1.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton1.OutlineThickness = 1F;
+            this.cuiButton1.PressedBackground = System.Drawing.Color.Empty;
+            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.cuiButton1.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.cuiButton1.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton1.Size = new System.Drawing.Size(72, 20);
+            this.cuiButton1.TabIndex = 77;
+            this.cuiButton1.Tag = "dontTheme";
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton1.TextOffset = new System.Drawing.Point(1, 0);
+            this.cuiButton1.Click += new System.EventHandler(this.cuiButton1_Click);
+            // 
+            // picRestartNeeded
+            // 
+            this.picRestartNeeded.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picRestartNeeded.Image = ((System.Drawing.Image)(resources.GetObject("picRestartNeeded.Image")));
+            this.picRestartNeeded.Location = new System.Drawing.Point(1254, 22);
+            this.picRestartNeeded.Name = "picRestartNeeded";
+            this.picRestartNeeded.Size = new System.Drawing.Size(24, 24);
+            this.picRestartNeeded.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRestartNeeded.TabIndex = 73;
+            this.picRestartNeeded.TabStop = false;
+            this.picRestartNeeded.Visible = false;
+            this.picRestartNeeded.Click += new System.EventHandler(this.picRestartNeeded_Click);
+            // 
+            // picLab
+            // 
+            this.picLab.Image = ((System.Drawing.Image)(resources.GetObject("picLab.Image")));
+            this.picLab.Location = new System.Drawing.Point(46, 41);
+            this.picLab.Name = "picLab";
+            this.picLab.Size = new System.Drawing.Size(18, 18);
+            this.picLab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLab.TabIndex = 72;
+            this.picLab.TabStop = false;
+            this.picLab.Visible = false;
+            // 
+            // picUpdate
+            // 
+            this.picUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picUpdate.Image = ((System.Drawing.Image)(resources.GetObject("picUpdate.Image")));
+            this.picUpdate.Location = new System.Drawing.Point(46, 41);
+            this.picUpdate.Name = "picUpdate";
+            this.picUpdate.Size = new System.Drawing.Size(18, 18);
+            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUpdate.TabIndex = 71;
+            this.picUpdate.TabStop = false;
+            this.picUpdate.Visible = false;
+            this.picUpdate.Click += new System.EventHandler(this.picUpdate_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -7999,14 +8000,6 @@ namespace Optimizer
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.Click += new System.EventHandler(this.MainForm_Click);
             this.bpanel.ResumeLayout(false);
-            this.indiciumMenu.ResumeLayout(false);
-            this.launcherMenu.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.cuiPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRestartNeeded)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLab)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             this.tabCollection.ResumeLayout(false);
             this.universalTab.ResumeLayout(false);
             this.universalTab.PerformLayout();
@@ -8058,6 +8051,7 @@ namespace Optimizer
             this.panel2.PerformLayout();
             this.indiciumTab.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.indiciumMenu.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.integratorTab.ResumeLayout(false);
             this.synapse.ResumeLayout(false);
@@ -8103,6 +8097,13 @@ namespace Optimizer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).EndInit();
+            this.launcherMenu.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.cuiPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRestartNeeded)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
