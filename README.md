@@ -1,4 +1,7 @@
 > [!CAUTION]
+> # In-dev
+
+> [!CAUTION]
 > ### This is a fork.
 > No support will be provided. Use this modified version at your own risk.<br>
 > This fork is opinionated, and may deviate from the original optimizer's goals.
@@ -15,7 +18,7 @@
 
 ---
 
-todo: rewrite introduction
+A UI switchup on your favourite Windows optimization tool, with the addition of presets.
 
 <center>
 <h2>💾 Downloads</h2> 
