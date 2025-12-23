@@ -2785,7 +2785,7 @@ namespace Optimizer
             this.cAutoInstall.Content = "Install after downloading";
             this.cAutoInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cAutoInstall.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAutoInstall.Location = new System.Drawing.Point(6086, 1458);
+            this.cAutoInstall.Location = new System.Drawing.Point(6393, 1541);
             this.cAutoInstall.MinimumSize = new System.Drawing.Size(16, 16);
             this.cAutoInstall.Name = "cAutoInstall";
             this.cAutoInstall.OutlineStyle = true;
@@ -2804,7 +2804,7 @@ namespace Optimizer
             this.progressDownloader.Background = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.progressDownloader.Flipped = false;
             this.progressDownloader.Foreground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.progressDownloader.Location = new System.Drawing.Point(8, 1494);
+            this.progressDownloader.Location = new System.Drawing.Point(8, 1577);
             this.progressDownloader.MaxValue = 100;
             this.progressDownloader.Name = "progressDownloader";
             this.progressDownloader.Rounding = 5;
@@ -2822,7 +2822,7 @@ namespace Optimizer
             this.btnDownloadApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownloadApps.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownloadApps.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadApps.Location = new System.Drawing.Point(6292, 1487);
+            this.btnDownloadApps.Location = new System.Drawing.Point(6599, 1570);
             this.btnDownloadApps.Margin = new System.Windows.Forms.Padding(2);
             this.btnDownloadApps.Name = "btnDownloadApps";
             this.btnDownloadApps.Size = new System.Drawing.Size(203, 35);
@@ -2920,7 +2920,7 @@ namespace Optimizer
             this.txtDownloadStatus.AutoSize = true;
             this.txtDownloadStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownloadStatus.ForeColor = System.Drawing.Color.LightGray;
-            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 1469);
+            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 1552);
             this.txtDownloadStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtDownloadStatus.Name = "txtDownloadStatus";
             this.txtDownloadStatus.Size = new System.Drawing.Size(32, 19);
@@ -2936,7 +2936,7 @@ namespace Optimizer
             this.linkWarnings.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkWarnings.ForeColor = System.Drawing.Color.Gold;
             this.linkWarnings.LinkColor = System.Drawing.Color.Gold;
-            this.linkWarnings.Location = new System.Drawing.Point(4, 1509);
+            this.linkWarnings.Location = new System.Drawing.Point(4, 1592);
             this.linkWarnings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkWarnings.Name = "linkWarnings";
             this.linkWarnings.Size = new System.Drawing.Size(92, 19);
@@ -2971,7 +2971,7 @@ namespace Optimizer
             this.goToDownloadsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goToDownloadsB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToDownloadsB.ForeColor = System.Drawing.Color.White;
-            this.goToDownloadsB.Location = new System.Drawing.Point(6086, 1487);
+            this.goToDownloadsB.Location = new System.Drawing.Point(6393, 1570);
             this.goToDownloadsB.Margin = new System.Windows.Forms.Padding(2);
             this.goToDownloadsB.Name = "goToDownloadsB";
             this.goToDownloadsB.Size = new System.Drawing.Size(203, 35);
@@ -4210,7 +4210,7 @@ namespace Optimizer
             this.boxAdapter.ExpandArrowColor = System.Drawing.Color.Gray;
             this.boxAdapter.ForeColor = System.Drawing.Color.Gainsboro;
             this.boxAdapter.Items = new string[0];
-            this.boxAdapter.Location = new System.Drawing.Point(80, 137);
+            this.boxAdapter.Location = new System.Drawing.Point(28, 50);
             this.boxAdapter.Margin = new System.Windows.Forms.Padding(14, 3, 14, 3);
             this.boxAdapter.MaxDropDownHeight = 200;
             this.boxAdapter.Name = "boxAdapter";
@@ -4220,7 +4220,7 @@ namespace Optimizer
             this.boxAdapter.Rounding = 8;
             this.boxAdapter.SelectedIndex = -1;
             this.boxAdapter.SelectedItem = "";
-            this.boxAdapter.Size = new System.Drawing.Size(1942, 122);
+            this.boxAdapter.Size = new System.Drawing.Size(655, 45);
             this.boxAdapter.SortAlphabetically = true;
             this.boxAdapter.TabIndex = 124;
             // 
@@ -4232,7 +4232,7 @@ namespace Optimizer
             this.boxDNS.ExpandArrowColor = System.Drawing.Color.Gray;
             this.boxDNS.ForeColor = System.Drawing.Color.Gainsboro;
             this.boxDNS.Items = new string[0];
-            this.boxDNS.Location = new System.Drawing.Point(80, 396);
+            this.boxDNS.Location = new System.Drawing.Point(29, 145);
             this.boxDNS.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
             this.boxDNS.MaxDropDownHeight = 200;
             this.boxDNS.Name = "boxDNS";
@@ -4242,7 +4242,7 @@ namespace Optimizer
             this.boxDNS.Rounding = 8;
             this.boxDNS.SelectedIndex = -1;
             this.boxDNS.SelectedItem = "";
-            this.boxDNS.Size = new System.Drawing.Size(1942, 122);
+            this.boxDNS.Size = new System.Drawing.Size(655, 45);
             this.boxDNS.SortAlphabetically = true;
             this.boxDNS.TabIndex = 125;
             // 
