@@ -17,9 +17,9 @@
 </p>
 
 ---
-
-A UI switchup on your favourite Windows optimization tool, with the addition of presets.
-
+# Optimizer Modded
+An opinionated UI switchup on your favourite Windows optimization tool, with the addition of pre-made presets.
+# 
 <center>
 <h2>💾 Downloads</h2> 
 </center>
@@ -76,7 +76,7 @@ If you find this tool useful, consider showing your support by [donating through
 <h2>❤️ Translations</h2>
 </center>
 
-These are the translations which were present when this fork was made!
+These are the translations which were present when this fork had been made!
 We'd like to extend our gratitude to the following contributors for their translations:
 
 - Russian: mrkaban
