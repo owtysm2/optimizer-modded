@@ -52,7 +52,7 @@ namespace Optimizer
         static string _argInvalidMsg = "Invalid argument! Example: Optimizer.exe /config=win10.json";
         static string _alreadyRunningMsg = "Optimizer is already running in the background!";
 
-        const string MUTEX_GUID = @"{DEADMOON-0EFC7B8A-D1FC-467F-B4B1-0117C643FE19-OPTIMIZER}";
+        const string MUTEX_GUID = @"{DEADMOON-OPTIMIZER-MODDED-026C16BD-DEE0-43F1-8279-1BEDCE12C9AC}";
         internal static Mutex MUTEX;
         static bool _notRunning;
 
