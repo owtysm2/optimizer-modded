@@ -255,40 +255,50 @@ namespace Optimizer
 
                 if (arg.StartsWith("/config="))
                 {
-                    UNSAFE_MODE = true;
-                    string fileName = arg.Replace("/config=", string.Empty);
-
-                    if (!File.Exists(fileName))
-                    {
-                        MessageBox.Show(_confNotFoundMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Environment.Exit(0);
-                        return;
-                    }
-
-                    SilentOps.GetSilentConfig(fileName);
-
-                    if (SilentOps.CurrentSilentConfig == null)
-                    {
-                        MessageBox.Show(_confInvalidFormatMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Environment.Exit(0);
-                        return;
-                    }
-                    if (!SilentOps.ProcessWindowsVersionCompatibility())
-                    {
-                        MessageBox.Show(_confInvalidVersionMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Environment.Exit(0);
-                        return;
-                    }
-                    SILENT_MODE = true;
-                    LoadSettings();
-                    SilentOps.ProcessAllActions();
-                    OptionsHelper.SaveSettings();
+                    ApplyConfigFromJsonTemplate(arg);
                 }
             }
             else
             {
                 StartMainForm();
             }
+        }
+
+        internal static void ApplyConfigFromJsonTemplate(string templateFilename)
+        {
+            UNSAFE_MODE = true;
+
+            string fileName = templateFilename;
+            if (fileName.StartsWith("/config="))
+            { 
+                fileName = fileName.Replace("/config=", string.Empty);
+            }
+
+            if (!File.Exists(fileName))
+            {
+                MessageBox.Show(_confNotFoundMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(0);
+                return;
+            }
+
+            SilentOps.GetSilentConfig(fileName);
+
+            if (SilentOps.CurrentSilentConfig == null)
+            {
+                MessageBox.Show(_confInvalidFormatMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(0);
+                return;
+            }
+            if (!SilentOps.ProcessWindowsVersionCompatibility())
+            {
+                MessageBox.Show(_confInvalidVersionMsg, "Optimizer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(0);
+                return;
+            }
+            SILENT_MODE = true;
+            LoadSettings();
+            SilentOps.ProcessAllActions();
+            OptionsHelper.SaveSettings();
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

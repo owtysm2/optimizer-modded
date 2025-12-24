@@ -2,7 +2,6 @@
 using CuoreUI.Controls;
 using Newtonsoft.Json;
 using Optimizer.Forms;
-using Optimizer.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,6 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -944,7 +942,7 @@ namespace Optimizer
             // (kinda related): 1 px is left below intentionally, for better contrast
             panel18.Left = cuiButton1.Left + ((cuiButton1.Width - panel18.Width) / 2);
             panel18.Top = cuiButton1.Bottom + 1;
-            panel18.Height = 44 * cuiPanel2.Controls.Count;
+            panel18.Height = 12 + (44 * (cuiPanel2.Controls.Count-1));
             panel18.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, panel18.Width, panel18.Height, 13, 13));
 
             if (OptionsHelper.CurrentOptions.UpdateOnLaunch)
@@ -4795,7 +4793,7 @@ namespace Optimizer
             }
             else if (boxLang.SelectedItem == Constants.CROATIAN)
             {
-                picFlag.Content = Properties.Resources.indonesia;
+                picFlag.Content = Properties.Resources.croatia;
                 OptionsHelper.CurrentOptions.LanguageCode = LanguageCode.HR;
             }
 
@@ -5345,6 +5343,22 @@ namespace Optimizer
         private void MainForm_Click(object sender, EventArgs e)
         {
             panel18.Visible = false;
+        }
+
+        private void cuiButton4_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter = "*JSON (.json)|*.json"
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    Program.ApplyConfigFromJsonTemplate(ofd.FileName);
+                }
+
+                panel18.Visible = false;
+            }
         }
     }
 }

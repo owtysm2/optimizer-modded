@@ -462,6 +462,8 @@ namespace Optimizer
             this.pictureBox1 = new CuoreUI.Controls.cuiPictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
+            this.cuiSeparator1 = new CuoreUI.Controls.cuiSeparator();
+            this.cuiButton4 = new CuoreUI.Controls.cuiButton();
             this.cuiButton3 = new CuoreUI.Controls.cuiButton();
             this.cuiButton2 = new CuoreUI.Controls.cuiButton();
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
@@ -2785,7 +2787,7 @@ namespace Optimizer
             this.cAutoInstall.Content = "Install after downloading";
             this.cAutoInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cAutoInstall.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAutoInstall.Location = new System.Drawing.Point(6393, 1541);
+            this.cAutoInstall.Location = new System.Drawing.Point(11919, 3035);
             this.cAutoInstall.MinimumSize = new System.Drawing.Size(16, 16);
             this.cAutoInstall.Name = "cAutoInstall";
             this.cAutoInstall.OutlineStyle = true;
@@ -2804,7 +2806,7 @@ namespace Optimizer
             this.progressDownloader.Background = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.progressDownloader.Flipped = false;
             this.progressDownloader.Foreground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.progressDownloader.Location = new System.Drawing.Point(8, 1577);
+            this.progressDownloader.Location = new System.Drawing.Point(8, 3071);
             this.progressDownloader.MaxValue = 100;
             this.progressDownloader.Name = "progressDownloader";
             this.progressDownloader.Rounding = 5;
@@ -2822,7 +2824,7 @@ namespace Optimizer
             this.btnDownloadApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownloadApps.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownloadApps.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadApps.Location = new System.Drawing.Point(6599, 1570);
+            this.btnDownloadApps.Location = new System.Drawing.Point(12125, 3064);
             this.btnDownloadApps.Margin = new System.Windows.Forms.Padding(2);
             this.btnDownloadApps.Name = "btnDownloadApps";
             this.btnDownloadApps.Size = new System.Drawing.Size(203, 35);
@@ -2920,7 +2922,7 @@ namespace Optimizer
             this.txtDownloadStatus.AutoSize = true;
             this.txtDownloadStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownloadStatus.ForeColor = System.Drawing.Color.LightGray;
-            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 1552);
+            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 3046);
             this.txtDownloadStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtDownloadStatus.Name = "txtDownloadStatus";
             this.txtDownloadStatus.Size = new System.Drawing.Size(32, 19);
@@ -2936,7 +2938,7 @@ namespace Optimizer
             this.linkWarnings.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkWarnings.ForeColor = System.Drawing.Color.Gold;
             this.linkWarnings.LinkColor = System.Drawing.Color.Gold;
-            this.linkWarnings.Location = new System.Drawing.Point(4, 1592);
+            this.linkWarnings.Location = new System.Drawing.Point(4, 3086);
             this.linkWarnings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkWarnings.Name = "linkWarnings";
             this.linkWarnings.Size = new System.Drawing.Size(92, 19);
@@ -2971,7 +2973,7 @@ namespace Optimizer
             this.goToDownloadsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goToDownloadsB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToDownloadsB.ForeColor = System.Drawing.Color.White;
-            this.goToDownloadsB.Location = new System.Drawing.Point(6393, 1570);
+            this.goToDownloadsB.Location = new System.Drawing.Point(11919, 3064);
             this.goToDownloadsB.Margin = new System.Windows.Forms.Padding(2);
             this.goToDownloadsB.Name = "goToDownloadsB";
             this.goToDownloadsB.Size = new System.Drawing.Size(203, 35);
@@ -7789,7 +7791,7 @@ namespace Optimizer
             this.panel18.Controls.Add(this.cuiPanel2);
             this.panel18.Location = new System.Drawing.Point(123, 43);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(152, 22);
+            this.panel18.Size = new System.Drawing.Size(152, 16);
             this.panel18.TabIndex = 78;
             this.panel18.Visible = false;
             // 
@@ -7798,6 +7800,8 @@ namespace Optimizer
             this.cuiPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiPanel2.Controls.Add(this.cuiSeparator1);
+            this.cuiPanel2.Controls.Add(this.cuiButton4);
             this.cuiPanel2.Controls.Add(this.cuiButton3);
             this.cuiPanel2.Controls.Add(this.cuiButton2);
             this.cuiPanel2.Location = new System.Drawing.Point(2, 1);
@@ -7806,8 +7810,69 @@ namespace Optimizer
             this.cuiPanel2.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel2.Size = new System.Drawing.Size(148, 18);
+            this.cuiPanel2.Size = new System.Drawing.Size(148, 12);
             this.cuiPanel2.TabIndex = 0;
+            // 
+            // cuiSeparator1
+            // 
+            this.cuiSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiSeparator1.Location = new System.Drawing.Point(4, -48);
+            this.cuiSeparator1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.cuiSeparator1.MaximumSize = new System.Drawing.Size(500, 12);
+            this.cuiSeparator1.MinimumSize = new System.Drawing.Size(42, 12);
+            this.cuiSeparator1.Name = "cuiSeparator1";
+            this.cuiSeparator1.SeparatorMargin = 8;
+            this.cuiSeparator1.Size = new System.Drawing.Size(140, 12);
+            this.cuiSeparator1.TabIndex = 81;
+            this.cuiSeparator1.Thickness = 0.5F;
+            this.cuiSeparator1.Vertical = false;
+            // 
+            // cuiButton4
+            // 
+            this.cuiButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiButton4.CheckButton = false;
+            this.cuiButton4.Checked = false;
+            this.cuiButton4.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton4.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton4.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton4.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton4.Content = "From Template";
+            this.cuiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.cuiButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.cuiButton4.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton4.HoverImageTint = System.Drawing.Color.White;
+            this.cuiButton4.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton4.Image = ((System.Drawing.Image)(resources.GetObject("cuiButton4.Image")));
+            this.cuiButton4.ImageAutoCenter = true;
+            this.cuiButton4.ImageExpand = new System.Drawing.Point(-1, -1);
+            this.cuiButton4.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.cuiButton4.Location = new System.Drawing.Point(4, -32);
+            this.cuiButton4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
+            this.cuiButton4.Name = "cuiButton4";
+            this.cuiButton4.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.cuiButton4.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton4.NormalImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton4.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton4.OutlineThickness = 1F;
+            this.cuiButton4.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.cuiButton4.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton4.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cuiButton4.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton4.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton4.Size = new System.Drawing.Size(140, 40);
+            this.cuiButton4.TabIndex = 80;
+            this.cuiButton4.Tag = "dontTheme";
+            this.cuiButton4.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton4.TextOffset = new System.Drawing.Point(2, 0);
+            this.cuiButton4.Click += new System.EventHandler(this.cuiButton4_Click);
             // 
             // cuiButton3
             // 
@@ -7829,8 +7894,8 @@ namespace Optimizer
             this.cuiButton3.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton3.Image = null;
             this.cuiButton3.ImageAutoCenter = true;
-            this.cuiButton3.ImageExpand = new System.Drawing.Point(-1, -1);
-            this.cuiButton3.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.cuiButton3.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton3.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiButton3.Location = new System.Drawing.Point(20, 50);
             this.cuiButton3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
             this.cuiButton3.Name = "cuiButton3";
@@ -7848,7 +7913,7 @@ namespace Optimizer
             this.cuiButton3.TabIndex = 79;
             this.cuiButton3.Tag = "dontTheme";
             this.cuiButton3.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton3.TextOffset = new System.Drawing.Point(1, 0);
+            this.cuiButton3.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton3.Click += new System.EventHandler(this.cuiButton3_Click);
             // 
             // cuiButton2
@@ -7871,8 +7936,8 @@ namespace Optimizer
             this.cuiButton2.HoverOutline = System.Drawing.Color.Empty;
             this.cuiButton2.Image = null;
             this.cuiButton2.ImageAutoCenter = true;
-            this.cuiButton2.ImageExpand = new System.Drawing.Point(-1, -1);
-            this.cuiButton2.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.cuiButton2.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.cuiButton2.Location = new System.Drawing.Point(20, 12);
             this.cuiButton2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 18);
             this.cuiButton2.Name = "cuiButton2";
@@ -7890,7 +7955,7 @@ namespace Optimizer
             this.cuiButton2.TabIndex = 79;
             this.cuiButton2.Tag = "dontTheme";
             this.cuiButton2.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton2.TextOffset = new System.Drawing.Point(1, 0);
+            this.cuiButton2.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton2.Click += new System.EventHandler(this.cuiButton2_Click);
             // 
             // cuiButton1
@@ -8537,6 +8602,8 @@ namespace Optimizer
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private CuoreUI.Controls.cuiButton cuiButton2;
         private CuoreUI.Controls.cuiButton cuiButton3;
+        private CuoreUI.Controls.cuiButton cuiButton4;
+        private CuoreUI.Controls.cuiSeparator cuiSeparator1;
     }
 }
 

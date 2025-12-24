@@ -28,9 +28,6 @@ namespace Optimizer
             set => _BorderSize = 0;
         }
 
-        [Category("Custom"), Description("The size of the components Indicator."), DefaultValue(0)]
-        public int IndicatorSize { get; set; } = 0;
-
         protected override CreateParams CreateParams
         {
             [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
@@ -84,20 +81,19 @@ namespace Optimizer
             Rectangle container = new Rectangle(0, 0, Width - (BorderSize % 2), Height - (BorderSize % 2));
             Rectangle containerHead;
 
-            using (SolidBrush brushActive = new SolidBrush(OptionsHelper.ForegroundColor))
-            using (SolidBrush brushInActive = new SolidBrush(Color.FromArgb(20, 20, 20)))
-            using (SolidBrush brushAlternative = new SolidBrush(OptionsHelper.ForegroundColor))
-            using (SolidBrush brushActiveIndicator = new SolidBrush(ControlPaint.Light(OptionsHelper.ForegroundColor)))
-            using (SolidBrush brushInActiveIndicator = new SolidBrush(OptionsHelper.ForegroundColor))
-            using (SolidBrush brushActiveText = new SolidBrush(OptionsHelper.TextColor))
-            using (SolidBrush brushInActiveText = new SolidBrush(Color.White))
+            if (TabCount > 0)
             {
-                //if (MoonManager.THEME_PREFERENCE == THEME.LIGHT) brushActiveText = new SolidBrush(Color.White);
-
-                if (TabCount > 0)
+                using (SolidBrush brushActive = new SolidBrush(OptionsHelper.ForegroundColor))
+                using (SolidBrush brushInActive = new SolidBrush(Color.FromArgb(20, 20, 20)))
+                using (SolidBrush brushAlternative = new SolidBrush(OptionsHelper.ForegroundColor))
+                using (SolidBrush brushActiveIndicator = new SolidBrush(ControlPaint.Light(OptionsHelper.ForegroundColor)))
+                using (SolidBrush brushInActiveIndicator = new SolidBrush(OptionsHelper.ForegroundColor))
+                using (SolidBrush brushActiveText = new SolidBrush(OptionsHelper.TextColor))
+                using (SolidBrush brushInActiveText = new SolidBrush(Color.White))
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
                     for (int i = 0; i < TabCount; i++)
                     {
