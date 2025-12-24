@@ -2,18 +2,14 @@
 > ### This is a fork.
 > No support will be provided.<br> Use this modified version at your own risk.<br>
 
+# Optimizer Modded
+An opinionated UI switchup on your favourite Windows optimization tool, with the addition of a UI for pre-made presets.
 <p align="center">
-   <img src="https://i.imgur.com/rP7HraB.png">
-</p>
-
-<p align="center">
+	<img src="https://i.imgur.com/Rmx37V3.png">
 	<a href="https://github.com/owtysm2/optimizer-modded/releases/latest" target="_blank">
 		<img src="https://i.imgur.com/deiuL4g.png">
 	</a>
 </p>
-
-# Optimizer Modded
-An opinionated UI switchup on your favourite Windows optimization tool, with the addition of a UI for pre-made presets.
 
 ---
 
@@ -31,25 +27,27 @@ Find the latest release of Optimizer Modded on the [Releases](https://github.com
 <h2>🌍 Showcase</h2> 
 </center>
 
-todo: add sth cooler here
+<p align="center">
+   <img src="https://i.imgur.com/rP7HraB.png">
+</p>
 
 <center>
 <h2>🤖 Templating and Automation</h2> 
 </center>
 
-Explore the possibilities of automation with Optimizer through our [Automation Guide](https://github.com/owtysm2/optimizer-modded/blob/master/AUTOMATION.md).
+Explore the possibilities of automation with Optimizer through our [Automation Guide <img src="https://i.imgur.com/9cwvXdg.png">](https://github.com/owtysm2/optimizer-modded/blob/master/AUTOMATION.md).
 
 <center>
 <h2>⌨️ Command-line Options</h2> 
 </center>
 
-Check out the [Command-line Options](https://github.com/owtysm2/optimizer-modded/blob/master/CONFS.md) available for Optimizer.
+Check out the [Command-line Options <img src="https://i.imgur.com/9cwvXdg.png">](https://github.com/owtysm2/optimizer-modded/blob/master/CONFS.md) available for Optimizer.
 
 <center>
 <h2>❓ Frequently Asked Questions</h2> 
 </center>
 
-Find answers to common queries in the [FAQ Section](https://github.com/owtysm2/optimizer-modded/blob/master/FAQ.md).
+Find answers to common queries in the [FAQ Section <img src="https://i.imgur.com/9cwvXdg.png">](https://github.com/owtysm2/optimizer-modded/blob/master/FAQ.md).
 
 <center>
 <h2>💻 Compatibility</h2> 
@@ -63,15 +61,15 @@ Find answers to common queries in the [FAQ Section](https://github.com/owtysm2/o
 <h2> ☕ Buy the original creator a delicious espresso</h2>
 </center>
 
-If you find this tool useful, consider showing your support by [donating through PayPal](https://www.paypal.com/paypalme/supportoptimizer).
+If you find this tool useful, consider showing your support by [donating through PayPal <img src="https://i.imgur.com/9cwvXdg.png">](https://www.paypal.com/paypalme/supportoptimizer).
 
 <center>
 <h2>❤️ Credits and Acknowledgments</h2>
 </center>
 
-- [deadmoon](https://github.com/hellzerg) - The creator of the original [Optimizer](https://github.com/hellzerg/optimizer)
-- [ByteSize](https://github.com/omar/ByteSize) - A useful library by Omar Rahman
-- ColorPicker - Theme engine, courtesy of cat ([GitHub Profile](https://github.com/vadiscode))
+- <img src="https://i.imgur.com/q2pYhSa.png"> [Optimizer](https://github.com/hellzerg/optimizer) - The original Optimizer project, maintained by deadmoon ([GitHub Profile](https://github.com/hellzerg))
+- <img src="https://i.imgur.com/WoCadWf.png"> [ByteSize](https://github.com/omar/ByteSize) - A useful byte conversion library by Omar Rahman ([GitHub Profile](https://github.com/omar))
+- <img src="https://i.imgur.com/K8swxaE.png"> ColorPicker - Theme engine, courtesy of cat ([GitHub Profile](https://github.com/vadiscode))
 
 <center>
 <h2>❤️ Translations</h2>
