@@ -49,12 +49,6 @@ namespace Optimizer
         public bool DisablePinger { get; set; }
 
         /// <summary>
-        /// Telemetry-related info, unique to each instance
-        /// </summary>
-        //public string TelemetryClientID { get; set; }
-        //public bool DisableOptimizerTelemetry { get; set; }
-
-        /// <summary>
         /// The saved language of the app
         /// </summary>
         public LanguageCode LanguageCode { get; set; }

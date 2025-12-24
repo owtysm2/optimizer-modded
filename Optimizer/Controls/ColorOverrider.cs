@@ -14,9 +14,6 @@ namespace Optimizer
         public static event Action SystemColorsChanging;
         public static event Action SystemColorsChanged;
 
-        private int[] OriginalColors { get; }
-        private IReadOnlyDictionary<int, int> KnownOriginalColors;
-
         private int[] _colorTable;
         private readonly FieldInfo _colorTableField;
         private readonly PropertyInfo _threadDataProperty;
@@ -35,10 +32,6 @@ namespace Optimizer
 
             _colorTable = readColorTable();
             SystemEvents.UserPreferenceChanging += userPreferenceChanging;
-
-            OriginalColors = _colorTable.ToArray();
-            KnownOriginalColors = KnownColors.Cast<int>()
-                .ToDictionary(i => i, i => OriginalColors[i]);
 
             _threadDataProperty = systemDrawingAssembly.GetType("System.Drawing.SafeNativeMethods")
                 .GetNestedType("Gdip", BindingFlags.NonPublic)
@@ -90,21 +83,6 @@ namespace Optimizer
         private void setColor(KnownColor knownColor, int argb) =>
             _colorTable[(int)knownColor] = argb;
 
-        public int GetOriginalColor(KnownColor knownColor) =>
-            OriginalColors[(int)knownColor];
-
-        public int GetColor(KnownColor knownColor)
-        {
-            if (!KnownColors.Contains(knownColor))
-                throw new ArgumentException();
-
-            return _colorTable[(int)knownColor];
-        }
-
-        public IReadOnlyDictionary<int, int> Save() =>
-            KnownColors.Cast<int>()
-                .ToDictionary(i => i, i => _colorTable[i]);
-
         public void Load(IReadOnlyDictionary<int, int> saved)
         {
             foreach (var color in KnownColors)
@@ -122,12 +100,6 @@ namespace Optimizer
 
             fireColorsChangedEvents();
         }
-
-        public void Reset(KnownColor color) =>
-            SetColor(color, OriginalColors[(int)color]);
-
-        public void ResetAll() =>
-            Load(KnownOriginalColors);
 
         private IDictionary ThreadData =>
             (IDictionary)_threadDataProperty.GetValue(null, null);

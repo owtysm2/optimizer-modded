@@ -1548,18 +1548,6 @@ namespace Optimizer
             Registry.LocalMachine.OpenSubKey(@"SYSTEM\Setup\LabConfig", true).DeleteValue("BypassCPUCheck", false);
         }
 
-        // DEPRECATED
-        //internal static void EnableFileExplorerClassicRibbon()
-        //{
-        //    Registry.SetValue(@"HKEY_CURRENT_USER\Software\Classes\CLSID\{d93ed569-3b3e-4bff-8355-3c44f6a52bb5}\InprocServer32", "", "");
-        //}
-
-        //internal static void DisableFileExplorerClassicRibbon()
-        //{
-        //    Registry.CurrentUser.DeleteSubKeyTree(@"Software\Classes\CLSID\{d93ed569-3b3e-4bff-8355-3c44f6a52bb5}", false);
-        //    Utilities.TryDeleteRegistryValue(true, @"SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages", "UndockingDisable");
-        //}
-
         internal static void EnableFilesCompactMode()
         {
             Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "UseCompactMode", 1, RegistryValueKind.DWord);

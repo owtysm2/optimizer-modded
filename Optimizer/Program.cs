@@ -102,7 +102,7 @@ namespace Optimizer
                     Process.Start(p);
                 }
                 catch (Win32Exception)
-                { 
+                {
                     // catch win32 exception when user presses "no" on the UAC prompt
                     // i think this only affects the dev when running from VS
                     // but it certainly is less annoying now
@@ -270,7 +270,7 @@ namespace Optimizer
 
             string fileName = templateFilename;
             if (fileName.StartsWith("/config="))
-            { 
+            {
                 fileName = fileName.Replace("/config=", string.Empty);
             }
 
@@ -329,11 +329,6 @@ namespace Optimizer
                 {
                     OptionsHelper.LoadSettings();
                 }
-
-                //if (!Options.CurrentOptions.DisableOptimizerTelemetry)
-                //{
-                //    TelemetryHelper.EnableTelemetryService();
-                //}
 
                 // ideal place to replace internal messages from translation list
                 _adminMissingMessage = OptionsHelper.TranslationList["adminMissingMsg"];
