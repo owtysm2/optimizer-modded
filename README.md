@@ -1,30 +1,31 @@
 > [!CAUTION]
-> # In-dev
-
-> [!CAUTION]
 > ### This is a fork.
-> No support will be provided. Use this modified version at your own risk.<br>
-> This fork is opinionated, and may deviate from the original optimizer's goals.
+> No support will be provided.<br> Use this modified version at your own risk.<br>
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/owtysm2/optimizer-modded/master/banner.png">
+   <img src="https://i.imgur.com/rP7HraB.png">
 </p>
 
 <p align="center">
 	<a href="https://github.com/owtysm2/optimizer-modded/releases/latest" target="_blank">
-		<img src="https://raw.githubusercontent.com/owtysm2/optimizer-modded/master/flags.png">
+		<img src="https://i.imgur.com/deiuL4g.png">
 	</a>
 </p>
 
----
 # Optimizer Modded
-An opinionated UI switchup on your favourite Windows optimization tool, with the addition of pre-made presets.
-# 
+An opinionated UI switchup on your favourite Windows optimization tool, with the addition of a UI for pre-made presets.
+
+---
+
 <center>
 <h2>💾 Downloads</h2> 
 </center>
 
 Find the latest release of Optimizer Modded on the [Releases](https://github.com/owtysm2/optimizer-modded/releases) page.
+
+| Version | Download Link |
+| ------- | ------------- |
+| Latest | [16.7 (Modded)](https://github.com/owtysm2/optimizer-modded/releases/latest) |
 
 <center>
 <h2>🌍 Showcase</h2> 
@@ -79,28 +80,35 @@ If you find this tool useful, consider showing your support by [donating through
 These are the translations which were present when this fork had been made!
 We'd like to extend our gratitude to the following contributors for their translations:
 
-- Russian: mrkaban
-- German: theflamehd
-- Turkish: Kheasyque
-- Spanish: danielcshn
-- Portuguese: Cassio
-- French: RAFF47
-- Italian: Ziocash
-- Chinese: btwise
-- Czech: Tom Longhorn
-- Taiwanese: H3XDaemon
-- Korean: VenusGirl
-- Polish: Wilamaxin
-- Arabic: MesterPerfect
-- Romanian: BeamingNG, DefaultUser9148
-- Dutch: svanlaere
-- Ukrainian: Kirill Ermakov
-- Japanese: Yamada Hayao, creeper-0910
-- Kurdish: Parwar Andam
-- Hungarian: Zan
-- Farsi: MjavadH
-- Nepali: chapagetti
-- Hellenic
-- Bulgarian
-- Indonesian: ftrsndrya
-- Croatian: zZan54
+| Language   | Contributor(s)             |
+| ---------- | -------------------------- |
+| <img src="https://i.imgur.com/mC6tVpf.png"> Russian    | mrkaban                    |
+| <img src="https://i.imgur.com/YgdinEE.png"> German     | theflamehd                 |
+| <img src="https://i.imgur.com/umU3r09.png"> Turkish    | Kheasyque                  |
+| <img src="https://i.imgur.com/ABXXMJf.png"> Spanish    | danielcshn                 |
+| <img src="https://i.imgur.com/seAcPLV.png"> Portuguese | Cassio                     |
+| <img src="https://i.imgur.com/rDpgqRe.png"> French     | RAFF47                     |
+| <img src="https://i.imgur.com/0WViCMM.png"> Italian    | Ziocash                    |
+| <img src="https://i.imgur.com/9MN5Z61.png"> Chinese    | btwise                     |
+| <img src="https://i.imgur.com/IJsDQdF.png"> Czech      | Tom Longhorn               |
+| <img src="https://i.imgur.com/XHdXyZU.png"> Taiwanese  | H3XDaemon                  |
+| <img src="https://i.imgur.com/1BR6dDr.png"> Korean     | VenusGirl                  |
+| <img src="https://i.imgur.com/pg4jRh8.png"> Polish     | Wilamaxin                  |
+| <img src="https://i.imgur.com/lVU0qfr.png"> Arabic     | MesterPerfect              |
+| <img src="https://i.imgur.com/hXobAIi.png"> Romanian   | BeamingNG, DefaultUser9148 |
+| <img src="https://i.imgur.com/dON2OyN.png"> Dutch      | svanlaere                  |
+| <img src="https://i.imgur.com/g2BB7Dd.png"> Ukrainian  | Kirill Ermakov             |
+| <img src="https://i.imgur.com/Vb7Y1oH.png"> Japanese   | Yamada Hayao, creeper-0910 |
+| <img src="https://i.imgur.com/Op9ufzW.png"> Kurdish    | Parwar Andam               |
+| <img src="https://i.imgur.com/NFG6Gd6.png"> Hungarian  | Zan                        |
+| <img src="https://i.imgur.com/7gSiyW5.jpeg"> Farsi      | MjavadH                    |
+| <img src="https://i.imgur.com/c50dnsY.png"> Nepali     | chapagetti                 |
+| <img src="https://i.imgur.com/jmw1YoK.png"> Hellenic   | - `(missing in original repo)` |
+| <img src="https://i.imgur.com/djWpngg.png"> Bulgarian  | - `(missing in original repo)` |
+| <img src="https://i.imgur.com/TSaUt7h.png"> Indonesian | ftrsndrya                  |
+| <img src="https://i.imgur.com/efq2VtY.png"> Croatian   | zZan54                     |
+
+
+---
+
+many sins have been committed in this codebase
