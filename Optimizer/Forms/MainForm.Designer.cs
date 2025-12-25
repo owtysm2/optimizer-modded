@@ -470,6 +470,8 @@ namespace Optimizer
             this.picRestartNeeded = new System.Windows.Forms.PictureBox();
             this.picLab = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
+            this.cuiSeparator2 = new CuoreUI.Controls.cuiSeparator();
+            this.cuiSeparator3 = new CuoreUI.Controls.cuiSeparator();
             this.bpanel.SuspendLayout();
             this.tabCollection.SuspendLayout();
             this.universalTab.SuspendLayout();
@@ -2734,7 +2736,7 @@ namespace Optimizer
             // 
             // panelCommonApps
             // 
-            this.panelCommonApps.AutoScroll = true;
+            this.panelCommonApps.Controls.Add(this.cuiSeparator3);
             this.panelCommonApps.Controls.Add(this.cuiComboBox1);
             this.panelCommonApps.Controls.Add(this.cAutoInstall);
             this.panelCommonApps.Controls.Add(this.progressDownloader);
@@ -2746,6 +2748,7 @@ namespace Optimizer
             this.panelCommonApps.Controls.Add(this.linkWarnings);
             this.panelCommonApps.Controls.Add(this.bitPref);
             this.panelCommonApps.Controls.Add(this.goToDownloadsB);
+            this.panelCommonApps.Controls.Add(this.cuiSeparator2);
             this.panelCommonApps.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelCommonApps.Location = new System.Drawing.Point(3, 565);
             this.panelCommonApps.Name = "panelCommonApps";
@@ -2762,7 +2765,7 @@ namespace Optimizer
             this.cuiComboBox1.Items = new string[] {
         "64-bit",
         "32-bit"};
-            this.cuiComboBox1.Location = new System.Drawing.Point(1093, 81);
+            this.cuiComboBox1.Location = new System.Drawing.Point(589, 30);
             this.cuiComboBox1.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
             this.cuiComboBox1.MaxDropDownHeight = 240;
             this.cuiComboBox1.Name = "cuiComboBox1";
@@ -2772,7 +2775,7 @@ namespace Optimizer
             this.cuiComboBox1.Rounding = 8;
             this.cuiComboBox1.SelectedIndex = 0;
             this.cuiComboBox1.SelectedItem = "64-bit";
-            this.cuiComboBox1.Size = new System.Drawing.Size(497, 122);
+            this.cuiComboBox1.Size = new System.Drawing.Size(136, 45);
             this.cuiComboBox1.SortAlphabetically = true;
             this.cuiComboBox1.TabIndex = 161;
             // 
@@ -2787,14 +2790,14 @@ namespace Optimizer
             this.cAutoInstall.Content = "Install after downloading";
             this.cAutoInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cAutoInstall.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cAutoInstall.Location = new System.Drawing.Point(11919, 3035);
+            this.cAutoInstall.Location = new System.Drawing.Point(755, 80);
             this.cAutoInstall.MinimumSize = new System.Drawing.Size(16, 16);
             this.cAutoInstall.Name = "cAutoInstall";
             this.cAutoInstall.OutlineStyle = true;
             this.cAutoInstall.OutlineThickness = 1F;
             this.cAutoInstall.Rounding = 4;
             this.cAutoInstall.ShowSymbols = true;
-            this.cAutoInstall.Size = new System.Drawing.Size(369, 24);
+            this.cAutoInstall.Size = new System.Drawing.Size(226, 24);
             this.cAutoInstall.TabIndex = 107;
             this.cAutoInstall.UncheckedForeground = System.Drawing.Color.Empty;
             this.cAutoInstall.UncheckedOutlineColor = System.Drawing.Color.Gray;
@@ -2806,7 +2809,7 @@ namespace Optimizer
             this.progressDownloader.Background = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.progressDownloader.Flipped = false;
             this.progressDownloader.Foreground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.progressDownloader.Location = new System.Drawing.Point(8, 3071);
+            this.progressDownloader.Location = new System.Drawing.Point(9, 101);
             this.progressDownloader.MaxValue = 100;
             this.progressDownloader.Name = "progressDownloader";
             this.progressDownloader.Rounding = 5;
@@ -2824,10 +2827,10 @@ namespace Optimizer
             this.btnDownloadApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownloadApps.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownloadApps.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadApps.Location = new System.Drawing.Point(12125, 3064);
+            this.btnDownloadApps.Location = new System.Drawing.Point(755, 31);
             this.btnDownloadApps.Margin = new System.Windows.Forms.Padding(2);
             this.btnDownloadApps.Name = "btnDownloadApps";
-            this.btnDownloadApps.Size = new System.Drawing.Size(203, 35);
+            this.btnDownloadApps.Size = new System.Drawing.Size(203, 44);
             this.btnDownloadApps.TabIndex = 50;
             this.btnDownloadApps.Text = "Download";
             this.btnDownloadApps.UseVisualStyleBackColor = false;
@@ -2922,7 +2925,7 @@ namespace Optimizer
             this.txtDownloadStatus.AutoSize = true;
             this.txtDownloadStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDownloadStatus.ForeColor = System.Drawing.Color.LightGray;
-            this.txtDownloadStatus.Location = new System.Drawing.Point(4, 3046);
+            this.txtDownloadStatus.Location = new System.Drawing.Point(6, 79);
             this.txtDownloadStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtDownloadStatus.Name = "txtDownloadStatus";
             this.txtDownloadStatus.Size = new System.Drawing.Size(32, 19);
@@ -2938,7 +2941,7 @@ namespace Optimizer
             this.linkWarnings.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkWarnings.ForeColor = System.Drawing.Color.Gold;
             this.linkWarnings.LinkColor = System.Drawing.Color.Gold;
-            this.linkWarnings.Location = new System.Drawing.Point(4, 3086);
+            this.linkWarnings.Location = new System.Drawing.Point(314, 95);
             this.linkWarnings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkWarnings.Name = "linkWarnings";
             this.linkWarnings.Size = new System.Drawing.Size(92, 19);
@@ -2955,7 +2958,7 @@ namespace Optimizer
             this.bitPref.AutoSize = true;
             this.bitPref.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bitPref.ForeColor = System.Drawing.Color.Gainsboro;
-            this.bitPref.Location = new System.Drawing.Point(368, 6);
+            this.bitPref.Location = new System.Drawing.Point(585, 6);
             this.bitPref.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bitPref.Name = "bitPref";
             this.bitPref.Size = new System.Drawing.Size(131, 19);
@@ -2973,10 +2976,10 @@ namespace Optimizer
             this.goToDownloadsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goToDownloadsB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToDownloadsB.ForeColor = System.Drawing.Color.White;
-            this.goToDownloadsB.Location = new System.Drawing.Point(11919, 3064);
+            this.goToDownloadsB.Location = new System.Drawing.Point(369, 30);
             this.goToDownloadsB.Margin = new System.Windows.Forms.Padding(2);
             this.goToDownloadsB.Name = "goToDownloadsB";
-            this.goToDownloadsB.Size = new System.Drawing.Size(203, 35);
+            this.goToDownloadsB.Size = new System.Drawing.Size(197, 45);
             this.goToDownloadsB.TabIndex = 77;
             this.goToDownloadsB.Text = "Go to Downloads";
             this.goToDownloadsB.UseVisualStyleBackColor = false;
@@ -8035,6 +8038,30 @@ namespace Optimizer
             this.picUpdate.Visible = false;
             this.picUpdate.Click += new System.EventHandler(this.picUpdate_Click);
             // 
+            // cuiSeparator2
+            // 
+            this.cuiSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiSeparator2.Location = new System.Drawing.Point(572, 6);
+            this.cuiSeparator2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cuiSeparator2.Name = "cuiSeparator2";
+            this.cuiSeparator2.SeparatorMargin = 8;
+            this.cuiSeparator2.Size = new System.Drawing.Size(10, 108);
+            this.cuiSeparator2.TabIndex = 162;
+            this.cuiSeparator2.Thickness = 0.5F;
+            this.cuiSeparator2.Vertical = true;
+            // 
+            // cuiSeparator3
+            // 
+            this.cuiSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiSeparator3.Location = new System.Drawing.Point(733, 6);
+            this.cuiSeparator3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cuiSeparator3.Name = "cuiSeparator3";
+            this.cuiSeparator3.SeparatorMargin = 8;
+            this.cuiSeparator3.Size = new System.Drawing.Size(12, 109);
+            this.cuiSeparator3.TabIndex = 172;
+            this.cuiSeparator3.Thickness = 0.5F;
+            this.cuiSeparator3.Vertical = true;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -8604,6 +8631,8 @@ namespace Optimizer
         private CuoreUI.Controls.cuiButton cuiButton3;
         private CuoreUI.Controls.cuiButton cuiButton4;
         private CuoreUI.Controls.cuiSeparator cuiSeparator1;
+        private CuoreUI.Controls.cuiSeparator cuiSeparator3;
+        private CuoreUI.Controls.cuiSeparator cuiSeparator2;
     }
 }
 

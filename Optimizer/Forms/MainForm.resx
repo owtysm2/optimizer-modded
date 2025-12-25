@@ -118,6 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtDownloadFolderButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAWJJREFUSEvdlbtK
+        RDEQhlfXwkJEd219BDv1BXwCW99AS0vvoIWt+jiCb+GlVDvBOyh4/eSHmSWbc3LOmlULf/hJSGbmTybD
+        pNH4SwADZYztsgAMxmsOoNmXUBgcaAMto+YjZXY9w52AGeAEuAdugFuj5nuhvXEoxS4BhwWvwhEwGful
+        0JVSS4dOKrwDHwFfbRQWzX4O2AU2gC3jJrANLBREgHFLTRXmzXYp3ijBvtk2XWAMuACegQfg0cYn4ByY
+        MruDIIhu9hbxxfbkO+o3SSKqrkNzVgo/A6EQvq7iaIeBhoFlYB1YAVaBNZvvAJfmqFNWIRRohQJ65DrU
+        BReSAnrkK9ssy61XUR0qBbxMU/ntBf9c4DoyyoH76rCFKrqzTT2oDHPoxaCuMNERMJFj2/wJnIWBvV1P
+        W0fVTZQuXfM7lI98T4HZMHbcEvTJ6E1y2GkPhc+psNAHkrHizz6XcdxfxRcxXHKnD6m1RQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="integrator7.Text" xml:space="preserve">
+    <value>Items can have custom icons and position.
+They can also be hidden, accessible only
+by pressing the SHIFT key.
+
+It can also create custom commands
+for Run Dialog, making it easy to launch
+any application only by typing your desired keyword.</value>
+  </data>
   <data name="btnRestoreUwp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -160,19 +182,6 @@
         TbYDPVeOqdP0CriX4oY78PUd9NNB+yybxkHzKralbONfBAk6tjHTVWHOH2XzRe/GV4UhVGJr2DHUYiuN
         XrTsDHHdqhKny2BD5OvaB8pgtHjm+XXtkJJXMq9q6j44dlp2gDnpNn9wUiSUWENtTmwYX/bJrIOyyhqr
         F3nO28JpUyX/9dvyDzgcpQ+f7zx4AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="txtDownloadFolderButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS45bG7aPgAAAWJJREFUSEvdlbtK
-        RDEQhlfXwkJEd219BDv1BXwCW99AS0vvoIWt+jiCb+GlVDvBOyh4/eSHmSWbc3LOmlULf/hJSGbmTybD
-        pNH4SwADZYztsgAMxmsOoNmXUBgcaAMto+YjZXY9w52AGeAEuAdugFuj5nuhvXEoxS4BhwWvwhEwGful
-        0JVSS4dOKrwDHwFfbRQWzX4O2AU2gC3jJrANLBREgHFLTRXmzXYp3ijBvtk2XWAMuACegQfg0cYn4ByY
-        MruDIIhu9hbxxfbkO+o3SSKqrkNzVgo/A6EQvq7iaIeBhoFlYB1YAVaBNZvvAJfmqFNWIRRohQJ65DrU
-        BReSAnrkK9ssy61XUR0qBbxMU/ntBf9c4DoyyoH76rCFKrqzTT2oDHPoxaCuMNERMJFj2/wJnIWBvV1P
-        W0fVTZQuXfM7lI98T4HZMHbcEvTJ6E1y2GkPhc+psNAHkrHizz6XcdxfxRcxXHKnD6m1RQAAAABJRU5E
-        rkJggg==
 </value>
   </data>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -349,15 +358,6 @@
   <metadata name="indiciumMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>904, 44</value>
   </metadata>
-  <data name="integrator7.Text" xml:space="preserve">
-    <value>Items can have custom icons and position.
-They can also be hidden, accessible only
-by pressing the SHIFT key.
-
-It can also create custom commands
-for Run Dialog, making it easy to launch
-any application only by typing your desired keyword.</value>
-  </data>
   <data name="picFlag.Content" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAIAAAB+9pigAAAABGdBTUEAALGPC/xhBQAABSVJREFUSEuV
