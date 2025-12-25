@@ -3,8 +3,6 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Optimizer.Forms
@@ -75,7 +73,7 @@ namespace Optimizer.Forms
 
             Region = Region.FromHrgn(Program.CreateRoundRectRgn(0, 0, Width, Height - 1, 13, 13));
             cuiButton1.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, cuiButton1.Width, cuiButton1.Height, 13, 13));
-            cuiPanelGradient1.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, cuiPanelGradient1.Width, cuiPanelGradient1.Height-1, 9, 9));
+            cuiPanelGradient1.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, cuiPanelGradient1.Width, cuiPanelGradient1.Height - 1, 9, 9));
             pictureBox1.Region = RegionFromImageAlpha(pictureBox1.Image);
 
             Text = $"Preset: {presetName}";

@@ -942,7 +942,7 @@ namespace Optimizer
             // (kinda related): 1 px is left below intentionally, for better contrast
             panel18.Left = cuiButton1.Left + ((cuiButton1.Width - panel18.Width) / 2);
             panel18.Top = cuiButton1.Bottom + 1;
-            panel18.Height = 12 + (44 * (cuiPanel2.Controls.Count-1));
+            panel18.Height = 12 + (44 * (cuiPanel2.Controls.Count - 1));
             panel18.Region = Region.FromHrgn(Program.CreateRoundRectRgn(1, 1, panel18.Width, panel18.Height, 13, 13));
 
             if (OptionsHelper.CurrentOptions.UpdateOnLaunch)
