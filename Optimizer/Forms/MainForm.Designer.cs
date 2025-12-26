@@ -2793,7 +2793,6 @@ namespace Optimizer
             // 
             // cAutoInstall
             // 
-            this.cAutoInstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cAutoInstall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cAutoInstall.Checked = false;
             this.cAutoInstall.CheckedForeground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
@@ -2831,7 +2830,6 @@ namespace Optimizer
             // 
             // btnDownloadApps
             // 
-            this.btnDownloadApps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDownloadApps.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnDownloadApps.FlatAppearance.BorderSize = 0;
             this.btnDownloadApps.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -2948,7 +2946,6 @@ namespace Optimizer
             // linkWarnings
             // 
             this.linkWarnings.ActiveLinkColor = System.Drawing.Color.Gold;
-            this.linkWarnings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkWarnings.AutoSize = true;
             this.linkWarnings.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkWarnings.ForeColor = System.Drawing.Color.Gold;
@@ -2980,7 +2977,6 @@ namespace Optimizer
             // 
             // goToDownloadsB
             // 
-            this.goToDownloadsB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.goToDownloadsB.BackColor = System.Drawing.Color.DodgerBlue;
             this.goToDownloadsB.FlatAppearance.BorderSize = 0;
             this.goToDownloadsB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;

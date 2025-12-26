@@ -266,6 +266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(294, 461);
+            this.ControlBox = false;
             this.Controls.Add(this.cuiButton1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel1);
@@ -275,7 +276,10 @@
             this.Controls.Add(this.cuiPanel1);
             this.Controls.Add(this.cuiPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PresetPreviewForm";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PresetPreviewForm";
