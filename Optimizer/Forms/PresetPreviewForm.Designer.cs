@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresetPreviewForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanelGradient1 = new CuoreUI.Controls.cuiPanelGradient();
+            this.cuiControlDrag1 = new CuoreUI.Components.cuiControlDrag(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cuiPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -260,6 +262,10 @@
             this.cuiPanelGradient1.Size = new System.Drawing.Size(293, 94);
             this.cuiPanelGradient1.TabIndex = 0;
             // 
+            // cuiControlDrag1
+            // 
+            this.cuiControlDrag1.TargetControl = this.cuiPanelGradient1;
+            // 
             // PresetPreviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +311,6 @@
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private CuoreUI.Controls.cuiLabel scrollToUnlockLabel;
         private CuoreUI.Controls.cuiPanelGradient cuiPanelGradient1;
+        private CuoreUI.Components.cuiControlDrag cuiControlDrag1;
     }
 }

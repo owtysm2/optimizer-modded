@@ -2446,98 +2446,105 @@ namespace Optimizer
         private void GetFootprint()
         {
             ByteSize footprint = CleanHelper.PreviewSizeToBeFreed;
-            if (footprint > ByteSize.FromBytes(0)) lblFootprint.Text = footprint.ToString();
-            else lblFootprint.Text = "-";
+            if (footprint > ByteSize.FromBytes(0))
+            {
+                lblFootprint.Text = footprint.ToString();
+            }
+            else
+            {
+                lblFootprint.Text = "-";
+            }
         }
 
         private void GetFeed()
         {
-            WebClient client = new WebClient
+            using (WebClient client = new WebClient
             {
                 Encoding = Encoding.UTF8
-            };
-
-            client.Headers.Add("Cache-Control", "no-cache");
-
-            try
+            })
             {
-                byte[] feedData;
-                string tmpImageFileName = string.Empty;
+                client.Headers.Add("Cache-Control", "no-cache");
 
-                feedData = client.DownloadData(_feedImages);
-
-                using (ZipArchive zip = new ZipArchive(new MemoryStream(feedData)))
+                try
                 {
-                    var zipEntries = zip.Entries;
+                    byte[] feedData;
+                    string tmpImageFileName = string.Empty;
 
-                    try
+                    feedData = client.DownloadData(_feedImages);
+
+                    using (ZipArchive zip = new ZipArchive(new MemoryStream(feedData)))
                     {
-                        string feed = client.DownloadString(_feedLink);
-                        AppsFromFeed = JsonConvert.DeserializeObject<List<AppInfo>>(feed);
+                        var zipEntries = zip.Entries;
 
-                        AppCard appCard;
-                        groupSystemTools.Controls.Clear();
-                        groupInternet.Controls.Clear();
-                        groupCoding.Controls.Clear();
-                        groupSoundVideo.Controls.Clear();
-
-                        foreach (AppInfo x in AppsFromFeed)
+                        try
                         {
-                            appCard = new AppCard();
-                            appCard.AutoSize = true;
-                            appCard.Anchor = AnchorStyles.None;
-                            appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                            appCard.appTitle.Content = x.Title;
-                            appCard.appTitle.Name = x.Tag;
-                            appCard.appTitle.CheckedForeground = OptionsHelper.ForegroundColor;
-                            appCard.appTitle.CheckedOutlineColor = OptionsHelper.ForegroundColor;
-                            appCard.appImage.SizeMode = PictureBoxSizeMode.Zoom;
+                            string feed = client.DownloadString(_feedLink);
+                            AppsFromFeed = JsonConvert.DeserializeObject<List<AppInfo>>(feed);
 
-                            tmpImageFileName = x.Image.Substring(x.Image.LastIndexOf("/") + 1, x.Image.Length - (x.Image.LastIndexOf("/") + 1));
-                            appCard.appImage.Image = Image.FromStream(zipEntries.First(ifn => ifn.Name == tmpImageFileName).Open());
+                            AppCard appCard;
+                            groupSystemTools.Controls.Clear();
+                            groupInternet.Controls.Clear();
+                            groupCoding.Controls.Clear();
+                            groupSoundVideo.Controls.Clear();
 
-                            switch (x.Group)
+                            foreach (AppInfo x in AppsFromFeed)
                             {
-                                case "SystemTools":
-                                    appCard.Location = new Point(0, groupSystemTools.Controls.Count * GetItemPadding());
-                                    groupSystemTools.Controls.Add(appCard);
-                                    break;
-                                case "Internet":
-                                    appCard.Location = new Point(0, groupInternet.Controls.Count * GetItemPadding());
-                                    groupInternet.Controls.Add(appCard);
-                                    break;
-                                case "Coding":
-                                    appCard.Location = new Point(0, groupCoding.Controls.Count * GetItemPadding());
-                                    groupCoding.Controls.Add(appCard);
-                                    break;
-                                case "GraphicsSound":
-                                    appCard.Location = new Point(0, groupSoundVideo.Controls.Count * GetItemPadding());
-                                    groupSoundVideo.Controls.Add(appCard);
-                                    break;
-                                default:
-                                    break;
+                                appCard = new AppCard();
+                                appCard.AutoSize = true;
+                                appCard.Anchor = AnchorStyles.None;
+                                appCard.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                                appCard.appTitle.Content = x.Title;
+                                appCard.appTitle.Name = x.Tag;
+                                appCard.appTitle.CheckedForeground = OptionsHelper.ForegroundColor;
+                                appCard.appTitle.CheckedOutlineColor = OptionsHelper.ForegroundColor;
+                                appCard.appImage.SizeMode = PictureBoxSizeMode.Zoom;
+
+                                tmpImageFileName = x.Image.Substring(x.Image.LastIndexOf("/") + 1, x.Image.Length - (x.Image.LastIndexOf("/") + 1));
+                                appCard.appImage.Image = Image.FromStream(zipEntries.First(ifn => ifn.Name == tmpImageFileName).Open());
+
+                                switch (x.Group)
+                                {
+                                    case "SystemTools":
+                                        appCard.Location = new Point(0, groupSystemTools.Controls.Count * GetItemPadding());
+                                        groupSystemTools.Controls.Add(appCard);
+                                        break;
+                                    case "Internet":
+                                        appCard.Location = new Point(0, groupInternet.Controls.Count * GetItemPadding());
+                                        groupInternet.Controls.Add(appCard);
+                                        break;
+                                    case "Coding":
+                                        appCard.Location = new Point(0, groupCoding.Controls.Count * GetItemPadding());
+                                        groupCoding.Controls.Add(appCard);
+                                        break;
+                                    case "GraphicsSound":
+                                        appCard.Location = new Point(0, groupSoundVideo.Controls.Count * GetItemPadding());
+                                        groupSoundVideo.Controls.Add(appCard);
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
+
+                            // UI handling
+                            btnDownloadApps.Enabled = true;
+                            txtFeedError.Visible = false;
                         }
+                        catch (Exception ex)
+                        {
+                            btnDownloadApps.Enabled = false;
+                            txtFeedError.Visible = true;
 
-                        // UI handling
-                        btnDownloadApps.Enabled = true;
-                        txtFeedError.Visible = false;
-                    }
-                    catch (Exception ex)
-                    {
-                        btnDownloadApps.Enabled = false;
-                        txtFeedError.Visible = true;
-
-                        Logger.LogError("MainForm.GetFeed", ex.Message, ex.StackTrace);
+                            Logger.LogError("MainForm.GetFeed", ex.Message, ex.StackTrace);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                btnDownloadApps.Enabled = false;
-                txtFeedError.Visible = true;
+                catch (Exception ex)
+                {
+                    btnDownloadApps.Enabled = false;
+                    txtFeedError.Visible = true;
 
-                Logger.LogError("MainForm.GetFeed-DownloadImages", ex.Message, ex.StackTrace);
+                    Logger.LogError("MainForm.GetFeed-DownloadImages", ex.Message, ex.StackTrace);
+                }
             }
         }
 
@@ -2545,14 +2552,30 @@ namespace Optimizer
         {
             try
             {
-                if (checkTemp.Checked) CleanHelper.PreviewTemp();
-                if (checkMiniDumps.Checked) CleanHelper.PreviewMinidumps();
-                if (checkErrorReports.Checked) CleanHelper.PreviewErrorReports();
+                if (checkTemp.Checked)
+                {
+                    CleanHelper.PreviewTemp();
+                }
+
+                if (checkMiniDumps.Checked)
+                {
+                    CleanHelper.PreviewMinidumps();
+                }
+
+                if (checkErrorReports.Checked)
+                {
+                    CleanHelper.PreviewErrorReports();
+                }
+
                 CleanHelper.PreviewChromeClean(chromeCache.Checked, chromeCookies.Checked, chromeHistory.Checked, chromeSession.Checked, chromePws.Checked);
                 CleanHelper.PreviewFireFoxClean(firefoxCache.Checked, firefoxCookies.Checked, firefoxHistory.Checked);
                 CleanHelper.PreviewEdgeClean(edgeCache.Checked, edgeCookies.Checked, edgeHistory.Checked, edgeSession.Checked);
                 CleanHelper.PreviewBraveClean(braveCache.Checked, braveCookies.Checked, braveHistory.Checked, braveSession.Checked, bravePasswords.Checked);
-                if (IECache.Checked) CleanHelper.PreviewInternetExplorerCache();
+                
+                if (IECache.Checked)
+                {
+                    CleanHelper.PreviewInternetExplorerCache();
+                }
             }
             catch (Exception ex)
             {
@@ -2561,14 +2584,17 @@ namespace Optimizer
             finally
             {
                 _cleanPreviewList = CleanHelper.PreviewCleanList;
-
                 _cleanPreviewList.Sort();
+
+                listCleanPreview.SuspendLayout();
                 listCleanPreview.Items.AddRange(_cleanPreviewList.ToArray());
 
                 for (int i = 0; i < listCleanPreview.Items.Count; i++)
                 {
                     listCleanPreview.SetItemChecked(i, true);
                 }
+
+                listCleanPreview.ResumeLayout();
 
                 GetFootprint();
             }
@@ -2581,7 +2607,10 @@ namespace Optimizer
                 CleanHelper.PreviewCleanList.Add(listCleanPreview.CheckedItems[i].ToString());
             }
 
-            if (checkBin.Checked) CleanHelper.EmptyRecycleBin();
+            if (checkBin.Checked)
+            {
+                CleanHelper.EmptyRecycleBin();
+            }
 
             CleanHelper.Clean();
 
