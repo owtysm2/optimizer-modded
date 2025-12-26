@@ -708,15 +708,29 @@ namespace Optimizer
 
         private void WidgetsSw_Click(object sender, EventArgs e)
         {
-            if (widgetsSw.ToggleChecked)
+            try
             {
-                OptimizeHelper.DisableWidgets();
+                if (widgetsSw.ToggleChecked)
+                {
+                    OptimizeHelper.DisableWidgets();
+                }
+                else
+                {
+                    OptimizeHelper.EnableWidgets();
+                }
+                OptionsHelper.CurrentOptions.DisableWidgets = widgetsSw.ToggleChecked;
             }
-            else
+            catch
             {
-                OptimizeHelper.EnableWidgets();
+                // known issue, disable widgets throws an exception when not in safe mode
+                // gets the "Restart in safe mode" localised translation
+                MessageBox.Show(OptionsHelper.TranslationList["btnRestartSafe"].ToString(), "Optimizer");
+                OptionsHelper.CurrentOptions.DisableWidgets = false;
+                if (widgetsSw.ToggleChecked)
+                {
+                    widgetsSw.ToggleChecked = false;
+                }
             }
-            OptionsHelper.CurrentOptions.DisableWidgets = widgetsSw.ToggleChecked;
         }
 
         private void SnapAssistSw_Click(object sender, EventArgs e)

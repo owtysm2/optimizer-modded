@@ -169,6 +169,7 @@ namespace Optimizer
             this.appsTitle = new System.Windows.Forms.Label();
             this.btnGetFeed = new System.Windows.Forms.Button();
             this.panelCommonApps = new System.Windows.Forms.Panel();
+            this.cuiSeparator3 = new CuoreUI.Controls.cuiSeparator();
             this.cuiComboBox1 = new CuoreUI.Controls.cuiComboBox();
             this.cAutoInstall = new CuoreUI.Controls.cuiCheckbox();
             this.progressDownloader = new CuoreUI.Controls.cuiProgressBarHorizontal();
@@ -180,6 +181,7 @@ namespace Optimizer
             this.linkWarnings = new System.Windows.Forms.LinkLabel();
             this.bitPref = new System.Windows.Forms.Label();
             this.goToDownloadsB = new System.Windows.Forms.Button();
+            this.cuiSeparator2 = new CuoreUI.Controls.cuiSeparator();
             this.groupSystemTools = new System.Windows.Forms.Panel();
             this.cleanerTab = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -470,8 +472,6 @@ namespace Optimizer
             this.picRestartNeeded = new System.Windows.Forms.PictureBox();
             this.picLab = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
-            this.cuiSeparator2 = new CuoreUI.Controls.cuiSeparator();
-            this.cuiSeparator3 = new CuoreUI.Controls.cuiSeparator();
             this.bpanel.SuspendLayout();
             this.tabCollection.SuspendLayout();
             this.universalTab.SuspendLayout();
@@ -2755,6 +2755,18 @@ namespace Optimizer
             this.panelCommonApps.Size = new System.Drawing.Size(1283, 120);
             this.panelCommonApps.TabIndex = 162;
             // 
+            // cuiSeparator3
+            // 
+            this.cuiSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiSeparator3.Location = new System.Drawing.Point(733, 6);
+            this.cuiSeparator3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cuiSeparator3.Name = "cuiSeparator3";
+            this.cuiSeparator3.SeparatorMargin = 8;
+            this.cuiSeparator3.Size = new System.Drawing.Size(12, 109);
+            this.cuiSeparator3.TabIndex = 172;
+            this.cuiSeparator3.Thickness = 0.5F;
+            this.cuiSeparator3.Vertical = true;
+            // 
             // cuiComboBox1
             // 
             this.cuiComboBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -2984,6 +2996,18 @@ namespace Optimizer
             this.goToDownloadsB.Text = "Go to Downloads";
             this.goToDownloadsB.UseVisualStyleBackColor = false;
             this.goToDownloadsB.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // cuiSeparator2
+            // 
+            this.cuiSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiSeparator2.Location = new System.Drawing.Point(572, 6);
+            this.cuiSeparator2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cuiSeparator2.Name = "cuiSeparator2";
+            this.cuiSeparator2.SeparatorMargin = 8;
+            this.cuiSeparator2.Size = new System.Drawing.Size(10, 108);
+            this.cuiSeparator2.TabIndex = 162;
+            this.cuiSeparator2.Thickness = 0.5F;
+            this.cuiSeparator2.Vertical = true;
             // 
             // groupSystemTools
             // 
@@ -5618,7 +5642,7 @@ namespace Optimizer
             this.txtItemName.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtItemName.Content = "";
             this.txtItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtItemName.FocusBackgroundColor = System.Drawing.Color.White;
+            this.txtItemName.FocusBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtItemName.FocusImageTint = System.Drawing.Color.White;
             this.txtItemName.FocusOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.txtItemName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -7818,18 +7842,22 @@ namespace Optimizer
             // 
             // cuiSeparator1
             // 
-            this.cuiSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cuiSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cuiSeparator1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.cuiSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.cuiSeparator1.Enabled = false;
+            this.cuiSeparator1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.cuiSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiSeparator1.Location = new System.Drawing.Point(4, -48);
-            this.cuiSeparator1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.cuiSeparator1.MaximumSize = new System.Drawing.Size(500, 12);
-            this.cuiSeparator1.MinimumSize = new System.Drawing.Size(42, 12);
+            this.cuiSeparator1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cuiSeparator1.Location = new System.Drawing.Point(2, -55);
+            this.cuiSeparator1.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.cuiSeparator1.MaximumSize = new System.Drawing.Size(793, 18);
+            this.cuiSeparator1.MinimumSize = new System.Drawing.Size(66, 18);
             this.cuiSeparator1.Name = "cuiSeparator1";
             this.cuiSeparator1.SeparatorMargin = 8;
-            this.cuiSeparator1.Size = new System.Drawing.Size(140, 12);
+            this.cuiSeparator1.Size = new System.Drawing.Size(145, 18);
             this.cuiSeparator1.TabIndex = 81;
+            this.cuiSeparator1.TabStop = false;
             this.cuiSeparator1.Thickness = 0.5F;
             this.cuiSeparator1.Vertical = false;
             // 
@@ -7844,7 +7872,7 @@ namespace Optimizer
             this.cuiButton4.CheckedForeColor = System.Drawing.Color.White;
             this.cuiButton4.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton4.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton4.Content = "From Template";
+            this.cuiButton4.Content = "Import Config";
             this.cuiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
@@ -8037,30 +8065,6 @@ namespace Optimizer
             this.picUpdate.TabStop = false;
             this.picUpdate.Visible = false;
             this.picUpdate.Click += new System.EventHandler(this.picUpdate_Click);
-            // 
-            // cuiSeparator2
-            // 
-            this.cuiSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiSeparator2.Location = new System.Drawing.Point(572, 6);
-            this.cuiSeparator2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cuiSeparator2.Name = "cuiSeparator2";
-            this.cuiSeparator2.SeparatorMargin = 8;
-            this.cuiSeparator2.Size = new System.Drawing.Size(10, 108);
-            this.cuiSeparator2.TabIndex = 162;
-            this.cuiSeparator2.Thickness = 0.5F;
-            this.cuiSeparator2.Vertical = true;
-            // 
-            // cuiSeparator3
-            // 
-            this.cuiSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiSeparator3.Location = new System.Drawing.Point(733, 6);
-            this.cuiSeparator3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cuiSeparator3.Name = "cuiSeparator3";
-            this.cuiSeparator3.SeparatorMargin = 8;
-            this.cuiSeparator3.Size = new System.Drawing.Size(12, 109);
-            this.cuiSeparator3.TabIndex = 172;
-            this.cuiSeparator3.Thickness = 0.5F;
-            this.cuiSeparator3.Vertical = true;
             // 
             // MainForm
             // 
