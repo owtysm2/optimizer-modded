@@ -1,6 +1,9 @@
 > [!CAUTION]
-> ### This is a fork.
-> No support will be provided.<br> Use this modified version at your own risk.<br>
+> ### This is a fork.<br>
+> No support will be provided.<br>
+> Use this modified version at your own risk.
+
+> No new features will be added.
 
 # Optimizer Modded
 An opinionated UI refresh of your favourite Windows optimization tool, with the addition of a UI for pre-made presets.
