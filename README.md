@@ -27,7 +27,7 @@ Find the latest release of Optimizer Modded on the [Releases](https://github.com
 
 | Version | Download Link |
 | ------- | ------------- |
-| Latest | [16.7 (Modded)](https://github.com/owtysm2/optimizer-modded/releases/latest) |
+| Latest | [16.7 (Modded, Dev)](https://github.com/owtysm2/optimizer-modded/releases/latest) |
 
 <center>
 <h2>🌍 Showcase</h2> 
