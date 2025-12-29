@@ -9,7 +9,8 @@
 > No new features will be added.
 
 # Optimizer Modded
-An opinionated UI refresh of your favourite Windows optimization tool, with the addition of a UI for pre-made presets.
+An opinionated UI refresh of your favourite Windows optimization tool, with the addition of a UI for pre-made presets.<br>
+Also includes small bugfixes.
 <p align="center">
 	<img src="https://i.imgur.com/Rmx37V3.png">
 	<a href="https://github.com/owtysm2/optimizer-modded/releases/latest" target="_blank">
